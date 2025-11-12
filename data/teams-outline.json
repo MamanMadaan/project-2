@@ -1,0 +1,196 @@
+{
+  "id": "psl-teams-outline",
+  "title": "PSL Teams",
+  "author": "PennState Soccer League",
+  "description": "Complete roster and information for all PSL teams",
+  "license": "by-sa",
+  "metadata": {
+    "season": "Spring 2025",
+    "lastUpdated": "2025-01-12T10:00:00Z",
+    "division": "Division A"
+  },
+  "items": [
+    {
+      "id": "team-blue-lions",
+      "indent": "1",
+      "location": "teams/blue-lions.html",
+      "slug": "teams/blue-lions",
+      "order": "0",
+      "parent": null,
+      "title": "Blue Lions",
+      "description": "Championship team known for strategic gameplay and exceptional teamwork",
+      "metadata": {
+        "teamColor": "#0066cc",
+        "founded": "2020",
+        "captain": "Sarah Johnson",
+        "coach": "Mike Rodriguez",
+        "wins": 15,
+        "losses": 3,
+        "draws": 2,
+        "homeField": "North Stadium",
+        "achievements": [
+          "2024 PSL Champions",
+          "2023 Tournament Winners",
+          "Best Defense 2024"
+        ],
+        "roster": [
+          {
+            "name": "Sarah Johnson",
+            "position": "Captain/Midfielder",
+            "number": 10,
+            "year": "Senior"
+          },
+          {
+            "name": "Alex Chen",
+            "position": "Goalkeeper",
+            "number": 1,
+            "year": "Junior"
+          },
+          {
+            "name": "Maria Santos",
+            "position": "Forward",
+            "number": 9,
+            "year": "Sophomore"
+          }
+        ],
+        "teamImage": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      }
+    },
+    {
+      "id": "team-white-hawks",
+      "indent": "1",
+      "location": "teams/white-hawks.html",
+      "slug": "teams/white-hawks",
+      "order": "1",
+      "parent": null,
+      "title": "White Hawks",
+      "description": "Rising stars known for exceptional speed and agility on the field",
+      "metadata": {
+        "teamColor": "#ffffff",
+        "secondaryColor": "#666666",
+        "founded": "2021",
+        "captain": "Jordan Kim",
+        "coach": "Lisa Thompson",
+        "wins": 12,
+        "losses": 6,
+        "draws": 2,
+        "homeField": "East Field",
+        "achievements": [
+          "2024 Most Improved Team",
+          "2024 Fair Play Award"
+        ],
+        "roster": [
+          {
+            "name": "Jordan Kim",
+            "position": "Captain/Defender",
+            "number": 5,
+            "year": "Senior"
+          },
+          {
+            "name": "Taylor Brown",
+            "position": "Midfielder",
+            "number": 8,
+            "year": "Junior"
+          },
+          {
+            "name": "Chris Wilson",
+            "position": "Forward",
+            "number": 11,
+            "year": "Sophomore"
+          }
+        ],
+        "teamImage": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      }
+    },
+    {
+      "id": "team-red-rovers",
+      "indent": "1",
+      "location": "teams/red-rovers.html",
+      "slug": "teams/red-rovers",
+      "order": "2",
+      "parent": null,
+      "title": "Red Rovers",
+      "description": "Veteran team with years of experience and strong defensive strategies",
+      "metadata": {
+        "teamColor": "#cc0000",
+        "founded": "2019",
+        "captain": "David Martinez",
+        "coach": "Robert Garcia",
+        "wins": 10,
+        "losses": 8,
+        "draws": 2,
+        "homeField": "South Stadium",
+        "achievements": [
+          "2023 Best Defense Award",
+          "2022 Veteran Team Recognition"
+        ],
+        "roster": [
+          {
+            "name": "David Martinez",
+            "position": "Captain/Defender",
+            "number": 4,
+            "year": "Graduate"
+          },
+          {
+            "name": "Emily Davis",
+            "position": "Midfielder",
+            "number": 6,
+            "year": "Senior"
+          },
+          {
+            "name": "James Lee",
+            "position": "Goalkeeper",
+            "number": 12,
+            "year": "Junior"
+          }
+        ],
+        "teamImage": "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      }
+    },
+    {
+      "id": "team-green-guardians",
+      "indent": "1",
+      "location": "teams/green-guardians.html",
+      "slug": "teams/green-guardians",
+      "order": "3",
+      "parent": null,
+      "title": "Green Guardians",
+      "description": "New team with fresh talent and innovative playing styles",
+      "metadata": {
+        "teamColor": "#00cc66",
+        "founded": "2023",
+        "captain": "Ashley Park",
+        "coach": "Jennifer Wong",
+        "wins": 8,
+        "losses": 10,
+        "draws": 2,
+        "homeField": "West Field",
+        "achievements": [
+          "2024 Newcomer Award",
+          "2024 Most Creative Plays"
+        ],
+        "roster": [
+          {
+            "name": "Ashley Park",
+            "position": "Captain/Midfielder",
+            "number": 7,
+            "year": "Sophomore"
+          },
+          {
+            "name": "Ryan Johnson",
+            "position": "Forward",
+            "number": 3,
+            "year": "Freshman"
+          },
+          {
+            "name": "Sam Taylor",
+            "position": "Defender",
+            "number": 2,
+            "year": "Freshman"
+          }
+        ],
+        "teamImage": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      }
+    }
+  ]
+}

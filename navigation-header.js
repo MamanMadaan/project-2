@@ -16,7 +16,10 @@ export class NavigationHeader extends HTMLElement {
         padding: 20px;
         border-bottom: 2px solid #1e3a8a;
         font-family: Arial, sans-serif;
-        position: relative;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       ">
         <div style="
           display: flex;
@@ -161,7 +164,10 @@ export class NavigationHeader extends HTMLElement {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const page = e.target.getAttribute('data-page');
-          this.dispatchEvent(new CustomEvent('navigate', { detail: { page } }));
+          this.dispatchEvent(new CustomEvent('navigate', { 
+            detail: { page },
+            bubbles: true 
+          }));
           this.isMenuOpen = false;
           dropdown.style.display = 'none';
         });

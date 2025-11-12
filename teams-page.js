@@ -1,6 +1,24 @@
+import { OutlineDataService } from './outline-data-service.js';
+
 export class TeamsPage extends HTMLElement {
   constructor() {
     super();
+    this.teamsData = null;
+  }
+
+  async connectedCallback() {
+    await this.loadTeamsData();
+    this.render();
+  }
+  
+  async loadTeamsData() {
+    try {
+      const outline = await OutlineDataService.loadTeamsOutline();
+      this.teamsData = OutlineDataService.getTeamsData(outline);
+    } catch (error) {
+      console.error('Failed to load teams data:', error);
+      this.teamsData = [];
+    }
   }
 
   connectedCallback() {
@@ -37,71 +55,70 @@ export class TeamsPage extends HTMLElement {
           margin-bottom: 40px;
         ">PSL Teams</h1>
         
-        <div style="
+        <div id="teams-container" style="
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 30px;
           margin: 40px 0;
         ">
-          <div style="
-            background: white;
+          <!-- Teams will be loaded here -->
+        </div>
+        </div>
+      </div>
+    `;
+    
+    this.attachEventListeners();
+  }
+  
+  render() {
+    if (!this.teamsData || this.teamsData.length === 0) {
+      this.innerHTML = '<div style="text-align: center; padding: 40px;">Loading teams...</div>';
+      return;
+    }
+    
+    // Create teams container HTML
+    const teamsHtml = this.teamsData.map(team => this.createTeamCard(team)).join('');
+    
+    this.innerHTML = `
+      <div style="
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+      ">
+        <!-- Back Button -->
+        <div style="margin-bottom: 30px;">
+          <button id="back-btn" style="
+            background: transparent;
+            color: #1e3a8a;
             border: 2px solid #1e3a8a;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          ">
-            <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 15px;">Blue Lions</h3>
-            <p style="color: #374151; line-height: 1.6;">Our championship team with an impressive track record. Known for their strategic gameplay and teamwork.</p>
-            <div style="margin: 20px 0;">
-              <strong>Wins:</strong> 15 | <strong>Losses:</strong> 3
-            </div>
-          </div>
-          
-          <div style="
-            background: white;
-            border: 2px solid #1e3a8a;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          ">
-            <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 15px;">White Hawks</h3>
-            <p style="color: #374151; line-height: 1.6;">Rising stars in the league with exceptional speed and agility. A team to watch this season.</p>
-            <div style="margin: 20px 0;">
-              <strong>Wins:</strong> 12 | <strong>Losses:</strong> 6
-            </div>
-          </div>
-          
-          <div style="
-            background: white;
-            border: 2px solid #1e3a8a;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          ">
-            <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 15px;">Red Rovers</h3>
-            <p style="color: #374151; line-height: 1.6;">Veteran team with years of experience. Known for their defensive strategies and leadership.</p>
-            <div style="margin: 20px 0;">
-              <strong>Wins:</strong> 10 | <strong>Losses:</strong> 8
-            </div>
-          </div>
-          
-          <div style="
-            background: white;
-            border: 2px solid #1e3a8a;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          ">
-            <h3 style="color: #1e3a8a; font-size: 24px; margin-bottom: 15px;">Green Guardians</h3>
-            <p style="color: #374151; line-height: 1.6;">New team with fresh talent and innovative playing styles. Quickly making a name in the league.</p>
-            <div style="margin: 20px 0;">
-              <strong>Wins:</strong> 8 | <strong>Losses:</strong> 10
-            </div>
-          </div>
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+          " onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a8a'">
+            ← Back to Home
+          </button>
+        </div>
+        
+        <h1 style="
+          text-align: center;
+          color: #1e3a8a;
+          font-size: 42px;
+          margin-bottom: 40px;
+        ">PSL Teams</h1>
+        
+        <div style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 30px;
+          margin: 40px 0;
+        ">
+          ${teamsHtml}
         </div>
         
         <div style="
@@ -130,6 +147,127 @@ export class TeamsPage extends HTMLElement {
       </div>
     `;
     
+    this.attachEventListeners();
+  }
+  
+  createTeamCard(team) {
+    const achievements = team.achievements.map(achievement => 
+      `<li style="margin-bottom: 5px;">${achievement}</li>`
+    ).join('');
+    
+    const totalGames = team.wins + team.losses + team.draws;
+    const winPercentage = totalGames > 0 ? Math.round((team.wins / totalGames) * 100) : 0;
+    
+    return `
+      <div style="
+        background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
+                  ${team.teamImage ? `url('${team.teamImage}')` : '#f8fafc'};
+        background-size: cover;
+        background-position: center;
+        border: 3px solid ${team.color};
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" 
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.1)'">
+        
+        <div style="text-align: center;">
+          <h3 style="
+            color: ${team.color}; 
+            font-size: 28px; 
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+          ">${team.title}</h3>
+          
+          <p style="
+            color: #374151; 
+            line-height: 1.6; 
+            margin-bottom: 20px;
+            font-size: 16px;
+          ">${team.description}</p>
+          
+          <!-- Stats Grid -->
+          <div style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+          ">
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: bold; color: ${team.color};">${team.wins}</div>
+              <div style="font-size: 12px; color: #666;">Wins</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: bold; color: #dc2626;">${team.losses}</div>
+              <div style="font-size: 12px; color: #666;">Losses</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: bold; color: #059669;">${team.draws}</div>
+              <div style="font-size: 12px; color: #666;">Draws</div>
+            </div>
+          </div>
+          
+          <!-- Team Info -->
+          <div style="
+            text-align: left;
+            background: rgba(248,250,252,0.9);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+          ">
+            <p style="margin: 5px 0;"><strong>Captain:</strong> ${team.captain}</p>
+            <p style="margin: 5px 0;"><strong>Coach:</strong> ${team.coach}</p>
+            <p style="margin: 5px 0;"><strong>Home Field:</strong> ${team.homeField}</p>
+            <p style="margin: 5px 0;"><strong>Founded:</strong> ${team.founded}</p>
+            <p style="margin: 5px 0;"><strong>Win Rate:</strong> ${winPercentage}%</p>
+          </div>
+          
+          <!-- Achievements -->
+          ${achievements ? `
+            <div style="
+              text-align: left;
+              background: rgba(248,250,252,0.9);
+              padding: 15px;
+              border-radius: 8px;
+              margin: 15px 0;
+            ">
+              <strong style="color: ${team.color};">Achievements:</strong>
+              <ul style="margin: 10px 0; padding-left: 20px;">
+                ${achievements}
+              </ul>
+            </div>
+          ` : ''}
+          
+          <!-- Roster Preview -->
+          ${team.roster.length > 0 ? `
+            <div style="
+              background: rgba(248,250,252,0.9);
+              padding: 15px;
+              border-radius: 8px;
+              margin: 15px 0;
+              text-align: left;
+            ">
+              <strong style="color: ${team.color};">Key Players:</strong>
+              <div style="margin-top: 10px;">
+                ${team.roster.slice(0, 3).map(player => `
+                  <div style="margin: 8px 0; padding: 8px; background: white; border-radius: 5px;">
+                    <strong>#${player.number} ${player.name}</strong><br>
+                    <small style="color: #666;">${player.position} • ${player.year}</small>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }
+  
+  attachEventListeners() {
     // Add event listener for back button
     setTimeout(() => {
       const backBtn = this.querySelector('#back-btn');

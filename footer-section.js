@@ -99,24 +99,24 @@ export class FooterSection extends HTMLElement {
             gap: 15px;
             flex-wrap: wrap;
           ">
-            <span style="
-              color: rgba(255, 255, 255, 0.9);
-              font-size: 16px;
-            ">Powered by</span>
             <div style="
               background: white;
-              padding: 10px 20px;
-              border-radius: 8px;
-              border: 2px dashed #1e3a8a;
+              padding: 15px 25px;
+              border-radius: 12px;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
               display: flex;
               align-items: center;
               justify-content: center;
             ">
-              <span style="
-                color: #1e3a8a;
-                font-size: 14px;
-                font-weight: bold;
-              ">Your Logo Here</span>
+              <img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000fba87230ae2c6d6da0721ac7&ts=489712&p=fs&cid=1&sig=cb822b0d47314b2fc3fac1a0910fbd369dafecdf1560cc2fb416b8e15bc8796e&v=0" 
+                   alt="Powered by Logo" 
+                   style="
+                     max-height: 40px;
+                     max-width: 200px;
+                     height: auto;
+                     width: auto;
+                   " 
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color: #1e3a8a; font-size: 14px; font-weight: bold;\'>Powered by [Logo]</span>';">
             </div>
           </div>
           
