@@ -1,0 +1,59 @@
+{
+  "id": "psl-navigation-outline",
+  "title": "PSL Website Navigation",
+  "author": "PennState Soccer League",
+  "description": "Primary navigation structure for the PSL website",
+  "license": "by-sa",
+  "metadata": {
+    "theme": "penn-state",
+    "primaryColor": "#1e3a8a",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "id": "nav-home-001",
+      "indent": "1",
+      "location": "index.html",
+      "slug": "home",
+      "order": "0",
+      "parent": null,
+      "title": "Home",
+      "description": "PSL homepage with league overview",
+      "metadata": {
+        "icon": "🏠",
+        "visible": true,
+        "component": "home-page"
+      }
+    },
+    {
+      "id": "nav-teams-001",
+      "indent": "1",
+      "location": "teams.html",
+      "slug": "teams",
+      "order": "1",
+      "parent": null,
+      "title": "Teams",
+      "description": "Overview of all PSL teams",
+      "metadata": {
+        "icon": "👥",
+        "visible": true,
+        "component": "teams-page"
+      }
+    },
+    {
+      "id": "nav-schedule-001",
+      "indent": "1",
+      "location": "schedule.html",
+      "slug": "schedule",
+      "order": "2",
+      "parent": null,
+      "title": "Schedule",
+      "description": "Game schedules and events",
+      "metadata": {
+        "icon": "📅",
+        "visible": true,
+        "component": "schedule-page"
+      }
+    }
+  ]
+}

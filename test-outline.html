@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSL - JSON Outline Test</title>
+    <script type="module" src="./outline-data-service.js"></script>
+    <script type="module" src="./enhanced-navigation-header.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; padding: 20px; background: #f0f8ff;">JSON Outline Architecture Test</h1>
+    
+    <!-- Current Navigation (your existing code) -->
+    <div style="margin: 20px; padding: 20px; border: 2px solid #ccc;">
+        <h2>Current Navigation (Hardcoded)</h2>
+        <navigation-header></navigation-header>
+    </div>
+    
+    <!-- Enhanced Navigation (using JSON Outline) -->
+    <div style="margin: 20px; padding: 20px; border: 2px solid #1e3a8a;">
+        <h2>Enhanced Navigation (JSON Outline)</h2>
+        <enhanced-navigation-header use-outline="true"></enhanced-navigation-header>
+    </div>
+    
+    <!-- Test Data Loading -->
+    <div style="margin: 20px; padding: 20px; background: #f8f9fa;">
+        <h2>JSON Data Test</h2>
+        <button onclick="testDataLoading()">Test Load Navigation Data</button>
+        <button onclick="testScheduleData()">Test Load Schedule Data</button>
+        <pre id="data-output" style="background: white; padding: 15px; border: 1px solid #ddd; margin-top: 10px; max-height: 300px; overflow-y: auto;"></pre>
+    </div>
+
+    <script type="module">
+        import { OutlineDataService } from './outline-data-service.js';
+        import './navigation-header.js';
+        
+        window.testDataLoading = async function() {
+            const output = document.getElementById('data-output');
+            try {
+                const navData = await OutlineDataService.loadNavigationOutline();
+                output.textContent = JSON.stringify(navData, null, 2);
+            } catch (error) {
+                output.textContent = 'Error loading navigation data: ' + error.message;
+            }
+        };
+        
+        window.testScheduleData = async function() {
+            const output = document.getElementById('data-output');
+            try {
+                const scheduleData = await OutlineDataService.loadScheduleOutline();
+                const upcomingEvents = OutlineDataService.getUpcomingEvents(scheduleData);
+                output.textContent = JSON.stringify({ 
+                    outline: scheduleData,
+                    upcomingEvents 
+                }, null, 2);
+            } catch (error) {
+                output.textContent = 'Error loading schedule data: ' + error.message;
+            }
+        };
+    </script>
+</body>
+</html>

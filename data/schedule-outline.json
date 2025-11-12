@@ -1,0 +1,99 @@
+{
+  "id": "psl-schedule-outline",
+  "title": "PSL Season Schedule",
+  "author": "PennState Soccer League",
+  "description": "Complete schedule of games and events for PSL season",
+  "license": "by-sa",
+  "metadata": {
+    "season": "Spring 2025",
+    "timezone": "America/New_York",
+    "lastUpdated": "2025-01-12T10:00:00Z"
+  },
+  "items": [
+    {
+      "id": "event-game-001",
+      "indent": "1",
+      "location": "events/game-001.html",
+      "slug": "events/blue-vs-white-jan15",
+      "order": "0",
+      "parent": null,
+      "title": "Blue Lions vs White Hawks",
+      "description": "Regular season league match",
+      "metadata": {
+        "eventType": "game",
+        "startTime": "2025-01-15T15:00:00Z",
+        "endTime": "2025-01-15T17:00:00Z",
+        "location": {
+          "name": "Field A",
+          "address": "University Park, PA"
+        },
+        "teams": [
+          {
+            "id": "blue-lions",
+            "name": "Blue Lions",
+            "role": "home"
+          },
+          {
+            "id": "white-hawks",
+            "name": "White Hawks",
+            "role": "away"
+          }
+        ],
+        "status": "scheduled"
+      }
+    },
+    {
+      "id": "event-game-002",
+      "indent": "1",
+      "location": "events/game-002.html",
+      "slug": "events/red-vs-green-jan18",
+      "order": "1",
+      "parent": null,
+      "title": "Red Rovers vs Green Guardians",
+      "description": "Regular season league match",
+      "metadata": {
+        "eventType": "game",
+        "startTime": "2025-01-18T17:30:00Z",
+        "endTime": "2025-01-18T19:30:00Z",
+        "location": {
+          "name": "Field B",
+          "address": "University Park, PA"
+        },
+        "teams": [
+          {
+            "id": "red-rovers",
+            "name": "Red Rovers",
+            "role": "home"
+          },
+          {
+            "id": "green-guardians",
+            "name": "Green Guardians",
+            "role": "away"
+          }
+        ],
+        "status": "scheduled"
+      }
+    },
+    {
+      "id": "event-championship",
+      "indent": "1",
+      "location": "events/championship.html",
+      "slug": "events/championship-final",
+      "order": "10",
+      "parent": null,
+      "title": "Championship Final",
+      "description": "PSL Spring 2025 Championship Final Match",
+      "metadata": {
+        "eventType": "championship",
+        "startTime": "2025-01-29T19:00:00Z",
+        "endTime": "2025-01-29T21:00:00Z",
+        "location": {
+          "name": "Main Stadium",
+          "address": "University Park, PA"
+        },
+        "status": "scheduled",
+        "featured": true
+      }
+    }
+  ]
+}
