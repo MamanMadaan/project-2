@@ -101,22 +101,27 @@ export class FooterSection extends HTMLElement {
           ">
             <div style="
               background: white;
-              padding: 15px 25px;
-              border-radius: 12px;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              padding: 8px 15px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
               display: flex;
               align-items: center;
               justify-content: center;
+              gap: 8px;
             ">
-              <img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000fba87230ae2c6d6da0721ac7&ts=489712&p=fs&cid=1&sig=cb822b0d47314b2fc3fac1a0910fbd369dafecdf1560cc2fb416b8e15bc8796e&v=0" 
-                   alt="Powered by Logo" 
-                   style="
-                     max-height: 40px;
-                     max-width: 200px;
-                     height: auto;
-                     width: auto;
-                   " 
-                   onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color: #1e3a8a; font-size: 14px; font-weight: bold;\'>Powered by [Logo]</span>';">
+              <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="20" width="80" height="60" rx="15" stroke="#000" stroke-width="3" fill="white"/>
+                <rect x="25" y="35" width="15" height="20" rx="3" stroke="#000" stroke-width="2" fill="white"/>
+                <rect x="45" y="35" width="15" height="20" rx="3" stroke="#000" stroke-width="2" fill="white"/>
+                <rect x="20" y="55" width="60" height="8" rx="4" stroke="#000" stroke-width="2" fill="white"/>
+              </svg>
+              <span style="
+                color: #000; 
+                font-size: 11px; 
+                font-weight: bold;
+                text-align: left;
+                line-height: 1.1;
+              ">POWERED BY<br>BACK SEAT<br>BROS</span>
             </div>
           </div>
           

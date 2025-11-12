@@ -133,7 +133,13 @@ export class NavigationHeader extends HTMLElement {
             font-size: 16px;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-          " onmouseover="this.style.backgroundColor='#1e40af'" onmouseout="this.style.backgroundColor='#1e3a8a'">
+          " onmouseover="this.style.backgroundColor='#1e40af'" onmouseout="this.style.backgroundColor='#1e3a8a'"
+          onclick="
+            this.dispatchEvent(new CustomEvent('navigate', { 
+              detail: { page: 'register' },
+              bubbles: true 
+            }));
+          ">
             Register
           </button>
         </div>

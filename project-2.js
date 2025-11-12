@@ -7,6 +7,7 @@ import './about-section.js';
 import './footer-section.js';
 import './teams-page.js';
 import './schedule-page.js';
+import './register-page.js';
 
 export class Project2 extends HTMLElement {
   constructor() {
@@ -37,6 +38,13 @@ export class Project2 extends HTMLElement {
         <contact-bar></contact-bar>
         <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
         <schedule-page></schedule-page>
+        <footer-section></footer-section>
+      `;
+    } else if (this.currentPage === 'register') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <register-page></register-page>
         <footer-section></footer-section>
       `;
     } else {

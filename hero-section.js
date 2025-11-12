@@ -180,6 +180,12 @@ export class HeroSection extends HTMLElement {
               this.style.transform='translateY(0)'; 
               this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';
               this.style.background='linear-gradient(45deg, #ffffff, #f8fafc)';
+            "
+            onclick="
+              this.dispatchEvent(new CustomEvent('navigate', { 
+                detail: { page: 'register' },
+                bubbles: true 
+              }));
             ">
               Register Now
             </button>

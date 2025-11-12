@@ -6,7 +6,7 @@ export class FeatureCard extends HTMLElement {
   connectedCallback() {
     const title = this.getAttribute('title') || 'Feature';
     const description = this.getAttribute('description') || 'Description';
-    const icon = this.getAttribute('icon') || '📄';
+    const icon = this.getAttribute('icon') || '';
     const clickable = this.getAttribute('clickable') === 'true';
     const linkPage = this.getAttribute('link-page');
     const backgroundImage = this.getAttribute('background-image') || '';
@@ -52,7 +52,7 @@ export class FeatureCard extends HTMLElement {
             font-size: 24px;
             margin: 0 0 15px 0;
             text-shadow: ${hasBackground ? '2px 2px 4px rgba(0,0,0,0.7)' : 'none'};
-          ">${icon} ${title}</h3>
+          ">${icon ? `${icon} ` : ''}${title}</h3>
           <p style="
             font-size: 16px;
             line-height: 1.5;
