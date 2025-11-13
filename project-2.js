@@ -84,19 +84,19 @@ export class Project2 extends HTMLElement {
             margin: 40px 0;
           ">
             <feature-card 
-              icon="" 
+              icon="📅" 
               title="Schedule" 
               description="View upcoming games and tournaments. Stay up to date with all PSL matches and events throughout the season."
               clickable="true"
               link-page="schedule"
-              background-image="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+              background-image="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
             
             <feature-card 
-              icon="" 
+              icon="🏆" 
               title="Tournaments" 
               description="Compete in exciting tournaments. Join competitive events and showcase your skills against other teams."
-              background-image="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+              background-image="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
             
             <feature-card 

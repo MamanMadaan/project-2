@@ -8,9 +8,9 @@ export class TeamsPage extends HTMLElement {
         title: "Nittany Lions FC",
         description: "The pride of Penn State soccer! Known for their aggressive offensive play and team unity. Our most successful team with multiple championship titles.",
         color: "#1e3a8a",
-        wins: 12,
-        losses: 3,
-        draws: 2,
+        wins: 6,
+        losses: 1,
+        draws: 1,
         captain: "Marcus Johnson",
         coach: "Coach Sarah Williams",
         homeField: "Beaver Stadium Field A",
@@ -34,9 +34,9 @@ export class TeamsPage extends HTMLElement {
         title: "Penn State United",
         description: "A team built on teamwork and strategic play. Known for their solid defense and quick counter-attacks. Always a tough opponent!",
         color: "#dc2626",
-        wins: 9,
-        losses: 5,
-        draws: 3,
+        wins: 5,
+        losses: 2,
+        draws: 1,
         captain: "Sarah Chen",
         coach: "Coach Mike Thompson",
         homeField: "IM Fields Complex",
@@ -60,9 +60,9 @@ export class TeamsPage extends HTMLElement {
         title: "Blue & White SC",
         description: "Representing the classic Penn State colors with pride! A balanced team with strong midfield control and excellent team chemistry.",
         color: "#059669",
-        wins: 8,
-        losses: 6,
-        draws: 3,
+        wins: 4,
+        losses: 3,
+        draws: 1,
         captain: "Alex Rodriguez",
         coach: "Coach Jennifer Martinez",
         homeField: "Recreation Park",
@@ -86,9 +86,9 @@ export class TeamsPage extends HTMLElement {
         title: "Happy Valley FC",
         description: "Named after our beloved Happy Valley! This team embodies the fun and competitive spirit of PSL with creative plays and boundless energy.",
         color: "#f59e0b",
-        wins: 6,
-        losses: 8,
-        draws: 3,
+        wins: 2,
+        losses: 5,
+        draws: 1,
         captain: "Taylor Martinez",
         coach: "Coach David Kim",
         homeField: "University Park Fields",
@@ -115,7 +115,15 @@ export class TeamsPage extends HTMLElement {
   }
   
   render() {
-    const teamsHtml = this.teamsData.map(team => this.createTeamCard(team)).join('');
+    if (this.selectedTeam) {
+      this.renderTeamDetails();
+    } else {
+      this.renderTeamsOverview();
+    }
+  }
+  
+  renderTeamsOverview() {
+    const teamsHtml = this.teamsData.map(team => this.createTeamPreviewCard(team)).join('');
     
     this.innerHTML = `
       <div style="
@@ -169,7 +177,7 @@ export class TeamsPage extends HTMLElement {
             font-size: 18px;
             color: #6b7280;
             margin: 0;
-          ">Meet the talented teams competing in the Premier Student League</p>
+          ">Click on any team to view detailed information</p>
         </div>
         
         <!-- Teams Grid -->
@@ -177,60 +185,11 @@ export class TeamsPage extends HTMLElement {
           max-width: 1200px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-          gap: 30px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 25px;
           margin-bottom: 40px;
         ">
           ${teamsHtml}
-        </div>
-        
-        <!-- Join Section -->
-        <div style="
-          max-width: 800px;
-          margin: 40px auto 0 auto;
-          background: white;
-          border-radius: 20px;
-          padding: 40px;
-          text-align: center;
-          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        ">
-          <div style="font-size: 48px; margin-bottom: 20px;">⚽</div>
-          <h2 style="
-            color: #1e3a8a;
-            margin: 0 0 15px 0;
-            font-size: 28px;
-          ">Join a Team!</h2>
-          <p style="
-            color: #6b7280;
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 0 0 25px 0;
-          ">
-            Interested in joining one of our amazing teams? We welcome players of all skill levels and backgrounds. 
-            Come be part of the PSL family!
-          </p>
-          <button id="join-btn" style="
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
-          " onmouseover="
-            this.style.transform='translateY(-2px)';
-            this.style.boxShadow='0 6px 20px rgba(30, 58, 138, 0.4)';
-          " onmouseout="
-            this.style.transform='translateY(0)';
-            this.style.boxShadow='0 4px 15px rgba(30, 58, 138, 0.3)';
-          ">
-            Register to Join
-          </button>
         </div>
       </div>
     `;
@@ -238,122 +197,405 @@ export class TeamsPage extends HTMLElement {
     this.attachEventListeners();
   }
   
-  createTeamCard(team) {
+  renderTeamDetails() {
+    const team = this.selectedTeam;
     const achievements = team.achievements.map(achievement => 
-      `<li style="margin-bottom: 5px;">${achievement}</li>`
+      `<li style="margin-bottom: 8px; padding: 8px; background: rgba(255,255,255,0.7); border-radius: 5px;">${achievement}</li>`
     ).join('');
     
+    const roster = team.roster.map(player => `
+      <div style="
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        gap: 15px;
+        align-items: center;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+      " onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" 
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+        <div style="
+          background: ${team.color};
+          color: white;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          font-size: 18px;
+        ">${player.number}</div>
+        <div>
+          <h4 style="margin: 0 0 5px 0; color: #1e3a8a; font-size: 16px;">${player.name}</h4>
+          <p style="margin: 0; color: #666; font-size: 14px;">${player.position}</p>
+        </div>
+        <div style="
+          background: ${team.color}20;
+          color: ${team.color};
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+        ">${player.year}</div>
+      </div>
+    `).join('');
+
+    this.innerHTML = `
+      <div style="
+        min-height: 100vh;
+        background: linear-gradient(135deg, ${team.color}15 0%, #f8fafc 100%);
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+      ">
+        <!-- Navigation -->
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto 30px auto;
+          display: flex;
+          gap: 15px;
+        ">
+          <button id="back-teams-btn" style="
+            background: transparent;
+            border: 2px solid ${team.color};
+            color: ${team.color};
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="
+            this.style.background='${team.color}'; 
+            this.style.color='white';
+          " onmouseout="
+            this.style.background='transparent'; 
+            this.style.color='${team.color}';
+          ">
+            ← Back to Teams
+          </button>
+          <button id="back-home-btn" style="
+            background: transparent;
+            border: 2px solid #6b7280;
+            color: #6b7280;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          " onmouseover="
+            this.style.background='#6b7280'; 
+            this.style.color='white';
+          " onmouseout="
+            this.style.background='transparent'; 
+            this.style.color='#6b7280';
+          ">
+            🏠 Home
+          </button>
+        </div>
+
+        <!-- Team Header -->
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto 40px auto;
+          background: white;
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('${team.teamImage}');
+          background-size: cover;
+          background-position: center;
+        ">
+          <div style="text-align: center;">
+            <div style="
+              background: ${team.color};
+              color: white;
+              border-radius: 50%;
+              width: 80px;
+              height: 80px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 36px;
+              margin: 0 auto 20px auto;
+              box-shadow: 0 4px 15px ${team.color}40;
+            ">⚽</div>
+            <h1 style="
+              font-size: 48px;
+              color: ${team.color};
+              margin: 0 0 15px 0;
+              font-weight: 900;
+            ">${team.title}</h1>
+            <p style="
+              font-size: 20px;
+              color: #374151;
+              line-height: 1.6;
+              margin: 0;
+              max-width: 600px;
+              margin: 0 auto;
+            ">${team.description}</p>
+          </div>
+        </div>
+
+        <!-- Stats and Info Grid -->
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 30px;
+          margin-bottom: 40px;
+        ">
+          <!-- Team Statistics -->
+          <div style="
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+          ">
+            <h3 style="
+              color: ${team.color};
+              font-size: 24px;
+              margin-bottom: 25px;
+              text-align: center;
+            ">Team Statistics</h3>
+            <div style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 20px;
+              margin-bottom: 25px;
+            ">
+              <div style="text-align: center; padding: 20px; background: ${team.color}10; border-radius: 10px;">
+                <div style="font-size: 36px; font-weight: bold; color: #059669;">${team.wins}</div>
+                <div style="font-size: 14px; color: #666; font-weight: 600;">WINS</div>
+              </div>
+              <div style="text-align: center; padding: 20px; background: ${team.color}10; border-radius: 10px;">
+                <div style="font-size: 36px; font-weight: bold; color: #dc2626;">${team.losses}</div>
+                <div style="font-size: 14px; color: #666; font-weight: 600;">LOSSES</div>
+              </div>
+              <div style="text-align: center; padding: 20px; background: ${team.color}10; border-radius: 10px;">
+                <div style="font-size: 36px; font-weight: bold; color: #f59e0b;">${team.draws}</div>
+                <div style="font-size: 14px; color: #666; font-weight: 600;">DRAWS</div>
+              </div>
+            </div>
+            <div style="
+              background: ${team.color}10;
+              padding: 15px;
+              border-radius: 10px;
+              text-align: center;
+            ">
+              <strong style="color: ${team.color}; font-size: 18px;">
+                Win Rate: ${Math.round((team.wins / (team.wins + team.losses + team.draws)) * 100)}%
+              </strong>
+            </div>
+          </div>
+
+          <!-- Team Information -->
+          <div style="
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+          ">
+            <h3 style="
+              color: ${team.color};
+              font-size: 24px;
+              margin-bottom: 25px;
+              text-align: center;
+            ">Team Information</h3>
+            <div style="space-y: 15px;">
+              <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px;">
+                <strong style="color: #374151;">Captain:</strong> ${team.captain}
+              </div>
+              <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px;">
+                <strong style="color: #374151;">Coach:</strong> ${team.coach}
+              </div>
+              <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px;">
+                <strong style="color: #374151;">Home Field:</strong> ${team.homeField}
+              </div>
+              <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px;">
+                <strong style="color: #374151;">Founded:</strong> ${team.founded}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements and Roster -->
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          gap: 30px;
+        ">
+          <!-- Achievements -->
+          <div style="
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+          ">
+            <h3 style="
+              color: ${team.color};
+              font-size: 24px;
+              margin-bottom: 25px;
+              text-align: center;
+            ">🏆 Achievements</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              ${achievements}
+            </ul>
+          </div>
+
+          <!-- Team Roster -->
+          <div style="
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+          ">
+            <h3 style="
+              color: ${team.color};
+              font-size: 24px;
+              margin-bottom: 25px;
+              text-align: center;
+            ">👥 Team Roster</h3>
+            <div style="max-height: 400px; overflow-y: auto;">
+              ${roster}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    this.attachDetailEventListeners();
+  }
+  
+  createTeamPreviewCard(team) {
     const totalGames = team.wins + team.losses + team.draws;
     const winPercentage = totalGames > 0 ? Math.round((team.wins / totalGames) * 100) : 0;
     
     return `
-      <div style="
-        background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
-                  ${team.teamImage ? `url('${team.teamImage}')` : '#f8fafc'};
-        background-size: cover;
-        background-position: center;
-        border: 3px solid ${team.color};
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" 
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.1)'">
+      <div 
+        class="team-preview-card" 
+        data-team-id="${team.id}" 
+        style="
+          background: white;
+          border: 2px solid ${team.color}20;
+          border-radius: 15px;
+          padding: 25px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        " 
+        onmouseover="
+          this.style.transform='translateY(-8px)'; 
+          this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';
+          this.style.borderColor='${team.color}';
+        " 
+        onmouseout="
+          this.style.transform='translateY(0)'; 
+          this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)';
+          this.style.borderColor='${team.color}20';
+        ">
         
-        <div style="text-align: center;">
-          <h3 style="
-            color: ${team.color}; 
-            font-size: 28px; 
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-          ">${team.title}</h3>
-          
-          <p style="
-            color: #374151; 
-            line-height: 1.6; 
-            margin-bottom: 20px;
-            font-size: 16px;
-          ">${team.description}</p>
-          
-          <!-- Stats Grid -->
-          <div style="
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 10px;
-          ">
-            <div style="text-align: center;">
-              <div style="font-size: 24px; font-weight: bold; color: ${team.color};">${team.wins}</div>
-              <div style="font-size: 12px; color: #666;">Wins</div>
-            </div>
-            <div style="text-align: center;">
-              <div style="font-size: 24px; font-weight: bold; color: #dc2626;">${team.losses}</div>
-              <div style="font-size: 12px; color: #666;">Losses</div>
-            </div>
-            <div style="text-align: center;">
-              <div style="font-size: 24px; font-weight: bold; color: #059669;">${team.draws}</div>
-              <div style="font-size: 12px; color: #666;">Draws</div>
-            </div>
+        <!-- Team Color Accent -->
+        <div style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: ${team.color};
+        "></div>
+        
+        <!-- Team Logo/Icon -->
+        <div style="
+          background: ${team.color};
+          color: white;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          margin: 0 auto 20px auto;
+          box-shadow: 0 4px 12px ${team.color}30;
+        ">⚽</div>
+        
+        <h3 style="
+          color: ${team.color}; 
+          font-size: 22px; 
+          margin-bottom: 15px;
+          font-weight: 700;
+        ">${team.title}</h3>
+        
+        <!-- Quick Stats -->
+        <div style="
+          display: flex;
+          justify-content: space-around;
+          margin: 20px 0;
+          padding: 15px;
+          background: ${team.color}08;
+          border-radius: 10px;
+        ">
+          <div style="text-align: center;">
+            <div style="font-size: 20px; font-weight: bold; color: #059669;">${team.wins}</div>
+            <div style="font-size: 11px; color: #666; text-transform: uppercase;">W</div>
           </div>
-          
-          <!-- Team Info -->
-          <div style="
-            text-align: left;
-            background: rgba(248,250,252,0.9);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-          ">
-            <p style="margin: 5px 0;"><strong>Captain:</strong> ${team.captain}</p>
-            <p style="margin: 5px 0;"><strong>Coach:</strong> ${team.coach}</p>
-            <p style="margin: 5px 0;"><strong>Home Field:</strong> ${team.homeField}</p>
-            <p style="margin: 5px 0;"><strong>Founded:</strong> ${team.founded}</p>
-            <p style="margin: 5px 0;"><strong>Win Rate:</strong> ${winPercentage}%</p>
+          <div style="text-align: center;">
+            <div style="font-size: 20px; font-weight: bold; color: #dc2626;">${team.losses}</div>
+            <div style="font-size: 11px; color: #666; text-transform: uppercase;">L</div>
           </div>
-          
-          <!-- Achievements -->
-          ${achievements ? `
-            <div style="
-              text-align: left;
-              background: rgba(248,250,252,0.9);
-              padding: 15px;
-              border-radius: 8px;
-              margin: 15px 0;
-            ">
-              <strong style="color: ${team.color};">Achievements:</strong>
-              <ul style="margin: 10px 0; padding-left: 20px;">
-                ${achievements}
-              </ul>
-            </div>
-          ` : ''}
-          
-          <!-- Roster Preview -->
-          ${team.roster.length > 0 ? `
-            <div style="
-              background: rgba(248,250,252,0.9);
-              padding: 15px;
-              border-radius: 8px;
-              margin: 15px 0;
-              text-align: left;
-            ">
-              <strong style="color: ${team.color};">Key Players:</strong>
-              <div style="margin-top: 10px;">
-                ${team.roster.slice(0, 3).map(player => `
-                  <div style="margin: 8px 0; padding: 8px; background: white; border-radius: 5px;">
-                    <strong>#${player.number} ${player.name}</strong><br>
-                    <small style="color: #666;">${player.position} • ${player.year}</small>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          ` : ''}
+          <div style="text-align: center;">
+            <div style="font-size: 20px; font-weight: bold; color: #f59e0b;">${team.draws}</div>
+            <div style="font-size: 11px; color: #666; text-transform: uppercase;">D</div>
+          </div>
+        </div>
+        
+        <!-- Win Percentage -->
+        <div style="
+          background: #f8fafc;
+          padding: 12px;
+          border-radius: 8px;
+          margin-bottom: 15px;
+        ">
+          <strong style="color: ${team.color};">Win Rate: ${winPercentage}%</strong>
+        </div>
+        
+        <!-- View Details Button -->
+        <div style="
+          background: ${team.color};
+          color: white;
+          padding: 10px 20px;
+          border-radius: 25px;
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-top: 15px;
+          transition: all 0.2s ease;
+        ">
+          View Details →
         </div>
       </div>
     `;
   }
+
+  
   
   attachEventListeners() {
     // Add event listener for back button
@@ -361,6 +603,39 @@ export class TeamsPage extends HTMLElement {
       const backBtn = this.querySelector('#back-btn');
       if (backBtn) {
         backBtn.addEventListener('click', () => {
+          this.dispatchEvent(new CustomEvent('navigate', { 
+            detail: { page: 'home' },
+            bubbles: true 
+          }));
+        });
+      }
+      
+      // Add event listeners for team preview cards
+      const teamCards = this.querySelectorAll('.team-preview-card');
+      teamCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          const teamId = parseInt(card.getAttribute('data-team-id'));
+          this.selectedTeam = this.teamsData.find(team => team.id === teamId);
+          this.render();
+        });
+      });
+    }, 0);
+  }
+  
+  attachDetailEventListeners() {
+    setTimeout(() => {
+      const backTeamsBtn = this.querySelector('#back-teams-btn');
+      const backHomeBtn = this.querySelector('#back-home-btn');
+      
+      if (backTeamsBtn) {
+        backTeamsBtn.addEventListener('click', () => {
+          this.selectedTeam = null;
+          this.render();
+        });
+      }
+      
+      if (backHomeBtn) {
+        backHomeBtn.addEventListener('click', () => {
           this.dispatchEvent(new CustomEvent('navigate', { 
             detail: { page: 'home' },
             bubbles: true 
