@@ -216,6 +216,12 @@ export class HeroSection extends HTMLElement {
               this.style.borderColor='rgba(255,255,255,0.8)';
               this.style.transform='translateY(0)';
               this.style.boxShadow='none';
+            "
+            onclick="
+              this.dispatchEvent(new CustomEvent('navigate', { 
+                detail: { page: 'teams' },
+                bubbles: true 
+              }));
             ">
               Learn More
             </button>

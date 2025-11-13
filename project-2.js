@@ -10,6 +10,11 @@ import './schedule-page.js';
 import './register-page.js';
 import './contact-page.js';
 import './stats-page.js';
+import './tournaments-page.js';
+import './support-page.js';
+import './season-kickoff-page.js';
+import './championship-page.js';
+import './new-coach-page.js';
 
 export class Project2 extends HTMLElement {
   constructor() {
@@ -63,6 +68,41 @@ export class Project2 extends HTMLElement {
         <stats-page></stats-page>
         <footer-section></footer-section>
       `;
+    } else if (this.currentPage === 'tournaments') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <tournaments-page></tournaments-page>
+        <footer-section></footer-section>
+      `;
+    } else if (this.currentPage === 'support') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <support-page></support-page>
+        <footer-section></footer-section>
+      `;
+    } else if (this.currentPage === 'season-kickoff') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <season-kickoff-page></season-kickoff-page>
+        <footer-section></footer-section>
+      `;
+    } else if (this.currentPage === 'championship') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <championship-page></championship-page>
+        <footer-section></footer-section>
+      `;
+    } else if (this.currentPage === 'new-coach') {
+      this.innerHTML = `
+        <contact-bar></contact-bar>
+        <navigation-header logo-image="https://bloximages.newyork1.vip.townnews.com/psucollegian.com/content/tncms/assets/v3/editorial/4/ac/4acbad8e-60f2-11ef-ad11-3fbf52503df0/66c7eb427b52f.image.jpg?resize=750%2C500"></navigation-header>
+        <new-coach-page></new-coach-page>
+        <footer-section></footer-section>
+      `;
     } else {
       // Home page
       this.innerHTML = `
@@ -84,18 +124,20 @@ export class Project2 extends HTMLElement {
             margin: 40px 0;
           ">
             <feature-card 
-              icon="📅" 
+              icon="" 
               title="Schedule" 
               description="View upcoming games and tournaments. Stay up to date with all PSL matches and events throughout the season."
               clickable="true"
               link-page="schedule"
-              background-image="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+              background-image="https://th.bing.com/th/id/OIP.z28qb1y86bBSDz10O9pXZAHaDL?w=345&h=149&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.5&pid=1.7&rm=3">
             </feature-card>
             
             <feature-card 
-              icon="🏆" 
+              icon="" 
               title="Tournaments" 
               description="Compete in exciting tournaments. Join competitive events and showcase your skills against other teams."
+              clickable="true"
+              link-page="tournaments"
               background-image="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
             
@@ -103,7 +145,9 @@ export class Project2 extends HTMLElement {
               icon="" 
               title="Support" 
               description="Support our league and players. Help us continue providing excellent soccer opportunities for students."
-              background-image="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+              clickable="true"
+              link-page="support"
+              background-image="https://tse3.mm.bing.net/th/id/OIP.wKCgEEbqxooWnzak7DiQlgHaFe?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3">
             </feature-card>
           </div>
         </div>
@@ -133,6 +177,8 @@ export class Project2 extends HTMLElement {
               icon="" 
               title="Season Kickoff" 
               description="New season starts January 15th! Registration is now open for all students."
+              clickable="true"
+              link-page="season-kickoff"
               background-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
             
@@ -140,6 +186,8 @@ export class Project2 extends HTMLElement {
               icon="" 
               title="Championship" 
               description="Congratulations to our championship team! See highlights from this season finals."
+              clickable="true"
+              link-page="championship"
               background-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
             
@@ -147,6 +195,8 @@ export class Project2 extends HTMLElement {
               icon="" 
               title="New Coach" 
               description="Welcome Coach Martinez! Our new head coach brings years of experience to PSL."
+              clickable="true"
+              link-page="new-coach"
               background-image="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
             </feature-card>
           </div>
