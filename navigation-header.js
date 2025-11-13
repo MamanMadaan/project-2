@@ -85,9 +85,29 @@ export class NavigationHeader extends HTMLElement {
                 padding: 15px 20px;
                 text-decoration: none;
                 color: #1e3a8a;
+                border-bottom: 1px solid #e2e8f0;
                 transition: background-color 0.3s;
               " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
                 Schedule
+              </a>
+              <a href="#stats" data-page="stats" style="
+                display: block;
+                padding: 15px 20px;
+                text-decoration: none;
+                color: #1e3a8a;
+                border-bottom: 1px solid #e2e8f0;
+                transition: background-color 0.3s;
+              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+                Statistics
+              </a>
+              <a href="#contact" data-page="contact" style="
+                display: block;
+                padding: 15px 20px;
+                text-decoration: none;
+                color: #1e3a8a;
+                transition: background-color 0.3s;
+              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+                Contact
               </a>
             </div>
           </div>

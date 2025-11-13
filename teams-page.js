@@ -1,147 +1,235 @@
-import { OutlineDataService } from './outline-data-service.js';
-
 export class TeamsPage extends HTMLElement {
   constructor() {
     super();
-    this.teamsData = null;
-  }
-
-  async connectedCallback() {
-    await this.loadTeamsData();
-    this.render();
-  }
-  
-  async loadTeamsData() {
-    try {
-      const outline = await OutlineDataService.loadTeamsOutline();
-      this.teamsData = OutlineDataService.getTeamsData(outline);
-    } catch (error) {
-      console.error('Failed to load teams data:', error);
-      this.teamsData = [];
-    }
+    this.selectedTeam = null;
+    this.teamsData = [
+      {
+        id: 1,
+        title: "Nittany Lions FC",
+        description: "The pride of Penn State soccer! Known for their aggressive offensive play and team unity. Our most successful team with multiple championship titles.",
+        color: "#1e3a8a",
+        wins: 12,
+        losses: 3,
+        draws: 2,
+        captain: "Marcus Johnson",
+        coach: "Coach Sarah Williams",
+        homeField: "Beaver Stadium Field A",
+        founded: "2019",
+        teamImage: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        achievements: [
+          "2024 PSL Champions",
+          "2023 Fair Play Award",
+          "Best Offensive Record 2024"
+        ],
+        roster: [
+          { number: 10, name: "Marcus Johnson", position: "Forward", year: "Senior" },
+          { number: 7, name: "Jordan Smith", position: "Midfielder", year: "Junior" },
+          { number: 1, name: "Alex Turner", position: "Goalkeeper", year: "Sophomore" },
+          { number: 5, name: "Emma Rodriguez", position: "Defender", year: "Senior" },
+          { number: 11, name: "Chris Davis", position: "Winger", year: "Freshman" }
+        ]
+      },
+      {
+        id: 2,
+        title: "Penn State United",
+        description: "A team built on teamwork and strategic play. Known for their solid defense and quick counter-attacks. Always a tough opponent!",
+        color: "#dc2626",
+        wins: 9,
+        losses: 5,
+        draws: 3,
+        captain: "Sarah Chen",
+        coach: "Coach Mike Thompson",
+        homeField: "IM Fields Complex",
+        founded: "2020",
+        teamImage: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        achievements: [
+          "2023 Defensive Excellence Award",
+          "Most Improved Team 2024",
+          "Sportsmanship Champions 2023"
+        ],
+        roster: [
+          { number: 9, name: "Sarah Chen", position: "Striker", year: "Senior" },
+          { number: 6, name: "Michael Park", position: "Midfielder", year: "Junior" },
+          { number: 3, name: "Lisa Wang", position: "Defender", year: "Sophomore" },
+          { number: 12, name: "Tyler Brooks", position: "Forward", year: "Senior" },
+          { number: 2, name: "Amanda Foster", position: "Defender", year: "Junior" }
+        ]
+      },
+      {
+        id: 3,
+        title: "Blue & White SC",
+        description: "Representing the classic Penn State colors with pride! A balanced team with strong midfield control and excellent team chemistry.",
+        color: "#059669",
+        wins: 8,
+        losses: 6,
+        draws: 3,
+        captain: "Alex Rodriguez",
+        coach: "Coach Jennifer Martinez",
+        homeField: "Recreation Park",
+        founded: "2021",
+        teamImage: "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        achievements: [
+          "Best Newcomer Team 2021",
+          "Most Goals Scored in 2023",
+          "Team Spirit Award 2024"
+        ],
+        roster: [
+          { number: 8, name: "Alex Rodriguez", position: "Midfielder", year: "Senior" },
+          { number: 4, name: "Rachel Green", position: "Defender", year: "Junior" },
+          { number: 15, name: "Kevin Liu", position: "Forward", year: "Sophomore" },
+          { number: 13, name: "Maya Patel", position: "Midfielder", year: "Freshman" },
+          { number: 21, name: "Jake Wilson", position: "Goalkeeper", year: "Junior" }
+        ]
+      },
+      {
+        id: 4,
+        title: "Happy Valley FC",
+        description: "Named after our beloved Happy Valley! This team embodies the fun and competitive spirit of PSL with creative plays and boundless energy.",
+        color: "#f59e0b",
+        wins: 6,
+        losses: 8,
+        draws: 3,
+        captain: "Taylor Martinez",
+        coach: "Coach David Kim",
+        homeField: "University Park Fields",
+        founded: "2022",
+        teamImage: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        achievements: [
+          "Most Creative Plays 2024",
+          "Rising Stars Award 2023",
+          "Best Team Celebration 2024"
+        ],
+        roster: [
+          { number: 14, name: "Taylor Martinez", position: "Forward", year: "Junior" },
+          { number: 16, name: "Samantha Lee", position: "Midfielder", year: "Sophomore" },
+          { number: 17, name: "Carlos Silva", position: "Defender", year: "Senior" },
+          { number: 19, name: "Jessica Brown", position: "Winger", year: "Freshman" },
+          { number: 20, name: "Ryan Thomas", position: "Goalkeeper", year: "Junior" }
+        ]
+      }
+    ];
   }
 
   connectedCallback() {
-    this.innerHTML = `
-      <div style="
-        padding: 40px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-      ">
-        <!-- Back Button -->
-        <div style="margin-bottom: 30px;">
-          <button id="back-btn" style="
-            background: transparent;
-            color: #1e3a8a;
-            border: 2px solid #1e3a8a;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-          " onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a8a'">
-            ← Back to Home
-          </button>
-        </div>
-        
-        <h1 style="
-          text-align: center;
-          color: #1e3a8a;
-          font-size: 42px;
-          margin-bottom: 40px;
-        ">PSL Teams</h1>
-        
-        <div id="teams-container" style="
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 30px;
-          margin: 40px 0;
-        ">
-          <!-- Teams will be loaded here -->
-        </div>
-        </div>
-      </div>
-    `;
-    
-    this.attachEventListeners();
+    this.render();
   }
   
   render() {
-    if (!this.teamsData || this.teamsData.length === 0) {
-      this.innerHTML = '<div style="text-align: center; padding: 40px;">Loading teams...</div>';
-      return;
-    }
-    
-    // Create teams container HTML
     const teamsHtml = this.teamsData.map(team => this.createTeamCard(team)).join('');
     
     this.innerHTML = `
       <div style="
+        min-height: 80vh;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         padding: 40px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
         font-family: Arial, sans-serif;
       ">
         <!-- Back Button -->
-        <div style="margin-bottom: 30px;">
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto 20px auto;
+        ">
           <button id="back-btn" style="
             background: transparent;
-            color: #1e3a8a;
             border: 2px solid #1e3a8a;
+            color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 50px;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
-          " onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a8a'">
+          " onmouseover="
+            this.style.background='#1e3a8a'; 
+            this.style.color='white';
+          " onmouseout="
+            this.style.background='transparent'; 
+            this.style.color='#1e3a8a';
+          ">
             ← Back to Home
           </button>
         </div>
-        
-        <h1 style="
-          text-align: center;
-          color: #1e3a8a;
-          font-size: 42px;
-          margin-bottom: 40px;
-        ">PSL Teams</h1>
-        
+
+        <!-- Header -->
         <div style="
+          max-width: 1200px;
+          margin: 0 auto 40px auto;
+          text-align: center;
+        ">
+          <h1 style="
+            font-size: 36px;
+            color: #1e3a8a;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+          ">PSL Teams</h1>
+          <p style="
+            font-size: 18px;
+            color: #6b7280;
+            margin: 0;
+          ">Meet the talented teams competing in the Premier Student League</p>
+        </div>
+        
+        <!-- Teams Grid -->
+        <div style="
+          max-width: 1200px;
+          margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
           gap: 30px;
-          margin: 40px 0;
+          margin-bottom: 40px;
         ">
           ${teamsHtml}
         </div>
         
+        <!-- Join Section -->
         <div style="
-          background: #f1f5f9;
+          max-width: 800px;
+          margin: 40px auto 0 auto;
+          background: white;
+          border-radius: 20px;
           padding: 40px;
-          border-radius: 15px;
           text-align: center;
-          margin-top: 40px;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
-          <h2 style="color: #1e3a8a; margin-bottom: 20px;">Join a Team!</h2>
-          <p style="color: #374151; font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
-            Interested in joining one of our teams? We welcome players of all skill levels!
+          <div style="font-size: 48px; margin-bottom: 20px;">⚽</div>
+          <h2 style="
+            color: #1e3a8a;
+            margin: 0 0 15px 0;
+            font-size: 28px;
+          ">Join a Team!</h2>
+          <p style="
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+          ">
+            Interested in joining one of our amazing teams? We welcome players of all skill levels and backgrounds. 
+            Come be part of the PSL family!
           </p>
-          <button style="
-            background: #1e3a8a;
+          <button id="join-btn" style="
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
+            padding: 15px 40px;
+            border-radius: 50px;
             font-size: 18px;
+            font-weight: 600;
             cursor: pointer;
-          " onmouseover="this.style.backgroundColor='#1e40af'" onmouseout="this.style.backgroundColor='#1e3a8a'">
-            Apply to Join
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+          " onmouseover="
+            this.style.transform='translateY(-2px)';
+            this.style.boxShadow='0 6px 20px rgba(30, 58, 138, 0.4)';
+          " onmouseout="
+            this.style.transform='translateY(0)';
+            this.style.boxShadow='0 4px 15px rgba(30, 58, 138, 0.3)';
+          ">
+            Register to Join
           </button>
         </div>
       </div>
