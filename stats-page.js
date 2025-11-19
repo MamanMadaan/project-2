@@ -5,270 +5,174 @@ export class StatsPage extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div style="
-        min-height: 80vh;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        padding: 40px 20px;
-        font-family: Arial, sans-serif;
-      ">
+      <div class="page">
         <!-- Back Button -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto 20px auto;
-        ">
-          <button id="back-btn" style="
-            background: transparent;
-            border: 2px solid #1e3a8a;
-            color: #1e3a8a;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-          " onmouseover="
-            this.style.background='#1e3a8a'; 
-            this.style.color='white';
-          " onmouseout="
-            this.style.background='transparent'; 
-            this.style.color='#1e3a8a';
-          ">
+        <div class="page__nav">
+          <button id="back-btn" class="button button--secondary button--back">
             ← Back to Home
           </button>
         </div>
 
         <!-- Header -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto 40px auto;
-          text-align: center;
-        ">
-          <h1 style="
-            font-size: 36px;
-            color: #1e3a8a;
-            margin: 0 0 10px 0;
-            font-weight: 900;
-          ">League Statistics</h1>
-          <p style="
-            font-size: 18px;
-            color: #6b7280;
-            margin: 0;
-          ">Current season standings, top performers, and team statistics</p>
+        <div class="page__header">
+          <h1 class="page__title">League Statistics</h1>
+          <p class="page__description">Current season standings, top performers, and team statistics</p>
         </div>
 
         <!-- Main Content Grid -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          gap: 30px;
-        ">
+        <div class="stats-container">
           
           <!-- Top Stats Cards -->
-          <div style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-          ">
+          <div class="stats-cards">
             
-            <div style="
-              background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              text-align: center;
-              box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
-            ">
-              <div style="font-size: 32px; margin-bottom: 10px;">⚽</div>
-              <div style="font-size: 36px; font-weight: 900; margin-bottom: 5px;">89</div>
-              <div style="font-size: 14px; opacity: 0.9;">Total Goals Scored</div>
+            <div class="stats-card stats-card--primary">
+              <div class="stats-card__icon">⚽</div>
+              <div class="stats-card__number">89</div>
+              <div class="stats-card__label">Total Goals Scored</div>
             </div>
             
-            <div style="
-              background: linear-gradient(135deg, #10b981, #34d399);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              text-align: center;
-              box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-            ">
-              <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-              <div style="font-size: 36px; font-weight: 900; margin-bottom: 5px;">19</div>
-              <div style="font-size: 14px; opacity: 0.9;">Games Played</div>
+            <div class="stats-card stats-card--success">
+              <div class="stats-card__icon">🏆</div>
+              <div class="stats-card__number">19</div>
+              <div class="stats-card__label">Games Played</div>
             </div>
             
-            <div style="
-              background: linear-gradient(135deg, #f59e0b, #fbbf24);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              text-align: center;
-              box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-            ">
-              <div style="font-size: 32px; margin-bottom: 10px;">👥</div>
-              <div style="font-size: 36px; font-weight: 900; margin-bottom: 5px;">108</div>
-              <div style="font-size: 14px; opacity: 0.9;">Active Players</div>
+            <div class="stats-card stats-card--warning">
+              <div class="stats-card__icon">👥</div>
+              <div class="stats-card__number">108</div>
+              <div class="stats-card__label">Active Players</div>
             </div>
             
-            <div style="
-              background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              text-align: center;
-              box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-            ">
-              <div style="font-size: 32px; margin-bottom: 10px;">📊</div>
-              <div style="font-size: 36px; font-weight: 900; margin-bottom: 5px;">4.68</div>
-              <div style="font-size: 14px; opacity: 0.9;">Avg Goals/Game</div>
+            <div class="stats-card stats-card--purple">
+              <div class="stats-card__icon">📊</div>
+              <div class="stats-card__number">4.68</div>
+              <div class="stats-card__label">Avg Goals/Game</div>
             </div>
           </div>
 
           <!-- Main Content Area -->
-          <div style="
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            align-items: start;
-          ">
+          <div class="stats-content">
             
             <!-- League Standings -->
-            <div style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-              overflow: hidden;
-            ">
-              <div style="
-                background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-                color: white;
-                padding: 20px;
-                text-align: center;
-              ">
-                <h2 style="margin: 0; font-size: 24px; font-weight: 700;">League Standings</h2>
+            <div class="standings-table">
+              <div class="standings-table__header">
+                <h2 class="standings-table__title">League Standings</h2>
               </div>
               
-              <div style="overflow-x: auto;">
-                <table style="
-                  width: 100%;
-                  border-collapse: collapse;
-                  font-size: 14px;
-                ">
-                  <thead>
-                    <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
-                      <th style="padding: 15px 10px; text-align: left; font-weight: 700; color: #374151;">Rank</th>
-                      <th style="padding: 15px 10px; text-align: left; font-weight: 700; color: #374151;">Team</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">GP</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">W</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">L</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">D</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">GF</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">GA</th>
-                      <th style="padding: 15px 10px; text-align: center; font-weight: 700; color: #374151;">Pts</th>
+              <div class="table-container">
+                <table class="table">
+                  <thead class="table__head">
+                    <tr class="table__row table__row--header">
+                      <th class="table__header">Rank</th>
+                      <th class="table__header">Team</th>
+                      <th class="table__header table__header--center">GP</th>
+                      <th class="table__header table__header--center">W</th>
+                      <th class="table__header table__header--center">L</th>
+                      <th class="table__header table__header--center">D</th>
+                      <th class="table__header table__header--center">GF</th>
+                      <th class="table__header table__header--center">GA</th>
+                      <th class="table__header table__header--center">Pts</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr style="border-bottom: 1px solid #e2e8f0; background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), transparent);">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #10b981;">1</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Nittany Lions FC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">12</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">10</td>
+                  <tbody class="table__body">
+                    <tr class="table__row table__row--first-place">
+                      <td class="table__cell table__cell--rank table__cell--first">1</td>
+                      <td class="table__cell table__cell--team">Nittany Lions FC</td>
+                      <td class="table__cell table__cell--center">4</td>
+                      <td class="table__cell table__cell--center table__cell--wins">3</td>
+                      <td class="table__cell table__cell--center table__cell--losses">0</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center">12</td>
+                      <td class="table__cell table__cell--center">4</td>
+                      <td class="table__cell table__cell--center table__cell--points">10</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Penn State United</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">9</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">7</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">2</td>
+                      <td class="table__cell table__cell--team">Penn State United</td>
+                      <td class="table__cell table__cell--center">3</td>
+                      <td class="table__cell table__cell--center table__cell--wins">2</td>
+                      <td class="table__cell table__cell--center table__cell--losses">0</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center">9</td>
+                      <td class="table__cell table__cell--center">3</td>
+                      <td class="table__cell table__cell--center table__cell--points">7</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">State College FC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">8</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">6</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">3</td>
+                      <td class="table__cell table__cell--team">State College FC</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--wins">2</td>
+                      <td class="table__cell table__cell--center table__cell--losses">0</td>
+                      <td class="table__cell table__cell--center">0</td>
+                      <td class="table__cell table__cell--center">8</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--points">6</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Blue & White SC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">6</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">4</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">4</td>
+                      <td class="table__cell table__cell--team">Blue & White SC</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--wins">1</td>
+                      <td class="table__cell table__cell--center table__cell--losses">0</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center">6</td>
+                      <td class="table__cell table__cell--center">3</td>
+                      <td class="table__cell table__cell--center table__cell--points">4</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">5</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Centre County SC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">5</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">3</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">5</td>
+                      <td class="table__cell table__cell--team">Centre County SC</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--wins">1</td>
+                      <td class="table__cell table__cell--center table__cell--losses">1</td>
+                      <td class="table__cell table__cell--center">0</td>
+                      <td class="table__cell table__cell--center">5</td>
+                      <td class="table__cell table__cell--center">4</td>
+                      <td class="table__cell table__cell--center table__cell--points">3</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">6</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Beaver Stadium FC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">5</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">3</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">6</td>
+                      <td class="table__cell table__cell--team">Beaver Stadium FC</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--wins">1</td>
+                      <td class="table__cell table__cell--center table__cell--losses">1</td>
+                      <td class="table__cell table__cell--center">0</td>
+                      <td class="table__cell table__cell--center">4</td>
+                      <td class="table__cell table__cell--center">5</td>
+                      <td class="table__cell table__cell--center table__cell--points">3</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">7</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">University Park United</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">3</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">1</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">7</td>
+                      <td class="table__cell table__cell--team">University Park United</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center table__cell--wins">0</td>
+                      <td class="table__cell table__cell--center table__cell--losses">0</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center">3</td>
+                      <td class="table__cell table__cell--center">3</td>
+                      <td class="table__cell table__cell--center table__cell--points">1</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">8</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Mount Nittany FC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">4</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">0</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">8</td>
+                      <td class="table__cell table__cell--team">Mount Nittany FC</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center table__cell--wins">0</td>
+                      <td class="table__cell table__cell--center table__cell--losses">1</td>
+                      <td class="table__cell table__cell--center">0</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center">4</td>
+                      <td class="table__cell table__cell--center table__cell--points">0</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                      <td style="padding: 15px 10px; font-weight: 700; color: #6b7280;">9</td>
-                      <td style="padding: 15px 10px; font-weight: 600; color: #1e3a8a;">Happy Valley FC</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #10b981; font-weight: 600;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #ef4444;">2</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">0</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">1</td>
-                      <td style="padding: 15px 10px; text-align: center; color: #6b7280;">7</td>
-                      <td style="padding: 15px 10px; text-align: center; font-weight: 700; color: #1e3a8a;">0</td>
+                    <tr class="table__row">
+                      <td class="table__cell table__cell--rank">9</td>
+                      <td class="table__cell table__cell--team">Happy Valley FC</td>
+                      <td class="table__cell table__cell--center">2</td>
+                      <td class="table__cell table__cell--center table__cell--wins">0</td>
+                      <td class="table__cell table__cell--center table__cell--losses">2</td>
+                      <td class="table__cell table__cell--center">0</td>
+                      <td class="table__cell table__cell--center">1</td>
+                      <td class="table__cell table__cell--center">7</td>
+                      <td class="table__cell table__cell--center table__cell--points">0</td>
                     </tr>
                   </tbody>
                 </table>
@@ -276,135 +180,55 @@ export class StatsPage extends HTMLElement {
             </div>
 
             <!-- Top Scorers & Team Stats -->
-            <div style="display: grid; gap: 20px;">
+            <div class="stats-sidebar">
               
               <!-- Top Scorers -->
-              <div style="
-                background: white;
-                border-radius: 15px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-                overflow: hidden;
-              ">
-                <div style="
-                  background: linear-gradient(135deg, #f59e0b, #fbbf24);
-                  color: white;
-                  padding: 15px;
-                  text-align: center;
-                ">
-                  <h3 style="margin: 0; font-size: 18px; font-weight: 700;">⚽ Top Scorers</h3>
+              <div class="top-scorers">
+                <div class="top-scorers__header">
+                  <h3 class="top-scorers__title">⚽ Top Scorers</h3>
                 </div>
                 
-                <div style="padding: 20px;">
-                  <div style="display: grid; gap: 12px;">
+                <div class="top-scorers__content">
+                  <div class="top-scorers__list">
                     
-                    <div style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 10px;
-                      background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent);
-                      border-radius: 8px;
-                    ">
-                      <div>
-                        <div style="font-weight: 600; color: #1e3a8a; font-size: 14px;">Marcus Johnson</div>
-                        <div style="font-size: 12px; color: #6b7280;">Nittany Lions FC</div>
+                    <div class="top-scorer top-scorer--first">
+                      <div class="top-scorer__info">
+                        <div class="top-scorer__name">Marcus Johnson</div>
+                        <div class="top-scorer__team">Nittany Lions FC</div>
                       </div>
-                      <div style="
-                        background: #f59e0b;
-                        color: white;
-                        padding: 5px 10px;
-                        border-radius: 12px;
-                        font-weight: 700;
-                        font-size: 14px;
-                      ">8</div>
+                      <div class="top-scorer__goals top-scorer__goals--first">8</div>
                     </div>
 
-                    <div style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 10px;
-                      background: #f8fafc;
-                      border-radius: 8px;
-                    ">
-                      <div>
-                        <div style="font-weight: 600; color: #1e3a8a; font-size: 14px;">David Chen</div>
-                        <div style="font-size: 12px; color: #6b7280;">State College FC</div>
+                    <div class="top-scorer">
+                      <div class="top-scorer__info">
+                        <div class="top-scorer__name">David Chen</div>
+                        <div class="top-scorer__team">State College FC</div>
                       </div>
-                      <div style="
-                        background: #6b7280;
-                        color: white;
-                        padding: 5px 10px;
-                        border-radius: 12px;
-                        font-weight: 700;
-                        font-size: 14px;
-                      ">6</div>
+                      <div class="top-scorer__goals">6</div>
                     </div>
 
-                    <div style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 10px;
-                      background: #f8fafc;
-                      border-radius: 8px;
-                    ">
-                      <div>
-                        <div style="font-weight: 600; color: #1e3a8a; font-size: 14px;">Sarah Martinez</div>
-                        <div style="font-size: 12px; color: #6b7280;">Penn State United</div>
+                    <div class="top-scorer">
+                      <div class="top-scorer__info">
+                        <div class="top-scorer__name">Sarah Martinez</div>
+                        <div class="top-scorer__team">Penn State United</div>
                       </div>
-                      <div style="
-                        background: #6b7280;
-                        color: white;
-                        padding: 5px 10px;
-                        border-radius: 12px;
-                        font-weight: 700;
-                        font-size: 14px;
-                      ">5</div>
+                      <div class="top-scorer__goals">5</div>
                     </div>
 
-                    <div style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 10px;
-                      background: #f8fafc;
-                      border-radius: 8px;
-                    ">
-                      <div>
-                        <div style="font-weight: 600; color: #1e3a8a; font-size: 14px;">Alex Rodriguez</div>
-                        <div style="font-size: 12px; color: #6b7280;">Blue & White SC</div>
+                    <div class="top-scorer">
+                      <div class="top-scorer__info">
+                        <div class="top-scorer__name">Alex Rodriguez</div>
+                        <div class="top-scorer__team">Blue & White SC</div>
                       </div>
-                      <div style="
-                        background: #6b7280;
-                        color: white;
-                        padding: 5px 10px;
-                        border-radius: 12px;
-                        font-weight: 700;
-                        font-size: 14px;
-                      ">4</div>
+                      <div class="top-scorer__goals">4</div>
                     </div>
 
-                    <div style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 10px;
-                      background: #f8fafc;
-                      border-radius: 8px;
-                    ">
-                      <div>
-                        <div style="font-weight: 600; color: #1e3a8a; font-size: 14px;">Jamie Thompson</div>
-                        <div style="font-size: 12px; color: #6b7280;">Centre County SC</div>
+                    <div class="top-scorer">
+                      <div class="top-scorer__info">
+                        <div class="top-scorer__name">Jamie Thompson</div>
+                        <div class="top-scorer__team">Centre County SC</div>
                       </div>
-                      <div style="
-                        background: #6b7280;
-                        color: white;
-                        padding: 5px 10px;
-                        border-radius: 12px;
-                        font-weight: 700;
-                        font-size: 14px;
-                      ">4</div>
+                      <div class="top-scorer__goals">4</div>
                     </div>
 
                   </div>
@@ -412,69 +236,31 @@ export class StatsPage extends HTMLElement {
               </div>
 
               <!-- Team Performance -->
-              <div style="
-                background: white;
-                border-radius: 15px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-                overflow: hidden;
-              ">
-                <div style="
-                  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-                  color: white;
-                  padding: 15px;
-                  text-align: center;
-                ">
-                  <h3 style="margin: 0; font-size: 18px; font-weight: 700;">📊 Performance</h3>
+              <div class="performance-metrics">
+                <div class="performance-metrics__header">
+                  <h3 class="performance-metrics__title">📊 Performance</h3>
                 </div>
                 
-                <div style="padding: 20px;">
-                  <div style="display: grid; gap: 15px;">
+                <div class="performance-metrics__content">
+                  <div class="performance-metrics__list">
                     
-                    <div>
-                      <div style="
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 5px;
-                      ">
-                        <span style="font-size: 14px; color: #6b7280;">Goals per Game</span>
-                        <span style="font-size: 14px; font-weight: 600; color: #1e3a8a;">4.68</span>
+                    <div class="performance-metric">
+                      <div class="performance-metric__header">
+                        <span class="performance-metric__label">Goals per Game</span>
+                        <span class="performance-metric__value">4.68</span>
                       </div>
-                      <div style="
-                        width: 100%;
-                        height: 8px;
-                        background: #e2e8f0;
-                        border-radius: 4px;
-                        overflow: hidden;
-                      ">
-                        <div style="
-                          width: 94%;
-                          height: 100%;
-                          background: linear-gradient(90deg, #8b5cf6, #a78bfa);
-                        "></div>
+                      <div class="progress-bar">
+                        <div class="progress-bar__fill progress-bar__fill--purple" style="width: 94%;"></div>
                       </div>
                     </div>
 
-                    <div>
-                      <div style="
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 5px;
-                      ">
-                        <span style="font-size: 14px; color: #6b7280;">Fair Play Score</span>
-                        <span style="font-size: 14px; font-weight: 600; color: #1e3a8a;">8.7/10</span>
+                    <div class="performance-metric">
+                      <div class="performance-metric__header">
+                        <span class="performance-metric__label">Fair Play Score</span>
+                        <span class="performance-metric__value">8.7/10</span>
                       </div>
-                      <div style="
-                        width: 100%;
-                        height: 8px;
-                        background: #e2e8f0;
-                        border-radius: 4px;
-                        overflow: hidden;
-                      ">
-                        <div style="
-                          width: 87%;
-                          height: 100%;
-                          background: linear-gradient(90deg, #f59e0b, #fbbf24);
-                        "></div>
+                      <div class="progress-bar">
+                        <div class="progress-bar__fill progress-bar__fill--warning" style="width: 87%;"></div>
                       </div>
                     </div>
 

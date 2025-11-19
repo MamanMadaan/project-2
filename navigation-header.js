@@ -9,151 +9,46 @@ export class NavigationHeader extends HTMLElement {
     const hasLogoImage = logoImage !== '';
     
     this.innerHTML = `
-      <header style="
-        background: ${hasLogoImage ? `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('${logoImage}')` : 'white'};
-        background-size: cover;
-        background-position: center;
-        padding: 20px;
-        border-bottom: 2px solid #1e3a8a;
-        font-family: Arial, sans-serif;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      ">
-        <div style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 10;
-        ">
+      <header class="navigation-header" style="${hasLogoImage ? `background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('${logoImage}')` : ''}">
+        <div class="navigation-header__container">
           <!-- Left: Hamburger Menu -->
-          <div style="position: relative;">
-            <button id="menu-btn" style="
-              background: #1e3a8a;
-              color: white;
-              border: none;
-              padding: 12px 20px;
-              border-radius: 5px;
-              font-size: 18px;
-              cursor: pointer;
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            ">
-              <span style="font-size: 20px;">☰</span> Menu
+          <div class="navigation-header__menu-wrapper">
+            <button id="menu-btn" class="navigation-header__menu-button">
+              <span class="navigation-header__menu-icon">☰</span> Menu
             </button>
             
-            <div id="dropdown-menu" style="
-              position: absolute;
-              top: 100%;
-              left: 0;
-              background: white;
-              border: 2px solid #1e3a8a;
-              border-radius: 5px;
-              min-width: 200px;
-              z-index: 1000;
-              display: none;
-              box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            ">
-              <a href="#home" data-page="home" style="
-                display: block;
-                padding: 15px 20px;
-                text-decoration: none;
-                color: #1e3a8a;
-                border-bottom: 1px solid #e2e8f0;
-                transition: background-color 0.3s;
-              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+            <div id="dropdown-menu" class="navigation-header__dropdown">
+              <a href="#home" data-page="home" class="navigation-header__dropdown-link">
                 Home
               </a>
-              <a href="#teams" data-page="teams" style="
-                display: block;
-                padding: 15px 20px;
-                text-decoration: none;
-                color: #1e3a8a;
-                border-bottom: 1px solid #e2e8f0;
-                transition: background-color 0.3s;
-              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+              <a href="#teams" data-page="teams" class="navigation-header__dropdown-link">
                 Teams
               </a>
-              <a href="#schedule" data-page="schedule" style="
-                display: block;
-                padding: 15px 20px;
-                text-decoration: none;
-                color: #1e3a8a;
-                border-bottom: 1px solid #e2e8f0;
-                transition: background-color 0.3s;
-              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+              <a href="#schedule" data-page="schedule" class="navigation-header__dropdown-link">
                 Schedule
               </a>
-              <a href="#stats" data-page="stats" style="
-                display: block;
-                padding: 15px 20px;
-                text-decoration: none;
-                color: #1e3a8a;
-                border-bottom: 1px solid #e2e8f0;
-                transition: background-color 0.3s;
-              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+              <a href="#stats" data-page="stats" class="navigation-header__dropdown-link">
                 Statistics
               </a>
-              <a href="#contact" data-page="contact" style="
-                display: block;
-                padding: 15px 20px;
-                text-decoration: none;
-                color: #1e3a8a;
-                transition: background-color 0.3s;
-              " onmouseover="this.style.backgroundColor='#f1f5f9'" onmouseout="this.style.backgroundColor='white'">
+              <a href="#contact" data-page="contact" class="navigation-header__dropdown-link navigation-header__dropdown-link--last">
                 Contact
               </a>
             </div>
           </div>
           
           <!-- Center: Logo and Title -->
-          <div style="text-align: center;">
-            <h1 style="
-              color: #1e3a8a;
-              font-size: 36px;
-              margin: 0 0 10px 0;
-              text-shadow: ${hasLogoImage ? '2px 2px 4px rgba(255,255,255,0.8)' : 'none'};
-            ">PSL</h1>
+          <div class="navigation-header__brand">
+            <h1 class="navigation-header__title ${hasLogoImage ? 'navigation-header__title--with-bg' : ''}">PSL</h1>
             ${hasLogoImage ? '' : `
-            <div style="
-              width: 80px;
-              height: 80px;
-              background: #f1f5f9;
-              border: 3px dashed #1e3a8a;
-              margin: 0 auto 10px auto;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 10px;
-            ">
-              <span style="color: #1e3a8a; font-size: 12px; text-align: center;">Your Logo Here</span>
+            <div class="navigation-header__placeholder-logo">
+              <span class="navigation-header__placeholder-text">Your Logo Here</span>
             </div>
             `}
-            <p style="
-              color: #374151;
-              margin: 0;
-              font-size: 16px;
-              text-shadow: ${hasLogoImage ? '1px 1px 2px rgba(255,255,255,0.8)' : 'none'};
-            ">PennState Soccer League</p>
+            <p class="navigation-header__subtitle ${hasLogoImage ? 'navigation-header__subtitle--with-bg' : ''}">PennState Soccer League</p>
           </div>
           
           <!-- Right: Register Button -->
-          <button style="
-            background: #1e3a8a;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-          " onmouseover="this.style.backgroundColor='#1e40af'" onmouseout="this.style.backgroundColor='#1e3a8a'"
+          <button class="navigation-header__register-button"
           onclick="
             this.dispatchEvent(new CustomEvent('navigate', { 
               detail: { page: 'register' },

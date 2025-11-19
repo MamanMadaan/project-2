@@ -308,136 +308,38 @@ export class SchedulePage extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div style="
-        min-height: 80vh;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        padding: 40px 20px;
-        font-family: Arial, sans-serif;
-      ">
+      <div class="page">
         <!-- Back Button -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto 20px auto;
-        ">
-          <button id="back-btn" style="
-            background: transparent;
-            border: 2px solid #1e3a8a;
-            color: #1e3a8a;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-          " onmouseover="
-            this.style.background='#1e3a8a'; 
-            this.style.color='white';
-          " onmouseout="
-            this.style.background='transparent'; 
-            this.style.color='#1e3a8a';
-          ">
+        <div class="page__nav">
+          <button id="back-btn" class="button button--secondary button--back">
             ← Back to Home
           </button>
         </div>
 
-        <!-- Header -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto 40px auto;
-          text-align: center;
-        ">
-          <h1 style="
-            font-size: 36px;
-            color: #1e3a8a;
-            margin: 0 0 10px 0;
-            font-weight: 900;
-          ">Game Schedule</h1>
-          <p style="
-            font-size: 18px;
-            color: #6b7280;
-            margin: 0;
-          ">View all PSL matches, filter by team, and never miss a game</p>
-        </div>
+        
 
         <!-- Filters Section -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto 30px auto;
-          background: white;
-          border-radius: 15px;
-          padding: 25px;
-          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        ">
-          <h3 style="
-            margin: 0 0 20px 0;
-            color: #1e3a8a;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-          ">
+        <div class="schedule-filters">
+          <h3 class="schedule-filters__title">
             🔍 Filter & Search
           </h3>
           
-          <div style="
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 15px;
-            align-items: end;
-          ">
+          <div class="schedule-filters__grid">
             
             <!-- Search Input -->
-            <div>
-              <label style="
-                display: block;
-                margin-bottom: 5px;
-                font-weight: 600;
-                color: #374151;
-                font-size: 14px;
-              ">Search Teams or Venues</label>
+            <div class="form-group">
+              <label class="form-group__label">Search Teams or Venues</label>
               <input 
                 type="text" 
                 id="search-input"
                 placeholder="Enter team name or location..."
-                style="
-                  width: 100%;
-                  padding: 12px 15px;
-                  border: 2px solid #e2e8f0;
-                  border-radius: 8px;
-                  font-size: 16px;
-                  transition: border-color 0.3s ease;
-                  box-sizing: border-box;
-                " 
-                onfocus="this.style.borderColor='#3b82f6'" 
-                onblur="this.style.borderColor='#e2e8f0'">
+                class="form-group__input">
             </div>
             
             <!-- Team Filter -->
-            <div>
-              <label style="
-                display: block;
-                margin-bottom: 5px;
-                font-weight: 600;
-                color: #374151;
-                font-size: 14px;
-              ">Team</label>
-              <select 
-                id="team-filter"
-                style="
-                  width: 100%;
-                  padding: 12px 15px;
-                  border: 2px solid #e2e8f0;
-                  border-radius: 8px;
-                  font-size: 16px;
-                  transition: border-color 0.3s ease;
-                  box-sizing: border-box;
-                  background: white;
-                " 
-                onfocus="this.style.borderColor='#3b82f6'" 
-                onblur="this.style.borderColor='#e2e8f0'">
+            <div class="form-group">
+              <label class="form-group__label">Team</label>
+              <select id="team-filter" class="form-group__select">
                 <option value="">All Teams</option>
                 <option value="Nittany Lions FC">Nittany Lions FC</option>
                 <option value="Penn State United">Penn State United</option>
@@ -452,28 +354,9 @@ export class SchedulePage extends HTMLElement {
             </div>
             
             <!-- Type Filter -->
-            <div>
-              <label style="
-                display: block;
-                margin-bottom: 5px;
-                font-weight: 600;
-                color: #374151;
-                font-size: 14px;
-              ">Match Type</label>
-              <select 
-                id="type-filter"
-                style="
-                  width: 100%;
-                  padding: 12px 15px;
-                  border: 2px solid #e2e8f0;
-                  border-radius: 8px;
-                  font-size: 16px;
-                  transition: border-color 0.3s ease;
-                  box-sizing: border-box;
-                  background: white;
-                " 
-                onfocus="this.style.borderColor='#3b82f6'" 
-                onblur="this.style.borderColor='#e2e8f0'">
+            <div class="form-group">
+              <label class="form-group__label">Match Type</label>
+              <select id="type-filter" class="form-group__select">
                 <option value="">All Types</option>
                 <option value="regular">Regular Season</option>
                 <option value="playoff">Playoffs</option>
@@ -482,28 +365,9 @@ export class SchedulePage extends HTMLElement {
             </div>
             
             <!-- Status Filter -->
-            <div>
-              <label style="
-                display: block;
-                margin-bottom: 5px;
-                font-weight: 600;
-                color: #374151;
-                font-size: 14px;
-              ">Status</label>
-              <select 
-                id="status-filter"
-                style="
-                  width: 100%;
-                  padding: 12px 15px;
-                  border: 2px solid #e2e8f0;
-                  border-radius: 8px;
-                  font-size: 16px;
-                  transition: border-color 0.3s ease;
-                  box-sizing: border-box;
-                  background: white;
-                " 
-                onfocus="this.style.borderColor='#3b82f6'" 
-                onblur="this.style.borderColor='#e2e8f0'">
+            <div class="form-group">
+              <label class="form-group__label">Status</label>
+              <select id="status-filter" class="form-group__select">
                 <option value="">All Games</option>
                 <option value="upcoming">Upcoming</option>
                 <option value="completed">Completed</option>
@@ -512,110 +376,33 @@ export class SchedulePage extends HTMLElement {
           </div>
           
           <!-- Clear Filters Button -->
-          <div style="margin-top: 20px; text-align: right;">
-            <button id="clear-filters" style="
-              background: transparent;
-              border: 2px solid #6b7280;
-              color: #6b7280;
-              padding: 8px 20px;
-              border-radius: 20px;
-              cursor: pointer;
-              font-size: 14px;
-              transition: all 0.3s ease;
-            " onmouseover="
-              this.style.backgroundColor='#6b7280';
-              this.style.color='white';
-            " onmouseout="
-              this.style.backgroundColor='transparent';
-              this.style.color='#6b7280';
-            ">
+          <div class="schedule-filters__actions">
+            <button id="clear-filters" class="button button--secondary button--small">
               Clear All Filters
             </button>
           </div>
         </div>
 
         <!-- Schedule Table -->
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto;
-          background: white;
-          border-radius: 15px;
-          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-          overflow: hidden;
-        ">
+        <div class="schedule-table">
           <!-- Table Header -->
-          <div style="
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 25px;
-            text-align: center;
-          ">
-            <h2 style="
-              margin: 0;
-              font-size: 24px;
-              font-weight: 700;
-            ">Match Schedule</h2>
+          <div class="schedule-table__header">
+            <h2 class="schedule-table__title">Match Schedule</h2>
           </div>
           
           <!-- Table Content -->
-          <div style="overflow-x: auto;">
-            <table style="
-              width: 100%;
-              border-collapse: collapse;
-            ">
-              <thead>
-                <tr style="
-                  background: #f8fafc;
-                  border-bottom: 2px solid #e2e8f0;
-                ">
-                  <th style="
-                    padding: 15px;
-                    text-align: left;
-                    font-weight: 700;
-                    color: #374151;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  ">Date</th>
-                  <th style="
-                    padding: 15px;
-                    text-align: left;
-                    font-weight: 700;
-                    color: #374151;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  ">Match</th>
-                  <th style="
-                    padding: 15px;
-                    text-align: left;
-                    font-weight: 700;
-                    color: #374151;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  ">Time</th>
-                  <th style="
-                    padding: 15px;
-                    text-align: left;
-                    font-weight: 700;
-                    color: #374151;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  ">Venue</th>
-                  <th style="
-                    padding: 15px;
-                    text-align: center;
-                    font-weight: 700;
-                    color: #374151;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  ">Type</th>
+          <div class="table-container">
+            <table class="table">
+              <thead class="table__head">
+                <tr class="table__row table__row--header">
+                  <th class="table__header">Date</th>
+                  <th class="table__header">Match</th>
+                  <th class="table__header">Time</th>
+                  <th class="table__header">Venue</th>
+                  <th class="table__header table__header--center">Type</th>
                 </tr>
               </thead>
-              <tbody id="schedule-table-body">
+              <tbody id="schedule-table-body" class="table__body">
                 <!-- Content will be dynamically populated -->
               </tbody>
             </table>
@@ -623,88 +410,22 @@ export class SchedulePage extends HTMLElement {
         </div>
 
         <!-- Quick Actions -->
-        <div style="
-          max-width: 1200px;
-          margin: 40px auto 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 20px;
-        ">
+        <div class="schedule-actions">
           
-          <div style="
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-          ">
-            <div style="font-size: 32px; margin-bottom: 15px;">📅</div>
-            <h3 style="
-              color: #1e3a8a;
-              margin: 0 0 10px 0;
-              font-size: 18px;
-            ">Add to Calendar</h3>
-            <p style="
-              color: #6b7280;
-              margin: 0 0 20px 0;
-              font-size: 14px;
-            ">Never miss a game! Add PSL schedule to your calendar.</p>
-            <button style="
-              background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-              color: white;
-              border: none;
-              padding: 12px 24px;
-              border-radius: 25px;
-              font-size: 14px;
-              font-weight: 600;
-              cursor: pointer;
-              transition: all 0.3s ease;
-            " onmouseover="
-              this.style.transform='translateY(-2px)';
-              this.style.boxShadow='0 6px 20px rgba(30, 58, 138, 0.4)';
-            " onmouseout="
-              this.style.transform='translateY(0)';
-              this.style.boxShadow='none';
-            ">
+          <div class="schedule-actions__card">
+            <div class="schedule-actions__icon">📅</div>
+            <h3 class="schedule-actions__title">Add to Calendar</h3>
+            <p class="schedule-actions__description">Never miss a game! Add PSL schedule to your calendar.</p>
+            <button class="button button--primary">
               Download Calendar
             </button>
           </div>
 
-          <div style="
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-          ">
-            <div style="font-size: 32px; margin-bottom: 15px;">🔔</div>
-            <h3 style="
-              color: #1e3a8a;
-              margin: 0 0 10px 0;
-              font-size: 18px;
-            ">Game Notifications</h3>
-            <p style="
-              color: #6b7280;
-              margin: 0 0 20px 0;
-              font-size: 14px;
-            ">Get notified about schedule changes and game updates.</p>
-            <button style="
-              background: transparent;
-              color: #1e3a8a;
-              border: 2px solid #1e3a8a;
-              padding: 10px 22px;
-              border-radius: 25px;
-              font-size: 14px;
-              font-weight: 600;
-              cursor: pointer;
-              transition: all 0.3s ease;
-            " onmouseover="
-              this.style.backgroundColor='#1e3a8a';
-              this.style.color='white';
-            " onmouseout="
-              this.style.backgroundColor='transparent';
-              this.style.color='#1e3a8a';
-            ">
+          <div class="schedule-actions__card">
+            <div class="schedule-actions__icon">🔔</div>
+            <h3 class="schedule-actions__title">Game Notifications</h3>
+            <p class="schedule-actions__description">Get notified about schedule changes and game updates.</p>
+            <button class="button button--secondary">
               Enable Notifications
             </button>
           </div>
