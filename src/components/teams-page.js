@@ -104,8 +104,38 @@ export class TeamsPage extends DDDSuper(LitElement) {
     }
 
     .team-record {
-      color: var(--ddd-theme-default-slateMaxLight);
-      margin-bottom: var(--ddd-spacing-4);
+      color: var(--ddd-theme-default-slateMaxLight, #666666);
+      margin-bottom: var(--ddd-spacing-4, 1rem);
+    }
+
+    .team-captain, .team-coach, .team-founded {
+      color: var(--ddd-theme-default-slateMaxLight, #666666);
+      font-size: var(--ddd-font-size-xs, 0.75rem);
+      margin-bottom: var(--ddd-spacing-1, 0.25rem);
+    }
+
+    .team-achievements {
+      margin-top: var(--ddd-spacing-4, 1rem);
+      padding-top: var(--ddd-spacing-3, 0.75rem);
+      border-top: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
+    }
+
+    .team-achievements h4 {
+      font-size: var(--ddd-font-size-xs, 0.75rem);
+      font-weight: var(--ddd-font-weight-bold, 600);
+      margin: 0 0 var(--ddd-spacing-2, 0.5rem) 0;
+      color: var(--ddd-theme-default-coalyGray, #333333);
+    }
+
+    .team-achievements ul {
+      margin: 0;
+      padding-left: var(--ddd-spacing-4, 1rem);
+      font-size: var(--ddd-font-size-xs, 0.75rem);
+      color: var(--ddd-theme-default-slateMaxLight, #666666);
+    }
+
+    .team-achievements li {
+      margin-bottom: var(--ddd-spacing-1, 0.25rem);
     }
 
     .team-stats {
@@ -181,39 +211,81 @@ export class TeamsPage extends DDDSuper(LitElement) {
     this.teams = [
       {
         id: 1,
-        name: 'Blue Lions',
-        color: '#3b82f6',
-        record: '3-1-0',
+        name: 'Nittany Lions FC',
+        color: '#1e3a8a',
+        record: '3-0-1',
         wins: 3,
-        losses: 1,
-        goals: 12
+        losses: 0,
+        goals: 15,
+        captain: 'Marcus Johnson',
+        coach: 'Coach Sarah Williams',
+        founded: '2019',
+        achievements: ['2024 PSL Champions', '2023 Fair Play Award', 'Best Offensive Record 2024']
       },
       {
         id: 2,
-        name: 'Red Hawks',
+        name: 'Penn State United',
         color: '#dc2626',
-        record: '2-2-0',
+        record: '2-0-1',
         wins: 2,
-        losses: 2,
-        goals: 8
+        losses: 0,
+        goals: 8,
+        captain: 'Sarah Martinez',
+        coach: 'Coach Mike Thompson',
+        founded: '2020',
+        achievements: ['2023 Defensive Excellence Award', 'Most Improved Team 2024']
       },
       {
         id: 3,
-        name: 'Green Eagles',
-        color: '#10b981',
-        record: '2-1-1',
-        wins: 2,
-        losses: 1,
-        goals: 10
+        name: 'Blue & White SC',
+        color: '#059669',
+        record: '1-0-1',
+        wins: 1,
+        losses: 0,
+        goals: 6,
+        captain: 'Alex Rodriguez',
+        coach: 'Coach Lisa Martinez',
+        founded: '2021',
+        achievements: ['Fastest Rising Team 2024', 'Best Team Spirit Award']
       },
       {
         id: 4,
-        name: 'White Wolves',
-        color: '#64748b',
-        record: '1-3-0',
+        name: 'Happy Valley FC',
+        color: '#7c3aed',
+        record: '0-2-0',
+        wins: 0,
+        losses: 2,
+        goals: 4,
+        captain: 'Jamie Foster',
+        coach: 'Coach David Park',
+        founded: '2022',
+        achievements: ['Community Choice Award 2024', 'Best Newcomer Team 2023']
+      },
+      {
+        id: 5,
+        name: 'State College FC',
+        color: '#ea580c',
+        record: '2-0-0',
+        wins: 2,
+        losses: 0,
+        goals: 12,
+        captain: 'David Chen',
+        coach: 'Coach Amanda Rodriguez',
+        founded: '2020',
+        achievements: ['Technical Excellence Award 2024', 'Best Tactical Team 2023']
+      },
+      {
+        id: 6,
+        name: 'University Park United',
+        color: '#0891b2',
+        record: '1-1-0',
         wins: 1,
-        losses: 3,
-        goals: 6
+        losses: 1,
+        goals: 7,
+        captain: 'Morgan Taylor',
+        coach: 'Coach Jennifer Lee',
+        founded: '2021',
+        achievements: ['Innovation in Play Award', 'Future Stars Recognition']
       }
     ];
   }
@@ -250,6 +322,9 @@ export class TeamsPage extends DDDSuper(LitElement) {
               </div>
               <div class="team-name">${team.name}</div>
               <div class="team-record">Record: ${team.record}</div>
+              ${team.captain ? html`<div class="team-captain">Captain: ${team.captain}</div>` : ''}
+              ${team.coach ? html`<div class="team-coach">Coach: ${team.coach}</div>` : ''}
+              ${team.founded ? html`<div class="team-founded">Founded: ${team.founded}</div>` : ''}
               <div class="team-stats">
                 <div class="stat">
                   <div class="stat-number">${team.wins}</div>
@@ -264,6 +339,14 @@ export class TeamsPage extends DDDSuper(LitElement) {
                   <div class="stat-label">Goals</div>
                 </div>
               </div>
+              ${team.achievements && team.achievements.length > 0 ? html`
+                <div class="team-achievements">
+                  <h4>Achievements:</h4>
+                  <ul>
+                    ${team.achievements.map(achievement => html`<li>${achievement}</li>`)}
+                  </ul>
+                </div>
+              ` : ''}
             </div>
           `)}
         </div>
@@ -271,7 +354,7 @@ export class TeamsPage extends DDDSuper(LitElement) {
         <footer class="footer">
           <div class="footer-content">
             <div class="footer-logo">
-              <img src="./assets/back-seat-bros-logo.svg" alt="Powered by Back Seat Bros" />
+              <img src="./src/assets/psl-logo.svg" alt="Penn State Soccer League" />
             </div>
             <div class="copyright">© 2025 Penn State Soccer League. All rights reserved.</div>
           </div>

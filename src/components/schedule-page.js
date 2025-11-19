@@ -81,6 +81,53 @@ export class SchedulePage extends DDDSuper(LitElement) {
       box-shadow: var(--ddd-boxShadow-lg);
     }
 
+    .game-completed {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      opacity: 0.8;
+    }
+
+    .game-championship {
+      border: 2px solid #fbbf24;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    }
+
+    .game-type-badge {
+      background: #fbbf24;
+      color: #92400e;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .score {
+      font-weight: var(--ddd-font-weight-bold, 600);
+      color: var(--ddd-theme-default-coalyGray, #333333);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 4px 8px;
+      border-radius: 8px;
+      margin: 0 8px;
+    }
+
+    .game-status {
+      margin-top: var(--ddd-spacing-3, 0.75rem);
+      font-size: var(--ddd-font-size-xs, 0.75rem);
+      font-weight: var(--ddd-font-weight-medium, 500);
+      text-align: center;
+      padding: 4px;
+      border-radius: 4px;
+    }
+
+    .game-status.upcoming {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .game-status:not(.upcoming) {
+      background: #dcfce7;
+      color: #166534;
+    }
+
     .game-header {
       display: flex;
       justify-content: space-between;
@@ -171,37 +218,61 @@ export class SchedulePage extends DDDSuper(LitElement) {
   constructor() {
     super();
     this.games = [
+      // Upcoming Games
       {
         id: 1,
-        date: 'Nov 22, 2024',
+        date: 'Nov 23, 2025',
         time: '2:00 PM',
-        team1: 'Blue Lions',
-        team2: 'Red Hawks',
-        location: 'Penn State Field A'
+        team1: 'Nittany Lions FC',
+        team2: 'State College FC',
+        location: 'Beaver Stadium Field A',
+        type: 'championship',
+        status: 'upcoming'
       },
       {
         id: 2,
-        date: 'Nov 24, 2024',
-        time: '4:00 PM',
-        team1: 'Green Eagles',
-        team2: 'White Wolves',
-        location: 'Penn State Field B'
+        date: 'Nov 25, 2025',
+        time: '4:30 PM',
+        team1: 'Penn State United',
+        team2: 'Blue & White SC',
+        location: 'IM Fields Complex',
+        type: 'regular',
+        status: 'upcoming'
       },
       {
         id: 3,
-        date: 'Nov 26, 2024',
+        date: 'Nov 27, 2025',
         time: '1:00 PM',
-        team1: 'Blue Lions',
-        team2: 'Green Eagles',
-        location: 'Penn State Field A'
+        team1: 'Happy Valley FC',
+        team2: 'University Park United',
+        location: 'Penn State Practice Fields',
+        type: 'regular',
+        status: 'upcoming'
       },
+      // Completed Games
       {
         id: 4,
-        date: 'Nov 28, 2024',
+        date: 'Nov 15, 2025',
         time: '3:00 PM',
-        team1: 'Red Hawks',
-        team2: 'White Wolves',
-        location: 'Penn State Field B'
+        team1: 'Nittany Lions FC',
+        team2: 'Happy Valley FC',
+        location: 'Beaver Stadium Field A',
+        type: 'regular',
+        status: 'completed',
+        score1: 4,
+        score2: 1
+      },
+      {
+        id: 5,
+        date: 'Nov 17, 2025',
+        time: '5:30 PM',
+        team1: 'State College FC',
+        team2: 'Penn State United',
+        location: 'State College Municipal Stadium',
+        type: 'regular',
+        status: 'completed',
+        score1: 2,
+        score2: 2
       }
     ];
   }
@@ -228,17 +299,27 @@ export class SchedulePage extends DDDSuper(LitElement) {
 
         <div class="games-grid">
           ${this.games.map(game => html`
-            <div class="game-card">
+            <div class="game-card ${game.status === 'completed' ? 'game-completed' : ''} ${game.type === 'championship' ? 'game-championship' : ''}">
               <div class="game-header">
                 <span class="game-date">${game.date}</span>
                 <span class="game-time">${game.time}</span>
+                ${game.type === 'championship' ? html`<span class="game-type-badge">Championship</span>` : ''}
               </div>
               <div class="teams">
                 <div class="team-matchup">
-                  ${game.team1} <span class="vs">vs</span> ${game.team2}
+                  ${game.team1} 
+                  ${game.status === 'completed' ? 
+                    html`<span class="score">${game.score1} - ${game.score2}</span>` : 
+                    html`<span class="vs">vs</span>`
+                  } 
+                  ${game.team2}
                 </div>
               </div>
               <div class="game-location">${game.location}</div>
+              ${game.status === 'completed' ? 
+                html`<div class="game-status">Final</div>` : 
+                html`<div class="game-status upcoming">Upcoming</div>`
+              }
             </div>
           `)}
         </div>
@@ -246,7 +327,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
         <footer class="footer">
           <div class="footer-content">
             <div class="footer-logo">
-              <img src="./assets/back-seat-bros-logo.svg" alt="Powered by Back Seat Bros" />
+              <img src="./src/assets/psl-logo.svg" alt="Penn State Soccer League" />
             </div>
             <div class="copyright">© 2025 Penn State Soccer League. All rights reserved.</div>
           </div>

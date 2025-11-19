@@ -5,6 +5,7 @@ import './components/schedule-page.js';
 import './components/teams-page.js';
 import './components/stats-page.js';
 import './components/register-page.js';
+import './components/championship-page.js';
 
 export class PslApp extends DDDSuper(LitElement) {
   static properties = {

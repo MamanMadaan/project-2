@@ -163,6 +163,12 @@ export class StatsPage extends DDDSuper(LitElement) {
       margin-left: var(--ddd-spacing-4);
     }
 
+    .team-record {
+      color: var(--ddd-theme-default-slateMaxLight, #666666);
+      font-size: var(--ddd-font-size-sm, 0.875rem);
+      margin-right: var(--ddd-spacing-4, 1rem);
+    }
+
     .points {
       font-weight: var(--ddd-font-weight-black, 700);
       color: #10b981;
@@ -213,15 +219,18 @@ export class StatsPage extends DDDSuper(LitElement) {
   constructor() {
     super();
     this.stats = {
-      totalGames: 16,
-      totalGoals: 36,
-      totalTeams: 4,
-      avgGoalsPerGame: 2.25,
+      totalGames: 19,
+      totalGoals: 89,
+      totalTeams: 6,
+      avgGoalsPerGame: 4.68,
+      activePlayers: 108,
       leaderboard: [
-        { rank: 1, team: 'Blue Lions', points: 9 },
-        { rank: 2, team: 'Green Eagles', points: 7 },
-        { rank: 3, team: 'Red Hawks', points: 6 },
-        { rank: 4, team: 'White Wolves', points: 3 }
+        { rank: 1, team: 'Nittany Lions FC', points: 10, record: '3-0-1' },
+        { rank: 2, team: 'State College FC', points: 6, record: '2-0-0' },
+        { rank: 3, team: 'Penn State United', points: 6, record: '2-0-1' },
+        { rank: 4, team: 'Blue & White SC', points: 4, record: '1-0-1' },
+        { rank: 5, team: 'University Park United', points: 3, record: '1-1-0' },
+        { rank: 6, team: 'Happy Valley FC', points: 0, record: '0-2-0' }
       ]
     };
   }
@@ -270,6 +279,12 @@ export class StatsPage extends DDDSuper(LitElement) {
             <div class="stat-number">${this.stats.avgGoalsPerGame}</div>
             <div class="stat-label">Avg Goals/Game</div>
           </div>
+
+          <div class="stat-card">
+            <div class="stat-icon" style="background-color: #8b5cf6;">👥</div>
+            <div class="stat-number">${this.stats.activePlayers}</div>
+            <div class="stat-label">Active Players</div>
+          </div>
         </div>
 
         <div class="leaderboard">
@@ -278,6 +293,7 @@ export class StatsPage extends DDDSuper(LitElement) {
             <div class="leaderboard-item">
               <span class="rank">#${item.rank}</span>
               <span class="team-name">${item.team}</span>
+              <span class="team-record">${item.record}</span>
               <span class="points">${item.points} pts</span>
             </div>
           `)}
@@ -286,7 +302,7 @@ export class StatsPage extends DDDSuper(LitElement) {
         <footer class="footer">
           <div class="footer-content">
             <div class="footer-logo">
-              <img src="./assets/back-seat-bros-logo.svg" alt="Powered by Back Seat Bros" />
+              <img src="./src/assets/psl-logo.svg" alt="Penn State Soccer League" />
             </div>
             <div class="copyright">© 2025 Penn State Soccer League. All rights reserved.</div>
           </div>
