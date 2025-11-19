@@ -131,6 +131,18 @@ export class HomePage extends DDDSuper(LitElement) {
       box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
     }
 
+    .btn-championship {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: var(--ddd-theme-default-coalyGray, #333333);
+      border: 2px solid transparent;
+      font-weight: var(--ddd-font-weight-bold, 600);
+    }
+
+    .btn-championship:hover {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+    }
+
     .btn:hover {
       transform: translateY(-2px);
       box-shadow: var(--ddd-boxShadow-lg);
@@ -262,6 +274,9 @@ export class HomePage extends DDDSuper(LitElement) {
               </button>
               <button class="btn btn-success" @click="${(e) => this._navigate('register', e)}">
                 Register Team
+              </button>
+              <button class="btn btn-championship" @click="${(e) => this._navigate('championship', e)}">
+                Championship News
               </button>
             </div>
           </div>

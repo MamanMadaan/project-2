@@ -6,6 +6,7 @@ import './components/teams-page.js';
 import './components/stats-page.js';
 import './components/register-page.js';
 import './components/championship-page.js';
+import './components/navigation-header.js';
 
 export class PslApp extends DDDSuper(LitElement) {
   static properties = {
@@ -75,7 +76,8 @@ export class PslApp extends DDDSuper(LitElement) {
       '/schedule': 'schedule',
       '/teams': 'teams',
       '/stats': 'stats',
-      '/register': 'register'
+      '/register': 'register',
+      '/championship': 'championship'
     };
 
     this.page = routes[path] || 'home';
@@ -88,7 +90,8 @@ export class PslApp extends DDDSuper(LitElement) {
       'schedule': '/schedule',
       'teams': '/teams',
       'stats': '/stats',
-      'register': '/register'
+      'register': '/register',
+      'championship': '/championship'
     };
 
     const url = routes[page] || '/';
@@ -103,6 +106,11 @@ export class PslApp extends DDDSuper(LitElement) {
 
   render() {
     return html`
+      <navigation-header 
+        .activePage="${this.page}"
+        @navigate="${(e) => this.navigate(e.detail.page)}">
+      </navigation-header>
+      
       <div class="page-container">
         <home-page 
           class="page" 
@@ -134,6 +142,12 @@ export class PslApp extends DDDSuper(LitElement) {
           ?active="${this.page === 'register'}"
           @navigate="${(e) => this.navigate(e.detail.page)}">
         </register-page>
+        
+        <championship-page 
+          class="page" 
+          ?active="${this.page === 'championship'}"
+          @navigate="${(e) => this.navigate(e.detail.page)}">
+        </championship-page>
       </div>
     `;
   }
