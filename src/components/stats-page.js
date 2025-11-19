@@ -164,8 +164,49 @@ export class StatsPage extends DDDSuper(LitElement) {
     }
 
     .points {
-      font-weight: var(--ddd-font-weight-black);
-      color: var(--ddd-theme-default-opportunityGreen);
+      font-weight: var(--ddd-font-weight-black, 700);
+      color: #10b981;
+    }
+
+    .footer {
+      background: var(--ddd-theme-default-white, #ffffff);
+      color: #64748b;
+      padding: var(--ddd-spacing-6, 2rem);
+      text-align: center;
+      border-top: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
+      margin-top: var(--ddd-spacing-8, 2rem);
+    }
+
+    .footer-content {
+      max-width: var(--ddd-breakpoint-md, 800px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--ddd-spacing-4, 1rem);
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      width: 120px;
+      height: 40px;
+      background: var(--ddd-theme-default-white, #ffffff);
+      border-radius: var(--ddd-radius-sm, 4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .copyright {
+      font-size: var(--ddd-font-size-sm, 0.875rem);
     }
   `;
 
@@ -241,6 +282,15 @@ export class StatsPage extends DDDSuper(LitElement) {
             </div>
           `)}
         </div>
+
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="./assets/back-seat-bros-logo.svg" alt="Powered by Back Seat Bros" />
+            </div>
+            <div class="copyright">© 2025 Penn State Soccer League. All rights reserved.</div>
+          </div>
+        </footer>
       </div>
     `;
   }

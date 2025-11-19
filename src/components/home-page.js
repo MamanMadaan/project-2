@@ -169,6 +169,49 @@ export class HomePage extends DDDSuper(LitElement) {
       border-color: rgba(255, 255, 255, 0.3);
       opacity: 1;
     }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--ddd-theme-default-white, #ffffff);
+      padding: var(--ddd-spacing-4, 1rem) var(--ddd-spacing-6, 2rem);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-content {
+      max-width: var(--ddd-breakpoint-md, 800px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--ddd-spacing-4, 1rem);
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      width: 120px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--ddd-radius-sm, 4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1) brightness(1);
+    }
+
+    .copyright {
+      font-size: var(--ddd-font-size-sm, 0.875rem);
+      opacity: 0.9;
+    }
   `;
 
   _navigate(page, event) {
@@ -209,6 +252,15 @@ export class HomePage extends DDDSuper(LitElement) {
             </div>
           </div>
         </div>
+
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="./assets/back-seat-bros-logo.svg" alt="Powered by Back Seat Bros" />
+            </div>
+            <div class="copyright">© 2025 Penn State Soccer League. All rights reserved.</div>
+          </div>
+        </footer>
       </div>
     `;
   }
