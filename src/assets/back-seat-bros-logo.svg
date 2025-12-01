@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#2c5f5f">
+  <!-- Car Seat Shape -->
+  <g>
+    <!-- Headrests -->
+    <ellipse cx="200" cy="70" rx="30" ry="35" fill="#2c5f5f"/>
+    <ellipse cx="312" cy="70" rx="30" ry="35" fill="#2c5f5f"/>
+    
+    <!-- Headrest Highlights -->
+    <ellipse cx="210" cy="65" rx="8" ry="12" fill="#4a7c7c" opacity="0.7"/>
+    <ellipse cx="322" cy="65" rx="8" ry="12" fill="#4a7c7c" opacity="0.7"/>
+    
+    <!-- Main Seat Back -->
+    <rect x="150" y="100" width="212" height="140" rx="25" ry="25" fill="#2c5f5f"/>
+    
+    <!-- Seat Back Highlight -->
+    <rect x="160" y="110" width="15" height="120" rx="7" ry="7" fill="#4a7c7c" opacity="0.5"/>
+    <rect x="337" y="110" width="15" height="120" rx="7" ry="7" fill="#4a7c7c" opacity="0.5"/>
+    
+    <!-- Seat Cushion -->
+    <ellipse cx="256" cy="280" rx="106" ry="35" fill="#2c5f5f"/>
+    
+    <!-- Seat Cushion Highlight -->
+    <ellipse cx="256" cy="275" rx="90" ry="25" fill="#4a7c7c" opacity="0.3"/>
+    
+    <!-- Armrests -->
+    <ellipse cx="130" cy="180" rx="20" ry="40" fill="#2c5f5f"/>
+    <ellipse cx="382" cy="180" rx="20" ry="40" fill="#2c5f5f"/>
+    
+    <!-- Seat Base/Legs -->
+    <rect x="140" y="315" width="20" height="15" rx="10" ry="10" fill="#2c5f5f"/>
+    <rect x="352" y="315" width="20" height="15" rx="10" ry="10" fill="#2c5f5f"/>
+  </g>
+  
+  <!-- Text -->
+  <g>
+    <!-- BACK SEAT -->
+    <text x="256" y="380" font-family="Arial Black, sans-serif" font-size="42" font-weight="900" text-anchor="middle" fill="#2c5f5f">BACK SEAT</text>
+    
+    <!-- BROS -->
+    <text x="256" y="430" font-family="Arial Black, sans-serif" font-size="54" font-weight="900" text-anchor="middle" fill="#2c5f5f">BROS</text>
+  </g>
+</svg>
