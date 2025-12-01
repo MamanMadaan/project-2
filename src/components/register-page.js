@@ -20,27 +20,6 @@ export class RegisterPage extends DDDSuper(LitElement) {
       color: var(--ddd-theme-default-coalyGray, #333333);
     }
 
-    .back-button {
-      position: absolute;
-      top: var(--ddd-spacing-8, 2rem);
-      left: var(--ddd-spacing-8, 2rem);
-      padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-5, 1.25rem);
-      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-      color: var(--ddd-theme-default-white, #ffffff);
-      border: none;
-      border-radius: var(--ddd-radius-rounded, 20px);
-      cursor: pointer;
-      font-weight: var(--ddd-font-weight-bold, 600);
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
-    }
-
-    .back-button:hover {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
-    }
-
     .header {
       text-align: center;
       margin-bottom: var(--ddd-spacing-8, 2rem);
@@ -195,10 +174,6 @@ export class RegisterPage extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="register-container">
-        <button class="back-button" @click="${() => this._navigate('home')}">
-          ← Back to Home
-        </button>
-
         <div class="header">
           <h1>Register Your Team</h1>
           <p class="subtitle">Join the Penn State Soccer League</p>
