@@ -35,6 +35,7 @@ export class PslApp extends DDDSuper(LitElement) {
 
     .page-container {
       min-height: 100vh;
+      padding-top: 80px; /* Account for fixed navigation header */
     }
 
     /* Hide pages that aren't active */
