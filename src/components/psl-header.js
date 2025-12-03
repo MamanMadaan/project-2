@@ -1,115 +1,219 @@
-import { LitElement, html, css } from 'lit';
-import { DDDSuper } from '@haxtheweb/d-d-d/d-d-d.js';
+import { LitElement, html, css } from "lit";
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
+/**
+ * `psl-header`
+ * Header component with navigation for Penn State Soccer League
+ * 
+ * @element psl-header
+ */
 export class PslHeader extends DDDSuper(LitElement) {
-  static properties = {
-    title: { type: String },
-    subtitle: { type: String }
-  };
+  static get tag() {
+    return "psl-header";
+  }
 
-  static styles = css`
-    :host {
-      display: block;
-      width: 100%;
-    }
+  static get properties() {
+    return {
+      ...super.properties,
+      currentRoute: { type: String },
+    };
+  }
 
-    .header {
-      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-      color: var(--ddd-theme-default-white, #ffffff);
-      padding: var(--ddd-spacing-8, 2rem);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+  static get styles() {
+    return [super.styles,
+    css`
+      :host {
+        display: block;
+        width: 100%;
+      }
 
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="70" r="0.5" fill="rgba(255,255,255,0.1)"/></svg>');
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto var(--ddd-spacing-4, 1rem);
-      background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: var(--ddd-font-size-3xl, 2.25rem);
-      font-weight: var(--ddd-font-weight-black, 900);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      letter-spacing: 1px;
-    }
-
-    .subtitle {
-      margin: var(--ddd-spacing-2, 0.5rem) 0 0;
-      font-size: var(--ddd-font-size-lg, 1.125rem);
-      opacity: 0.9;
-      font-weight: var(--ddd-font-weight-medium, 500);
-    }
-
-    @media (max-width: 768px) {
       .header {
-        padding: var(--ddd-spacing-6, 1.5rem);
+        background: linear-gradient(135deg, var(--ddd-theme-default-navy, #1e40af) 0%, var(--ddd-theme-default-skyBlue, #3b82f6) 100%);
+        color: var(--ddd-theme-default-white, #ffffff);
+        padding: var(--ddd-spacing-4, 1rem) var(--ddd-spacing-6, 2rem);
+        box-shadow: var(--ddd-boxShadow-2, 0 4px 8px rgba(0,0,0,0.15));
       }
-      
-      h1 {
-        font-size: var(--ddd-font-size-2xl, 1.875rem);
+
+      .header-container {
+        max-width: var(--ddd-breakpoint-lg, 1200px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      
-      .subtitle {
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: var(--ddd-spacing-3, 0.75rem);
+      }
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        background: var(--ddd-theme-default-white, #ffffff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: var(--ddd-font-weight-black, 900);
+        color: var(--ddd-theme-default-navy, #1e40af);
+        font-size: var(--ddd-font-size-sm, 0.875rem);
+      }
+
+      .site-title {
+        font-size: var(--ddd-font-size-xl, 1.25rem);
+        font-weight: var(--ddd-font-weight-bold, 700);
+        margin: 0;
+      }
+
+      .nav {
+        display: flex;
+        gap: var(--ddd-spacing-2, 0.5rem);
+      }
+
+      .nav-link {
+        padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
+        text-decoration: none;
+        color: var(--ddd-theme-default-white, #ffffff);
+        border-radius: var(--ddd-radius-md, 8px);
+        transition: all 0.3s ease;
+        font-weight: var(--ddd-font-weight-medium, 500);
+        cursor: pointer;
+        border: none;
+        background: transparent;
         font-size: var(--ddd-font-size-base, 1rem);
       }
-    }
-  `;
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-link.active {
+        background: var(--ddd-theme-default-white, #ffffff);
+        color: var(--ddd-theme-default-navy, #1e40af);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: var(--ddd-theme-default-white, #ffffff);
+        font-size: var(--ddd-font-size-lg, 1.125rem);
+        cursor: pointer;
+        padding: var(--ddd-spacing-2, 0.5rem);
+      }
+
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--ddd-theme-default-navy, #1e40af);
+        flex-direction: column;
+        padding: var(--ddd-spacing-4, 1rem);
+        box-shadow: var(--ddd-boxShadow-2, 0 4px 8px rgba(0,0,0,0.15));
+      }
+
+      .mobile-nav.open {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          position: relative;
+        }
+        
+        .nav {
+          display: none;
+        }
+        
+        .mobile-menu-toggle {
+          display: block;
+        }
+        
+        .site-title {
+          font-size: var(--ddd-font-size-base, 1rem);
+        }
+      }
+    `];
+  }
 
   constructor() {
     super();
-    this.title = 'Penn State Soccer League';
-    this.subtitle = 'PSL';
+    this.currentRoute = "/";
+    this.mobileMenuOpen = false;
+  }
+
+  _handleNavClick(path) {
+    this.dispatchEvent(new CustomEvent('navigate', {
+      detail: { path },
+      bubbles: true,
+      composed: true
+    }));
+    this.mobileMenuOpen = false;
+    this.requestUpdate();
+  }
+
+  _toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+    this.requestUpdate();
+  }
+
+  _isActiveRoute(route) {
+    return this.currentRoute === route || 
+           (route === "/" && this.currentRoute === "/");
   }
 
   render() {
+    const navItems = [
+      { path: "/", label: "Home" },
+      { path: "/schedule", label: "Schedule" },
+      { path: "/teams", label: "Teams" },
+      { path: "/standings", label: "Standings" },
+      { path: "/register", label: "Register" }
+    ];
+
     return html`
       <header class="header">
-        <div class="header-content">
-          <div class="logo">
-            <img src="./src/assets/psl-logo.svg" alt="PSL Logo" />
+        <div class="header-container">
+          <div class="logo-section">
+            <div class="logo">PSL</div>
+            <h1 class="site-title">Penn State Soccer League</h1>
           </div>
-          <h1>${this.title}</h1>
-          <p class="subtitle">${this.subtitle}</p>
+          
+          <nav class="nav">
+            ${navItems.map(item => html`
+              <button 
+                class="nav-link ${this._isActiveRoute(item.path) ? 'active' : ''}"
+                @click="${() => this._handleNavClick(item.path)}">
+                ${item.label}
+              </button>
+            `)}
+          </nav>
+
+          <button class="mobile-menu-toggle" @click="${this._toggleMobileMenu}">
+            ☰
+          </button>
         </div>
+
+        <nav class="mobile-nav ${this.mobileMenuOpen ? 'open' : ''}">
+          ${navItems.map(item => html`
+            <button 
+              class="nav-link ${this._isActiveRoute(item.path) ? 'active' : ''}"
+              @click="${() => this._handleNavClick(item.path)}">
+              ${item.label}
+            </button>
+          `)}
+        </nav>
       </header>
     `;
   }
+
+  static get haxProperties() {
+    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url).href;
+  }
 }
 
-customElements.define('psl-header', PslHeader);
+globalThis.customElements.define(PslHeader.tag, PslHeader);
