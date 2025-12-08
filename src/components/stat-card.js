@@ -18,7 +18,6 @@ export class StatCard extends DDDSuper(LitElement) {
 
     .stat-card {
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
       padding: var(--ddd-spacing-6, 2rem);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
@@ -26,11 +25,6 @@ export class StatCard extends DDDSuper(LitElement) {
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
     .stat-icon {
@@ -58,7 +52,6 @@ export class StatCard extends DDDSuper(LitElement) {
       margin-top: var(--ddd-spacing-3, 0.75rem);
       font-size: var(--ddd-font-size-sm, 0.875rem);
       padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
       font-weight: var(--ddd-font-weight-medium, 500);
     }
 

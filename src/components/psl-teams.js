@@ -74,7 +74,7 @@ export class PslTeams extends DDDSuper(LitElement) {
       .search-input {
         padding: var(--ddd-spacing-3, 0.75rem);
         border: 2px solid var(--ddd-theme-default-slateLight, #e2e8f0);
-        border-radius: var(--ddd-radius-md, 8px);
+        
         font-size: var(--ddd-font-size-sm, 0.875rem);
         color: var(--ddd-theme-default-coalyGray, #333);
         font-family: var(--ddd-font-primary);
@@ -92,16 +92,10 @@ export class PslTeams extends DDDSuper(LitElement) {
 
       .team-card {
         background: var(--ddd-theme-default-white, #fff);
-        border-radius: var(--ddd-radius-lg, 12px);
         border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
         overflow: hidden;
         transition: all 0.3s ease;
-      }
-
-      .team-card:hover {
-        box-shadow: var(--ddd-boxShadow-2, 0 8px 16px rgba(0,0,0,0.15));
-        transform: translateY(-2px);
       }
 
       .team-header {

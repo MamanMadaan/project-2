@@ -80,7 +80,7 @@ export class SeasonKickoffPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -104,7 +104,7 @@ export class SeasonKickoffPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto 40px auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 50px 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
           text-align: center;
@@ -114,7 +114,7 @@ export class SeasonKickoffPage extends HTMLElement {
             background: linear-gradient(135deg, #059669, #10b981);
             color: white;
             padding: 8px 20px;
-            border-radius: 25px;
+            
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
@@ -169,7 +169,7 @@ export class SeasonKickoffPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto 40px auto;
           background: white;
-          border-radius: 20px;
+          
           overflow: hidden;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
@@ -192,7 +192,7 @@ export class SeasonKickoffPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
           line-height: 1.8;
@@ -203,7 +203,7 @@ export class SeasonKickoffPage extends HTMLElement {
           <div style="
             background: linear-gradient(135deg, #1e3a8a15, #3b82f615);
             padding: 30px;
-            border-radius: 15px;
+            
             text-align: center;
             margin-top: 40px;
           ">
@@ -225,7 +225,7 @@ export class SeasonKickoffPage extends HTMLElement {
               color: white;
               border: none;
               padding: 15px 35px;
-              border-radius: 50px;
+              
               font-size: 16px;
               font-weight: 600;
               cursor: pointer;
@@ -264,7 +264,7 @@ export class SeasonKickoffPage extends HTMLElement {
           ">
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 25px;
               box-shadow: 0 4px 15px rgba(0,0,0,0.1);
               cursor: pointer;
@@ -292,7 +292,7 @@ export class SeasonKickoffPage extends HTMLElement {
             
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 25px;
               box-shadow: 0 4px 15px rgba(0,0,0,0.1);
               cursor: pointer;
@@ -352,7 +352,7 @@ export class SeasonKickoffPage extends HTMLElement {
             background: linear-gradient(135deg, #059669, #10b981);
             color: white;
             padding: 25px;
-            border-radius: 10px;
+            
             margin: 30px 0;
             font-size: 18px;
             font-weight: 600;
@@ -382,7 +382,7 @@ export class SeasonKickoffPage extends HTMLElement {
                   width: 8px;
                   height: 8px;
                   background: #059669;
-                  border-radius: 50%;
+                  
                 "></span>
                 ${item}
               </li>
@@ -397,7 +397,7 @@ export class SeasonKickoffPage extends HTMLElement {
             padding: 25px 30px;
             margin: 30px 0;
             background: #f8fafc;
-            border-radius: 0 10px 10px 0;
+            
             font-style: italic;
             color: #374151;
             font-size: 18px;

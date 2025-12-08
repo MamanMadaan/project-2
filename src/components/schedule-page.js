@@ -34,7 +34,6 @@ export class SchedulePage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
       color: var(--ddd-theme-default-white, #ffffff);
       border: none;
-      border-radius: var(--ddd-radius-rounded, 20px);
       cursor: pointer;
       font-weight: var(--ddd-font-weight-bold, 600);
       transition: all var(--ddd-duration-rapid, 0.3s ease);
@@ -69,7 +68,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
 
     .game-card {
       background: var(--ddd-theme-default-white);
-      border-radius: var(--ddd-radius-lg);
+      
       padding: var(--ddd-spacing-6);
       box-shadow: var(--ddd-boxShadow-md);
       transition: all var(--ddd-duration-rapid);
@@ -95,7 +94,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
       background: #fbbf24;
       color: #92400e;
       padding: 2px 8px;
-      border-radius: 12px;
+      
       font-size: 0.75rem;
       font-weight: 600;
     }
@@ -105,7 +104,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
       color: var(--ddd-theme-default-coalyGray, #333333);
       background: rgba(255, 255, 255, 0.8);
       padding: 4px 8px;
-      border-radius: 8px;
+      
       margin: 0 8px;
     }
 
@@ -115,7 +114,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
       font-weight: var(--ddd-font-weight-medium, 500);
       text-align: center;
       padding: 4px;
-      border-radius: 4px;
+      
     }
 
     .game-status.upcoming {
@@ -139,7 +138,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
-      border-radius: var(--ddd-radius-rounded, 20px);
+      
       font-size: var(--ddd-font-size-sm, 0.875rem);
       font-weight: var(--ddd-font-weight-bold, 600);
       box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
@@ -196,7 +195,7 @@ export class SchedulePage extends DDDSuper(LitElement) {
       width: 120px;
       height: 40px;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       display: flex;
       align-items: center;
       justify-content: center;

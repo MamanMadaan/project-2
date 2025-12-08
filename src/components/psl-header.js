@@ -16,6 +16,7 @@ export class PslHeader extends DDDSuper(LitElement) {
     return {
       ...super.properties,
       currentRoute: { type: String },
+      mobileMenuOpen: { type: Boolean }
     };
   }
 
@@ -51,7 +52,7 @@ export class PslHeader extends DDDSuper(LitElement) {
       .logo {
         width: 50px;
         height: 50px;
-        border-radius: var(--ddd-radius-md, 8px);
+        
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -82,7 +83,7 @@ export class PslHeader extends DDDSuper(LitElement) {
         padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
         text-decoration: none;
         color: var(--ddd-theme-default-white, #ffffff);
-        border-radius: var(--ddd-radius-md, 8px);
+        
         transition: all 0.3s ease;
         font-weight: var(--ddd-font-weight-medium, 500);
         cursor: pointer;
@@ -102,12 +103,22 @@ export class PslHeader extends DDDSuper(LitElement) {
 
       .mobile-menu-toggle {
         display: none;
-        background: transparent;
-        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
         color: var(--ddd-theme-default-white, #ffffff);
-        font-size: var(--ddd-font-size-lg, 1.125rem);
+        font-size: var(--ddd-font-size-xl, 1.25rem);
         cursor: pointer;
-        padding: var(--ddd-spacing-2, 0.5rem);
+        padding: var(--ddd-spacing-3, 0.75rem);
+        transition: all 0.3s ease;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
       }
 
       .mobile-nav {
@@ -136,7 +147,7 @@ export class PslHeader extends DDDSuper(LitElement) {
         }
         
         .mobile-menu-toggle {
-          display: block;
+          display: flex;
         }
         
         .site-title {
@@ -186,7 +197,7 @@ export class PslHeader extends DDDSuper(LitElement) {
         <div class="header-container">
           <div class="logo-section">
             <div class="logo">
-              <img src="./src/assets/psl-logo.svg" alt="PSL Logo" />
+              <img src="${new URL('./assets/psl-logo.svg', import.meta.url).href}" alt="PSL Logo" />
             </div>
             <h1 class="site-title">Penn State Soccer League</h1>
           </div>

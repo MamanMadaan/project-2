@@ -41,7 +41,7 @@ export class RegisterPage extends DDDSuper(LitElement) {
       max-width: 600px;
       margin: 0 auto;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       padding: var(--ddd-spacing-8, 2rem);
       box-shadow: var(--ddd-boxShadow-md, 0 4px 8px rgba(0,0,0,0.1));
       border: 1px solid #e2e8f0;
@@ -65,7 +65,7 @@ export class RegisterPage extends DDDSuper(LitElement) {
       width: 100%;
       padding: var(--ddd-spacing-3, 0.75rem);
       border: 2px solid #e2e8f0;
-      border-radius: var(--ddd-radius-md, 8px);
+      
       font-size: var(--ddd-font-size-base, 16px);
       transition: all 0.3s ease;
       box-sizing: border-box;
@@ -81,7 +81,6 @@ export class RegisterPage extends DDDSuper(LitElement) {
       width: 100%;
       padding: var(--ddd-spacing-3, 0.75rem);
       border: 2px solid #e2e8f0;
-      border-radius: var(--ddd-radius-md, 8px);
       font-size: var(--ddd-font-size-base, 16px);
       background-color: white;
       cursor: pointer;
@@ -98,7 +97,6 @@ export class RegisterPage extends DDDSuper(LitElement) {
     .color-preview {
       width: 40px;
       height: 40px;
-      border-radius: var(--ddd-radius-sm, 4px);
       border: 2px solid #e2e8f0;
       margin-top: var(--ddd-spacing-2, 0.5rem);
       transition: all 0.3s ease;
@@ -116,7 +114,7 @@ export class RegisterPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: var(--ddd-theme-default-white, #ffffff);
       border: none;
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       font-size: var(--ddd-font-size-lg, 1.125rem);
       font-weight: var(--ddd-font-weight-bold, 600);
       cursor: pointer;

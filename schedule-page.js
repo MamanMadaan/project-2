@@ -272,7 +272,7 @@ export class SchedulePage extends HTMLElement {
             <span style="
               background: #e2e8f0;
               padding: 2px 8px;
-              border-radius: 4px;
+              
               font-size: 12px;
               color: #6b7280;
               font-weight: 600;
@@ -295,7 +295,7 @@ export class SchedulePage extends HTMLElement {
         ">
           <span style="
             padding: 4px 12px;
-            border-radius: 12px;
+            
             font-size: 12px;
             font-weight: 600;
             background: ${game.type === 'final' ? '#fef3c7' : game.type === 'playoff' ? '#ddd6fe' : '#e0f2fe'};

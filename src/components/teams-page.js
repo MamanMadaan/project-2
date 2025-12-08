@@ -30,7 +30,7 @@ export class TeamsPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
       color: var(--ddd-theme-default-white, #ffffff);
       border: none;
-      border-radius: var(--ddd-radius-rounded, 20px);
+      
       cursor: pointer;
       font-weight: var(--ddd-font-weight-bold, 600);
       transition: all 0.3s ease;
@@ -70,7 +70,7 @@ export class TeamsPage extends DDDSuper(LitElement) {
 
     .team-card {
       background: var(--ddd-theme-default-white);
-      border-radius: var(--ddd-radius-lg);
+      
       padding: var(--ddd-spacing-8);
       box-shadow: var(--ddd-boxShadow-md);
       transition: all var(--ddd-duration-rapid);
@@ -86,7 +86,7 @@ export class TeamsPage extends DDDSuper(LitElement) {
     .team-logo {
       width: var(--ddd-spacing-20);
       height: var(--ddd-spacing-20);
-      border-radius: var(--ddd-radius-circle);
+      
       margin: 0 auto var(--ddd-spacing-4) auto;
       display: flex;
       align-items: center;
@@ -186,7 +186,7 @@ export class TeamsPage extends DDDSuper(LitElement) {
       width: 120px;
       height: 40px;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       display: flex;
       align-items: center;
       justify-content: center;

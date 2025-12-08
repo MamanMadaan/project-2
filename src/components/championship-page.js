@@ -25,7 +25,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       border: 2px solid #1e3a8a;
       color: #1e3a8a;
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-5, 1.25rem);
-      border-radius: var(--ddd-radius-rounded, 25px);
+      
       cursor: pointer;
       font-size: var(--ddd-font-size-sm, 0.875rem);
       font-weight: var(--ddd-font-weight-bold, 600);
@@ -49,7 +49,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       max-width: 800px;
       margin: 0 auto var(--ddd-spacing-10, 2.5rem) auto;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       padding: var(--ddd-spacing-12, 3rem) var(--ddd-spacing-10, 2.5rem);
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       text-align: center;
@@ -59,7 +59,6 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #f59e0b, #fbbf24);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-5, 1.25rem);
-      border-radius: var(--ddd-radius-rounded, 25px);
       font-size: var(--ddd-font-size-xs, 0.75rem);
       font-weight: var(--ddd-font-weight-bold, 600);
       text-transform: uppercase;
@@ -99,7 +98,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       max-width: 800px;
       margin: 0 auto var(--ddd-spacing-10, 2.5rem) auto;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       padding: var(--ddd-spacing-10, 2.5rem);
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
@@ -116,7 +115,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #f59e0b, #fbbf24);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-8, 2rem);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       text-align: center;
       margin-bottom: var(--ddd-spacing-8, 2rem);
     }
@@ -163,7 +162,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
     .stat-item {
       background: var(--ddd-theme-default-limestoneLight, #f8fafc);
       padding: var(--ddd-spacing-5, 1.25rem);
-      border-radius: var(--ddd-radius-sm, 6px);
+      
       text-align: center;
     }
 
@@ -182,7 +181,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
     .mvp-section {
       background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(59, 130, 246, 0.1));
       padding: var(--ddd-spacing-6, 1.5rem);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       text-align: center;
     }
 
@@ -216,7 +215,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       max-width: 800px;
       margin: 0 auto var(--ddd-spacing-10, 2.5rem) auto;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
@@ -240,7 +239,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       max-width: 800px;
       margin: 0 auto;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       padding: var(--ddd-spacing-10, 2.5rem);
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       line-height: var(--ddd-lh-150, 1.8);
@@ -263,7 +262,6 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #f59e0b, #fbbf24);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-6, 1.5rem);
-      border-radius: var(--ddd-radius-sm, 6px);
       margin: var(--ddd-spacing-8, 2rem) 0;
       font-size: var(--ddd-font-size-lg, 1.125rem);
       font-weight: var(--ddd-font-weight-bold, 600);
@@ -275,7 +273,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       padding: var(--ddd-spacing-6, 1.5rem) var(--ddd-spacing-8, 2rem);
       margin: var(--ddd-spacing-8, 2rem) 0;
       background: var(--ddd-theme-default-limestoneLight, #f8fafc);
-      border-radius: 0 var(--ddd-radius-sm, 6px) var(--ddd-radius-sm, 6px) 0;
+      
       font-style: italic;
       color: var(--ddd-theme-default-coalyGray, #374151);
       font-size: var(--ddd-font-size-lg, 1.125rem);
@@ -294,7 +292,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, #059669, #10b981);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-8, 2rem);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       text-align: center;
       margin-top: var(--ddd-spacing-10, 2.5rem);
     }
@@ -316,7 +314,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       color: #059669;
       border: none;
       padding: var(--ddd-spacing-4, 1rem) var(--ddd-spacing-9, 2.25rem);
-      border-radius: var(--ddd-radius-rounded, 25px);
+      
       font-size: var(--ddd-font-size-base, 1rem);
       font-weight: var(--ddd-font-weight-bold, 600);
       cursor: pointer;
@@ -353,7 +351,7 @@ export class ChampionshipPage extends DDDSuper(LitElement) {
       width: 120px;
       height: 40px;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       display: flex;
       align-items: center;
       justify-content: center;

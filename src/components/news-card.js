@@ -19,17 +19,11 @@ export class NewsCard extends DDDSuper(LitElement) {
 
     .news-card {
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
       transition: all 0.3s ease;
       overflow: hidden;
       cursor: pointer;
-    }
-
-    .news-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
     .news-image {
@@ -58,7 +52,7 @@ export class NewsCard extends DDDSuper(LitElement) {
       background: rgba(0, 0, 0, 0.7);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       font-size: var(--ddd-font-size-xs, 0.75rem);
       font-weight: var(--ddd-font-weight-bold, 600);
       text-transform: uppercase;

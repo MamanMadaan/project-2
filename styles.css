@@ -57,14 +57,6 @@
   --psl-font-size-xxxl: 36px;
   --psl-font-size-hero: 48px;
 
-  /* Border Radius */
-  --psl-radius-sm: 4px;
-  --psl-radius-md: 8px;
-  --psl-radius-lg: 12px;
-  --psl-radius-xl: 15px;
-  --psl-radius-xxl: 20px;
-  --psl-radius-full: 50%;
-
   /* Shadows */
   --psl-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --psl-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -152,7 +144,7 @@
   font-weight: 600;
   font-size: var(--psl-font-size-base);
   padding: var(--psl-spacing-sm) var(--psl-spacing-md);
-  border-radius: var(--psl-radius-md);
+  
   transition: all var(--psl-transition-normal);
 }
 
@@ -167,7 +159,7 @@
   border: 2px solid var(--psl-primary-blue);
   color: var(--psl-primary-blue);
   padding: var(--psl-spacing-sm);
-  border-radius: var(--psl-radius-md);
+  
   cursor: pointer;
   font-size: var(--psl-font-size-lg);
   transition: all var(--psl-transition-normal);
@@ -187,7 +179,6 @@
   background: linear-gradient(135deg, #1e40af, #3b82f6);
   color: white;
   border: none;
-  border-radius: 8px;
   padding: 12px 20px;
   font-size: 14px;
   font-weight: 600;
@@ -217,7 +208,7 @@
   top: 100%;
   left: 0;
   background: white;
-  border-radius: 12px;
+  
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   padding: 8px 0;
   display: none;
@@ -286,7 +277,7 @@
   width: 40px;
   height: 40px;
   background: #e5e7eb;
-  border-radius: 8px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,7 +296,6 @@
   background: linear-gradient(135deg, #10b981, #059669);
   color: white;
   border: none;
-  border-radius: 25px;
   padding: 12px 24px;
   font-size: 14px;
   font-weight: 600;
@@ -374,7 +364,7 @@
 .footer-section__brand-badge {
   background: var(--psl-white);
   padding: var(--psl-spacing-md);
-  border-radius: var(--psl-radius-md);
+  
   box-shadow: var(--psl-shadow-md);
   display: flex;
   align-items: center;
@@ -467,7 +457,7 @@
   color: var(--psl-white);
   padding: var(--psl-spacing-md) var(--psl-spacing-xxl);
   border: none;
-  border-radius: var(--psl-radius-full);
+  
   font-size: var(--psl-font-size-md);
   font-weight: 700;
   cursor: pointer;
@@ -485,7 +475,6 @@
 /* Hero Section Button Components */
 .hero-section__button {
   border: none;
-  border-radius: 30px;
   padding: 14px 28px;
   font-size: 15px;
   font-weight: 700;
@@ -545,7 +534,7 @@
   background-size: cover;
   background-position: center;
   padding: var(--psl-spacing-xxl);
-  border-radius: var(--psl-radius-xl);
+  
   text-align: center;
   font-family: var(--psl-font-family-primary);
   margin: var(--psl-spacing-md);
@@ -581,7 +570,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(30,58,138,0.4), rgba(59,130,246,0.3));
-  border-radius: 13px;
+  
 }
 
 .feature-card__content {
@@ -676,7 +665,6 @@
   margin: 0;
   background: rgba(255, 255, 255, 0.8);
   padding: var(--psl-spacing-xxl);
-  border-radius: var(--psl-radius-lg);
   box-shadow: var(--psl-shadow-md);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -705,7 +693,7 @@
   border: 2px solid var(--psl-primary-blue);
   color: var(--psl-primary-blue);
   padding: var(--psl-spacing-sm) var(--psl-spacing-lg);
-  border-radius: var(--psl-radius-full);
+  
   cursor: pointer;
   font-size: var(--psl-font-size-base);
   font-weight: 600;
@@ -746,7 +734,7 @@
 /* Button Components */
 .btn {
   padding: var(--psl-spacing-lg) var(--psl-spacing-xxl);
-  border-radius: var(--psl-radius-md);
+  
   font-size: var(--psl-font-size-md);
   font-weight: 600;
   cursor: pointer;
@@ -783,7 +771,6 @@
 /* Modern Button Components */
 .button {
   border: none;
-  border-radius: 25px;
   padding: 12px 24px;
   font-size: 14px;
   font-weight: 600;
@@ -850,13 +837,11 @@
 .button--small {
   padding: 8px 20px;
   font-size: 12px;
-  border-radius: 20px;
 }
 
 .button--large {
   padding: 16px 32px;
   font-size: 16px;
-  border-radius: 30px;
 }
 
 .button--back {
@@ -869,7 +854,6 @@
 /* Card Components */
 .card {
   background: var(--psl-white);
-  border-radius: var(--psl-radius-xl);
   box-shadow: var(--psl-shadow-lg);
   overflow: hidden;
   transition: all var(--psl-transition-normal);
@@ -917,7 +901,7 @@
 
 .modal__content {
   background: var(--psl-white);
-  border-radius: var(--psl-radius-xl);
+  
   padding: var(--psl-spacing-xxl);
   max-width: 600px;
   width: 90%;
@@ -941,7 +925,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--psl-radius-full);
+  
   transition: background-color var(--psl-transition-fast);
 }
 
@@ -974,7 +958,7 @@
   width: 100%;
   padding: var(--psl-spacing-lg);
   border: 2px solid var(--psl-gray-200);
-  border-radius: var(--psl-radius-md);
+  
   font-size: var(--psl-font-size-md);
   transition: border-color var(--psl-transition-normal);
   box-sizing: border-box;

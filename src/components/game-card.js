@@ -21,16 +21,10 @@ export class GameCard extends DDDSuper(LitElement) {
 
     .game-card {
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
       padding: var(--ddd-spacing-6, 2rem);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
       transition: all 0.3s ease;
-    }
-
-    .game-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
 
     .game-header {
@@ -50,7 +44,7 @@ export class GameCard extends DDDSuper(LitElement) {
       background: var(--ddd-theme-default-skyBlue, #3b82f6);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       font-size: var(--ddd-font-size-sm, 0.875rem);
       font-weight: var(--ddd-font-weight-medium, 500);
     }
@@ -62,7 +56,7 @@ export class GameCard extends DDDSuper(LitElement) {
       margin: var(--ddd-spacing-4, 1rem) 0;
       padding: var(--ddd-spacing-5, 1.5rem) var(--ddd-spacing-4, 1rem);
       background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      border-radius: var(--ddd-radius-md, 8px);
+      
     }
 
     .team {
@@ -75,7 +69,7 @@ export class GameCard extends DDDSuper(LitElement) {
       background: linear-gradient(135deg, var(--ddd-theme-default-skyBlue, #3b82f6) 0%, var(--ddd-theme-default-navy, #1e40af) 100%);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-3, 0.75rem);
-      border-radius: 50%;
+      
       font-size: var(--ddd-font-size-xs, 0.75rem);
       font-weight: var(--ddd-font-weight-bold, 700);
       letter-spacing: 1px;
@@ -93,7 +87,7 @@ export class GameCard extends DDDSuper(LitElement) {
       background: var(--ddd-theme-default-skyBlue, #3b82f6);
       color: var(--ddd-theme-default-white, #ffffff);
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       font-size: var(--ddd-font-size-lg, 1.125rem);
       font-weight: var(--ddd-font-weight-bold, 600);
     }
@@ -112,7 +106,7 @@ export class GameCard extends DDDSuper(LitElement) {
     .status-badge {
       display: inline-block;
       padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       font-size: var(--ddd-font-size-xs, 0.75rem);
       font-weight: var(--ddd-font-weight-medium, 500);
       text-transform: uppercase;

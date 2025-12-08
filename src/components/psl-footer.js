@@ -85,7 +85,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       text-decoration: none;
       transition: all 0.3s ease;
       padding: var(--ddd-spacing-1, 0.25rem) 0;
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       position: relative;
       font-weight: var(--ddd-font-weight-medium, 500);
     }
@@ -120,7 +120,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       width: 48px;
       height: 48px;
       background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       display: flex;
       align-items: center;
       justify-content: center;
@@ -143,7 +143,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       height: 80px;
       margin: 0 0 var(--ddd-spacing-5, 1.5rem) 0;
       background: linear-gradient(135deg, var(--ddd-theme-default-white, #ffffff), var(--ddd-theme-default-slateLight, #e2e8f0));
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       display: flex;
       align-items: center;
       justify-content: center;
@@ -157,7 +157,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       position: absolute;
       inset: 2px;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-md, 8px);
+      
     }
 
     .logo-footer img {
@@ -169,17 +169,18 @@ export class PslFooter extends DDDSuper(LitElement) {
     }
 
     .league-title {
-      font-size: var(--ddd-font-size-2xl, 1.75rem);
+      font-size: var(--ddd-font-size-xl, 1.25rem);
       font-weight: var(--ddd-font-weight-bold, 700);
       color: var(--ddd-theme-default-white, #ffffff);
       margin: 0 0 var(--ddd-spacing-3, 0.75rem) 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      line-height: 1.3;
     }
 
     .league-description {
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
-      font-size: var(--ddd-font-size-sm, 0.875rem);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+      font-size: var(--ddd-font-size-base, 1rem);
       margin: 0;
     }
 
@@ -211,7 +212,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       color: rgba(255, 255, 255, 0.6);
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
       background: rgba(255, 255, 255, 0.05);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -220,7 +221,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       width: 36px;
       height: 36px;
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       display: flex;
       align-items: center;
       justify-content: center;
@@ -280,7 +281,7 @@ export class PslFooter extends DDDSuper(LitElement) {
         <div class="footer-content">
           <div class="footer-section logo-section">
             <div class="logo-footer">
-              <img src="./src/assets/psl-logo.svg" alt="PSL Logo" />
+              <img src="${new URL('./assets/psl-logo.svg', import.meta.url).href}" alt="PSL Logo" />
             </div>
             <h2 class="league-title">Penn State Soccer League</h2>
             <p class="league-description">Experience competitive soccer excellence at Penn State University. Building community through sport and fostering lifelong friendships on and off the field.</p>
@@ -329,7 +330,7 @@ export class PslFooter extends DDDSuper(LitElement) {
             <div class="powered-by">
               <span>Powered by</span>
               <div class="powered-logo">
-                <img src="./src/assets/back-seat-bros-logo.svg" alt="Back Seat Bros" />
+                <img src="${new URL('./assets/back-seat-bros-logo.svg', import.meta.url).href}" alt="Back Seat Bros" />
               </div>
             </div>
           </div>

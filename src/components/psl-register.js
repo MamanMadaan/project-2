@@ -55,7 +55,7 @@ export class PslRegister extends DDDSuper(LitElement) {
 
       .form-container {
         background: var(--ddd-theme-default-white, #fff);
-        border-radius: var(--ddd-radius-lg, 12px);
+        
         padding: var(--ddd-spacing-8, 3rem);
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
         border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
@@ -91,11 +91,34 @@ export class PslRegister extends DDDSuper(LitElement) {
       .form-textarea {
         padding: var(--ddd-spacing-3, 0.75rem);
         border: 2px solid var(--ddd-theme-default-slateLight, #e2e8f0);
-        border-radius: var(--ddd-radius-md, 8px);
+        
         font-size: var(--ddd-font-size-base, 1rem);
         color: var(--ddd-theme-default-coalyGray, #333);
+        background: var(--ddd-theme-default-white, #ffffff);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         font-family: var(--ddd-font-primary);
+      }
+
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: var(--ddd-theme-default-slateMaxLight, #666);
+        opacity: 1;
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .form-input,
+        .form-select,
+        .form-textarea {
+          background: var(--ddd-theme-default-white, #ffffff);
+          color: var(--ddd-theme-default-coalyGray, #333);
+          border-color: var(--ddd-theme-default-slateLight, #e2e8f0);
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+          color: var(--ddd-theme-default-slateMaxLight, #666);
+        }
       }
 
       .form-input:focus,

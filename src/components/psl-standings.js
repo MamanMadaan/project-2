@@ -65,7 +65,7 @@ export class PslStandings extends DDDSuper(LitElement) {
         padding: var(--ddd-spacing-3, 0.75rem) var(--ddd-spacing-6, 2rem);
         background: var(--ddd-theme-default-white, #fff);
         border: 2px solid var(--ddd-theme-default-slateLight, #e2e8f0);
-        border-radius: var(--ddd-radius-md, 8px);
+        
         font-size: var(--ddd-font-size-sm, 0.875rem);
         font-weight: var(--ddd-font-weight-medium, 500);
         color: var(--ddd-theme-default-coalyGray, #333);
@@ -86,7 +86,7 @@ export class PslStandings extends DDDSuper(LitElement) {
 
       .standings-table {
         background: var(--ddd-theme-default-white, #fff);
-        border-radius: var(--ddd-radius-lg, 12px);
+        
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
         border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
         overflow: hidden;
@@ -171,7 +171,7 @@ export class PslStandings extends DDDSuper(LitElement) {
         display: inline-block;
         width: 20px;
         height: 20px;
-        border-radius: 50%;
+        
         margin: 0 1px;
         color: var(--ddd-theme-default-white, #fff);
         font-size: var(--ddd-font-size-xs, 0.75rem);

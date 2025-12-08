@@ -21,7 +21,7 @@ export class RegisterPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -45,7 +45,7 @@ export class RegisterPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto;
           background: white;
-          border-radius: 20px;
+          
           box-shadow: 0 10px 30px rgba(0,0,0,0.1);
           overflow: hidden;
         ">
@@ -105,7 +105,7 @@ export class RegisterPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -123,7 +123,7 @@ export class RegisterPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -142,7 +142,7 @@ export class RegisterPage extends HTMLElement {
                     width: 100%;
                     padding: 12px 15px;
                     border: 2px solid #e2e8f0;
-                    border-radius: 8px;
+                    
                     font-size: 16px;
                     transition: border-color 0.3s ease;
                     box-sizing: border-box;
@@ -160,7 +160,7 @@ export class RegisterPage extends HTMLElement {
                     width: 100%;
                     padding: 12px 15px;
                     border: 2px solid #e2e8f0;
-                    border-radius: 8px;
+                    
                     font-size: 16px;
                     transition: border-color 0.3s ease;
                     box-sizing: border-box;
@@ -195,7 +195,7 @@ export class RegisterPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -213,7 +213,7 @@ export class RegisterPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -240,7 +240,7 @@ export class RegisterPage extends HTMLElement {
                     width: 100%;
                     padding: 12px 15px;
                     border: 2px solid #e2e8f0;
-                    border-radius: 8px;
+                    
                     font-size: 16px;
                     transition: border-color 0.3s ease;
                     box-sizing: border-box;
@@ -269,7 +269,7 @@ export class RegisterPage extends HTMLElement {
                     width: 100%;
                     padding: 12px 15px;
                     border: 2px solid #e2e8f0;
-                    border-radius: 8px;
+                    
                     font-size: 16px;
                     transition: border-color 0.3s ease;
                     box-sizing: border-box;
@@ -294,7 +294,7 @@ export class RegisterPage extends HTMLElement {
                     width: 100%;
                     padding: 12px 15px;
                     border: 2px solid #e2e8f0;
-                    border-radius: 8px;
+                    
                     font-size: 16px;
                     transition: border-color 0.3s ease;
                     box-sizing: border-box;
@@ -314,7 +314,7 @@ export class RegisterPage extends HTMLElement {
               <div style="
                 padding: 20px;
                 background: #f8fafc;
-                border-radius: 10px;
+                
                 border-left: 4px solid #3b82f6;
               ">
                 <label style="
@@ -343,7 +343,7 @@ export class RegisterPage extends HTMLElement {
                 color: white;
                 border: none;
                 padding: 16px 32px;
-                border-radius: 50px;
+                
                 font-size: 18px;
                 font-weight: 700;
                 cursor: pointer;
@@ -406,14 +406,14 @@ export class RegisterPage extends HTMLElement {
           text-align: center;
           background: white;
           padding: 60px 40px;
-          border-radius: 20px;
+          
           box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         ">
           <div style="
             width: 80px;
             height: 80px;
             background: linear-gradient(135deg, #10b981, #34d399);
-            border-radius: 50%;
+            
             margin: 0 auto 30px auto;
             display: flex;
             align-items: center;
@@ -444,7 +444,7 @@ export class RegisterPage extends HTMLElement {
             color: white;
             border: none;
             padding: 12px 30px;
-            border-radius: 50px;
+            
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;

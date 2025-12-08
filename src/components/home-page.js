@@ -86,7 +86,6 @@ export class HomePage extends DDDSuper(LitElement) {
     .btn {
       padding: var(--ddd-spacing-3) var(--ddd-spacing-6);
       border: none;
-      border-radius: var(--ddd-radius-rounded);
       font-size: var(--ddd-font-size-base);
       font-weight: var(--ddd-font-weight-bold);
       cursor: pointer;
@@ -179,7 +178,6 @@ export class HomePage extends DDDSuper(LitElement) {
       font-weight: var(--ddd-font-weight-medium, 500);
       transition: all 0.3s ease;
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
       border: 2px solid transparent;
       background: transparent;
       cursor: pointer;
@@ -216,7 +214,7 @@ export class HomePage extends DDDSuper(LitElement) {
       width: 120px;
       height: 40px;
       background: rgba(255, 255, 255, 0.9);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       display: flex;
       align-items: center;
       justify-content: center;

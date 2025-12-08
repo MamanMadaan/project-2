@@ -19,7 +19,7 @@ export class PslButton extends DDDSuper(LitElement) {
       font-family: var(--ddd-font-primary);
       font-size: var(--ddd-font-size-base, 1rem);
       font-weight: var(--ddd-font-weight-medium, 500);
-      border-radius: var(--ddd-radius-md, 8px);
+      
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;

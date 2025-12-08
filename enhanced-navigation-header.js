@@ -87,7 +87,7 @@ export class EnhancedNavigationHeader extends HTMLElement {
               color: white;
               border: none;
               padding: 12px 20px;
-              border-radius: 5px;
+              
               font-size: 18px;
               cursor: pointer;
               display: flex;
@@ -105,7 +105,7 @@ export class EnhancedNavigationHeader extends HTMLElement {
               left: 0;
               background: white;
               border: 2px solid #1e3a8a;
-              border-radius: 5px;
+              
               min-width: 200px;
               z-index: 1000;
               display: none;
@@ -134,7 +134,7 @@ export class EnhancedNavigationHeader extends HTMLElement {
             color: white;
             border: none;
             padding: 12px 24px;
-            border-radius: 5px;
+            
             font-size: 16px;
             cursor: pointer;
           ">Register</button>

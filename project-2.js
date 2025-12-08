@@ -1,4 +1,4 @@
-﻿// Import all component files
+// Import all component files
 import './contact-bar.js';
 import './navigation-header.js';
 import './hero-section.js';

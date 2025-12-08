@@ -20,7 +20,6 @@ export class PlayerCard extends DDDSuper(LitElement) {
 
     .player-card {
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
       padding: var(--ddd-spacing-6, 2rem);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
@@ -30,15 +29,10 @@ export class PlayerCard extends DDDSuper(LitElement) {
       overflow: hidden;
     }
 
-    .player-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
     .player-photo {
       width: 80px;
       height: 80px;
-      border-radius: 50%;
+      
       background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
       margin: 0 auto var(--ddd-spacing-4, 1rem);
       display: flex;
@@ -65,7 +59,7 @@ export class PlayerCard extends DDDSuper(LitElement) {
       height: 40px;
       background: var(--ddd-theme-default-skyBlue, #3b82f6);
       color: var(--ddd-theme-default-white, #ffffff);
-      border-radius: 50%;
+      
       display: flex;
       align-items: center;
       justify-content: center;
@@ -100,7 +94,7 @@ export class PlayerCard extends DDDSuper(LitElement) {
       margin-top: var(--ddd-spacing-4, 1rem);
       padding: var(--ddd-spacing-4, 1rem);
       background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      border-radius: var(--ddd-radius-md, 8px);
+      
     }
 
     .stat {

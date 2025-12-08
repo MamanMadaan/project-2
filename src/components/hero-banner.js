@@ -20,7 +20,7 @@ export class HeroBanner extends DDDSuper(LitElement) {
       position: relative;
       height: 500px;
       background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -82,7 +82,6 @@ export class HeroBanner extends DDDSuper(LitElement) {
       background: var(--ddd-theme-default-white, #ffffff);
       color: var(--ddd-theme-default-skyBlue, #3b82f6);
       padding: var(--ddd-spacing-4, 1rem) var(--ddd-spacing-8, 3rem);
-      border-radius: var(--ddd-radius-md, 8px);
       border: none;
       font-size: var(--ddd-font-size-lg, 1.125rem);
       font-weight: var(--ddd-font-weight-bold, 600);

@@ -79,7 +79,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
       .filter-select {
         padding: var(--ddd-spacing-3, 0.75rem);
         border: 2px solid var(--ddd-theme-default-slateLight, #e2e8f0);
-        border-radius: var(--ddd-radius-md, 8px);
+        
         font-size: var(--ddd-font-size-sm, 0.875rem);
         color: var(--ddd-theme-default-coalyGray, #333);
         font-family: var(--ddd-font-primary);
@@ -93,7 +93,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
 
       .week-section {
         background: var(--ddd-theme-default-white, #fff);
-        border-radius: var(--ddd-radius-lg, 12px);
+        
         border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
         overflow: hidden;
@@ -122,18 +122,12 @@ export class PslSchedule extends DDDSuper(LitElement) {
         align-items: center;
         padding: var(--ddd-spacing-4, 1rem);
         border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
-        border-radius: var(--ddd-radius-md, 8px);
         margin-bottom: var(--ddd-spacing-3, 0.75rem);
         transition: all 0.3s ease;
       }
 
       .game-card:last-child {
         margin-bottom: 0;
-      }
-
-      .game-card:hover {
-        box-shadow: var(--ddd-boxShadow-2, 0 4px 8px rgba(0,0,0,0.1));
-        transform: translateY(-1px);
       }
 
       .team {
@@ -185,7 +179,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
         text-align: center;
         background: var(--ddd-theme-default-slateLight, #e2e8f0);
         padding: var(--ddd-spacing-2, 0.5rem);
-        border-radius: var(--ddd-radius-sm, 4px);
+        
       }
 
       .completed .game-card {
@@ -201,7 +195,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
         font-size: var(--ddd-font-size-2xs, 0.625rem);
         font-weight: var(--ddd-font-weight-bold, 700);
         padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-2, 0.5rem);
-        border-radius: var(--ddd-radius-xs, 3px);
+        
         text-transform: uppercase;
         letter-spacing: 0.25px;
         box-shadow: var(--ddd-boxShadow-1, 0 1px 3px rgba(0,0,0,0.1));

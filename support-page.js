@@ -100,7 +100,7 @@ export class SupportPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -125,7 +125,7 @@ export class SupportPage extends HTMLElement {
           margin: 0 auto 60px auto;
           text-align: center;
           background: white;
-          border-radius: 20px;
+          
           padding: 60px 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
@@ -160,7 +160,7 @@ export class SupportPage extends HTMLElement {
               background: linear-gradient(135deg, #1e3a8a, #3b82f6);
               color: white;
               padding: 30px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 36px; font-weight: 900; margin-bottom: 8px;">50+</div>
@@ -170,7 +170,7 @@ export class SupportPage extends HTMLElement {
               background: linear-gradient(135deg, #059669, #10b981);
               color: white;
               padding: 30px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 36px; font-weight: 900; margin-bottom: 8px;">$25K</div>
@@ -180,7 +180,7 @@ export class SupportPage extends HTMLElement {
               background: linear-gradient(135deg, #f59e0b, #fbbf24);
               color: white;
               padding: 30px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 36px; font-weight: 900; margin-bottom: 8px;">100%</div>
@@ -238,7 +238,7 @@ export class SupportPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 50px 40px;
           text-align: center;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -270,7 +270,7 @@ export class SupportPage extends HTMLElement {
               color: white;
               border: none;
               padding: 15px 35px;
-              border-radius: 50px;
+              
               font-size: 16px;
               font-weight: 600;
               cursor: pointer;
@@ -292,7 +292,7 @@ export class SupportPage extends HTMLElement {
               color: #1e3a8a;
               border: 2px solid #1e3a8a;
               padding: 15px 35px;
-              border-radius: 50px;
+              
               font-size: 16px;
               font-weight: 600;
               cursor: pointer;
@@ -320,7 +320,7 @@ export class SupportPage extends HTMLElement {
     return `
       <div style="
         background: white;
-        border-radius: 15px;
+        
         padding: 30px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
@@ -372,7 +372,7 @@ export class SupportPage extends HTMLElement {
                 background: ${tier.color};
                 width: 6px;
                 height: 6px;
-                border-radius: 50%;
+                
                 margin-top: 8px;
                 flex-shrink: 0;
               "></span>
@@ -387,7 +387,7 @@ export class SupportPage extends HTMLElement {
           color: white;
           border: none;
           padding: 12px 25px;
-          border-radius: 25px;
+          
           font-size: 14px;
           font-weight: 600;
           cursor: pointer;
@@ -411,7 +411,7 @@ export class SupportPage extends HTMLElement {
     return `
       <div style="
         background: white;
-        border-radius: 15px;
+        
         padding: 35px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
@@ -443,7 +443,7 @@ export class SupportPage extends HTMLElement {
         <div style="
           background: #f8fafc;
           padding: 20px;
-          border-radius: 10px;
+          
           margin-bottom: 20px;
         ">
           <div style="
@@ -459,7 +459,7 @@ export class SupportPage extends HTMLElement {
         <div style="
           background: linear-gradient(135deg, #1e3a8a15, #3b82f615);
           padding: 15px 20px;
-          border-radius: 10px;
+          
           display: flex;
           justify-content: space-between;
           align-items: center;

@@ -103,7 +103,7 @@ export class ChampionshipPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -127,7 +127,7 @@ export class ChampionshipPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto 40px auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 50px 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
           text-align: center;
@@ -137,7 +137,7 @@ export class ChampionshipPage extends HTMLElement {
             background: linear-gradient(135deg, #f59e0b, #fbbf24);
             color: white;
             padding: 8px 20px;
-            border-radius: 25px;
+            
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
@@ -186,7 +186,7 @@ export class ChampionshipPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto 40px auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
@@ -203,7 +203,7 @@ export class ChampionshipPage extends HTMLElement {
             background: linear-gradient(135deg, #f59e0b, #fbbf24);
             color: white;
             padding: 30px;
-            border-radius: 15px;
+            
             text-align: center;
             margin-bottom: 30px;
           ">
@@ -243,7 +243,7 @@ export class ChampionshipPage extends HTMLElement {
             <div style="
               background: #f8fafc;
               padding: 20px;
-              border-radius: 10px;
+              
               text-align: center;
             ">
               <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">VENUE</div>
@@ -253,7 +253,7 @@ export class ChampionshipPage extends HTMLElement {
             <div style="
               background: #f8fafc;
               padding: 20px;
-              border-radius: 10px;
+              
               text-align: center;
             ">
               <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">ATTENDANCE</div>
@@ -263,7 +263,7 @@ export class ChampionshipPage extends HTMLElement {
             <div style="
               background: #f8fafc;
               padding: 20px;
-              border-radius: 10px;
+              
               text-align: center;
             ">
               <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">WEATHER</div>
@@ -273,7 +273,7 @@ export class ChampionshipPage extends HTMLElement {
             <div style="
               background: #f8fafc;
               padding: 20px;
-              border-radius: 10px;
+              
               text-align: center;
             ">
               <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">DURATION</div>
@@ -285,7 +285,7 @@ export class ChampionshipPage extends HTMLElement {
           <div style="
             background: linear-gradient(135deg, #1e3a8a15, #3b82f615);
             padding: 25px;
-            border-radius: 15px;
+            
             text-align: center;
           ">
             <h3 style="
@@ -318,7 +318,7 @@ export class ChampionshipPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto 40px auto;
           background: white;
-          border-radius: 20px;
+          
           overflow: hidden;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
@@ -341,7 +341,7 @@ export class ChampionshipPage extends HTMLElement {
           max-width: 800px;
           margin: 0 auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 40px;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
           line-height: 1.8;
@@ -353,7 +353,7 @@ export class ChampionshipPage extends HTMLElement {
             background: linear-gradient(135deg, #059669, #10b981);
             color: white;
             padding: 30px;
-            border-radius: 15px;
+            
             text-align: center;
             margin-top: 40px;
           ">
@@ -374,7 +374,7 @@ export class ChampionshipPage extends HTMLElement {
               color: #059669;
               border: none;
               padding: 15px 35px;
-              border-radius: 50px;
+              
               font-size: 16px;
               font-weight: 600;
               cursor: pointer;
@@ -425,7 +425,7 @@ export class ChampionshipPage extends HTMLElement {
             background: linear-gradient(135deg, #f59e0b, #fbbf24);
             color: white;
             padding: 25px;
-            border-radius: 10px;
+            
             margin: 30px 0;
             font-size: 18px;
             font-weight: 600;
@@ -440,7 +440,7 @@ export class ChampionshipPage extends HTMLElement {
             padding: 25px 30px;
             margin: 30px 0;
             background: #f8fafc;
-            border-radius: 0 10px 10px 0;
+            
             font-style: italic;
             color: #374151;
             font-size: 18px;

@@ -21,7 +21,7 @@ export class ContactPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -53,7 +53,7 @@ export class ContactPage extends HTMLElement {
           <!-- Left Column: Contact Information -->
           <div style="
             background: white;
-            border-radius: 20px;
+            
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
           ">
@@ -94,7 +94,7 @@ export class ContactPage extends HTMLElement {
                 <div style="
                   background: #f8fafc;
                   padding: 15px;
-                  border-radius: 10px;
+                  
                   border-left: 4px solid #3b82f6;
                 ">
                   <p style="margin: 0 0 8px 0; color: #374151;"><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
@@ -124,7 +124,7 @@ export class ContactPage extends HTMLElement {
                   <div style="
                     padding: 15px;
                     background: #f8fafc;
-                    border-radius: 10px;
+                    
                     display: flex;
                     align-items: center;
                     gap: 15px;
@@ -133,7 +133,7 @@ export class ContactPage extends HTMLElement {
                       width: 40px;
                       height: 40px;
                       background: #3b82f6;
-                      border-radius: 50%;
+                      
                       display: flex;
                       align-items: center;
                       justify-content: center;
@@ -149,7 +149,7 @@ export class ContactPage extends HTMLElement {
                   <div style="
                     padding: 15px;
                     background: #f8fafc;
-                    border-radius: 10px;
+                    
                     display: flex;
                     align-items: center;
                     gap: 15px;
@@ -158,7 +158,7 @@ export class ContactPage extends HTMLElement {
                       width: 40px;
                       height: 40px;
                       background: #3b82f6;
-                      border-radius: 50%;
+                      
                       display: flex;
                       align-items: center;
                       justify-content: center;
@@ -174,7 +174,7 @@ export class ContactPage extends HTMLElement {
                   <div style="
                     padding: 15px;
                     background: #f8fafc;
-                    border-radius: 10px;
+                    
                     display: flex;
                     align-items: center;
                     gap: 15px;
@@ -183,7 +183,7 @@ export class ContactPage extends HTMLElement {
                       width: 40px;
                       height: 40px;
                       background: #3b82f6;
-                      border-radius: 50%;
+                      
                       display: flex;
                       align-items: center;
                       justify-content: center;
@@ -213,7 +213,7 @@ export class ContactPage extends HTMLElement {
                 <div style="
                   background: #f8fafc;
                   padding: 15px;
-                  border-radius: 10px;
+                  
                   border-left: 4px solid #3b82f6;
                 ">
                   <p style="margin: 0; color: #374151;">Penn State University</p>
@@ -229,7 +229,7 @@ export class ContactPage extends HTMLElement {
             <!-- Contact Form -->
             <div style="
               background: white;
-              border-radius: 20px;
+              
               box-shadow: 0 10px 30px rgba(0,0,0,0.1);
               overflow: hidden;
               margin-bottom: 30px;
@@ -264,7 +264,7 @@ export class ContactPage extends HTMLElement {
                         width: 100%;
                         padding: 12px 15px;
                         border: 2px solid #e2e8f0;
-                        border-radius: 8px;
+                        
                         font-size: 16px;
                         transition: border-color 0.3s ease;
                         box-sizing: border-box;
@@ -282,7 +282,7 @@ export class ContactPage extends HTMLElement {
                         width: 100%;
                         padding: 12px 15px;
                         border: 2px solid #e2e8f0;
-                        border-radius: 8px;
+                        
                         font-size: 16px;
                         transition: border-color 0.3s ease;
                         box-sizing: border-box;
@@ -301,7 +301,7 @@ export class ContactPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -319,7 +319,7 @@ export class ContactPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -345,7 +345,7 @@ export class ContactPage extends HTMLElement {
                       width: 100%;
                       padding: 12px 15px;
                       border: 2px solid #e2e8f0;
-                      border-radius: 8px;
+                      
                       font-size: 16px;
                       transition: border-color 0.3s ease;
                       box-sizing: border-box;
@@ -359,7 +359,7 @@ export class ContactPage extends HTMLElement {
                     color: white;
                     border: none;
                     padding: 15px 30px;
-                    border-radius: 50px;
+                    
                     font-size: 16px;
                     font-weight: 700;
                     cursor: pointer;
@@ -384,7 +384,7 @@ export class ContactPage extends HTMLElement {
             <!-- FAQ Section -->
             <div style="
               background: white;
-              border-radius: 20px;
+              
               box-shadow: 0 10px 30px rgba(0,0,0,0.1);
               overflow: hidden;
             ">
@@ -408,7 +408,7 @@ export class ContactPage extends HTMLElement {
                   
                   <div class="faq-item" style="
                     border: 2px solid #e2e8f0;
-                    border-radius: 10px;
+                    
                     overflow: hidden;
                     transition: all 0.3s ease;
                   ">
@@ -442,7 +442,7 @@ export class ContactPage extends HTMLElement {
 
                   <div class="faq-item" style="
                     border: 2px solid #e2e8f0;
-                    border-radius: 10px;
+                    
                     overflow: hidden;
                     transition: all 0.3s ease;
                   ">
@@ -476,7 +476,7 @@ export class ContactPage extends HTMLElement {
 
                   <div class="faq-item" style="
                     border: 2px solid #e2e8f0;
-                    border-radius: 10px;
+                    
                     overflow: hidden;
                     transition: all 0.3s ease;
                   ">
@@ -510,7 +510,7 @@ export class ContactPage extends HTMLElement {
 
                   <div class="faq-item" style="
                     border: 2px solid #e2e8f0;
-                    border-radius: 10px;
+                    
                     overflow: hidden;
                     transition: all 0.3s ease;
                   ">
@@ -614,7 +614,7 @@ export class ContactPage extends HTMLElement {
       <div style="
         background: white;
         padding: 40px;
-        border-radius: 20px;
+        
         text-align: center;
         max-width: 400px;
         margin: 20px;
@@ -624,7 +624,7 @@ export class ContactPage extends HTMLElement {
           width: 60px;
           height: 60px;
           background: linear-gradient(135deg, #10b981, #34d399);
-          border-radius: 50%;
+          
           margin: 0 auto 20px auto;
           display: flex;
           align-items: center;
@@ -649,7 +649,7 @@ export class ContactPage extends HTMLElement {
           color: white;
           border: none;
           padding: 10px 25px;
-          border-radius: 50px;
+          
           font-weight: 600;
           cursor: pointer;
         ">Close</button>

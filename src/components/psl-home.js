@@ -70,7 +70,7 @@ export class PslHome extends DDDSuper(LitElement) {
       .news-section {
         background: var(--ddd-theme-default-white, #fff);
         padding: var(--ddd-spacing-6, 2rem);
-        border-radius: var(--ddd-radius-lg, 12px);
+        
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
         margin-bottom: var(--ddd-spacing-6, 2rem);
       }
@@ -79,7 +79,7 @@ export class PslHome extends DDDSuper(LitElement) {
         text-align: center;
         background: var(--ddd-theme-default-white, #fff);
         padding: var(--ddd-spacing-8, 3rem);
-        border-radius: var(--ddd-radius-lg, 12px);
+        
         box-shadow: var(--ddd-boxShadow-1, 0 2px 4px rgba(0,0,0,0.1));
       }
 

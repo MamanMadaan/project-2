@@ -48,7 +48,7 @@ export class NavigationHeader extends DDDSuper(LitElement) {
     .logo {
       width: 40px;
       height: 40px;
-      border-radius: 50%;
+      
       background: var(--ddd-theme-default-white, #ffffff);
       padding: 4px;
     }
@@ -80,7 +80,7 @@ export class NavigationHeader extends DDDSuper(LitElement) {
       font-weight: var(--ddd-font-weight-medium, 500);
       font-size: var(--ddd-font-size-sm, 0.875rem);
       padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       transition: all 0.3s ease;
       position: relative;
       cursor: pointer;
@@ -107,7 +107,7 @@ export class NavigationHeader extends DDDSuper(LitElement) {
       width: 20px;
       height: 2px;
       background: #fbbf24;
-      border-radius: 1px;
+      
     }
 
     .mobile-menu-button {
@@ -118,7 +118,7 @@ export class NavigationHeader extends DDDSuper(LitElement) {
       font-size: 1.5rem;
       cursor: pointer;
       padding: var(--ddd-spacing-2, 0.5rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       transition: background 0.3s ease;
     }
 
@@ -148,7 +148,7 @@ export class NavigationHeader extends DDDSuper(LitElement) {
       text-decoration: none;
       font-weight: var(--ddd-font-weight-medium, 500);
       padding: var(--ddd-spacing-3, 0.75rem);
-      border-radius: var(--ddd-radius-sm, 4px);
+      
       transition: all 0.3s ease;
       cursor: pointer;
     }

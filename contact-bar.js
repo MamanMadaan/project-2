@@ -30,7 +30,7 @@ export class ContactBar extends HTMLElement {
             <div style="
               background: var(--psl-primary-blue);
               color: white;
-              border-radius: 50%;
+              
               width: 60px;
               height: 60px;
               display: flex;

@@ -56,7 +56,7 @@ export class NewCoachPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -80,7 +80,7 @@ export class NewCoachPage extends HTMLElement {
           max-width: 1000px;
           margin: 0 auto 50px auto;
           background: white;
-          border-radius: 20px;
+          
           overflow: hidden;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         ">
@@ -111,7 +111,7 @@ export class NewCoachPage extends HTMLElement {
                 width: 150px;
                 height: 150px;
                 background: rgba(255,255,255,0.2);
-                border-radius: 50%;
+                
                 margin: 0 auto 25px auto;
                 display: flex;
                 align-items: center;
@@ -137,7 +137,7 @@ export class NewCoachPage extends HTMLElement {
               <div style="
                 background: rgba(255,255,255,0.2);
                 padding: 8px 20px;
-                border-radius: 25px;
+                
                 display: inline-block;
                 font-size: 14px;
                 font-weight: 600;
@@ -163,7 +163,7 @@ export class NewCoachPage extends HTMLElement {
             <!-- About Section -->
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 35px;
               box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             ">
@@ -189,7 +189,7 @@ export class NewCoachPage extends HTMLElement {
               <div style="
                 background: #f8fafc;
                 padding: 25px;
-                border-radius: 10px;
+                
                 margin-bottom: 25px;
               ">
                 <h3 style="
@@ -220,7 +220,7 @@ export class NewCoachPage extends HTMLElement {
                 border-left: 4px solid #1e3a8a;
                 padding: 20px 25px;
                 background: #f8fafc;
-                border-radius: 0 10px 10px 0;
+                
               ">
                 <h3 style="
                   color: #1e3a8a;
@@ -240,7 +240,7 @@ export class NewCoachPage extends HTMLElement {
             <!-- Goals & Vision -->
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 35px;
               box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             ">
@@ -264,7 +264,7 @@ export class NewCoachPage extends HTMLElement {
                   <div style="
                     background: #f8fafc;
                     padding: 20px;
-                    border-radius: 10px;
+                    
                     border-left: 4px solid #059669;
                     transition: all 0.3s ease;
                   " onmouseover="
@@ -285,7 +285,7 @@ export class NewCoachPage extends HTMLElement {
                         color: white;
                         width: 20px;
                         height: 20px;
-                        border-radius: 50%;
+                        
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -308,7 +308,7 @@ export class NewCoachPage extends HTMLElement {
             <!-- Certifications -->
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 30px;
               box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             ">
@@ -324,7 +324,7 @@ export class NewCoachPage extends HTMLElement {
                   <div style="
                     background: #f8fafc;
                     padding: 15px;
-                    border-radius: 8px;
+                    
                     color: #374151;
                     font-weight: 600;
                     border-left: 3px solid #3b82f6;
@@ -336,7 +336,7 @@ export class NewCoachPage extends HTMLElement {
             <!-- Experience Highlights -->
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 30px;
               box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             ">
@@ -361,7 +361,7 @@ export class NewCoachPage extends HTMLElement {
                       background: #059669;
                       width: 6px;
                       height: 6px;
-                      border-radius: 50%;
+                      
                       flex-shrink: 0;
                     "></span>
                     ${highlight}
@@ -373,7 +373,7 @@ export class NewCoachPage extends HTMLElement {
             <!-- Personal Info -->
             <div style="
               background: white;
-              border-radius: 15px;
+              
               padding: 30px;
               box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             ">
@@ -403,7 +403,7 @@ export class NewCoachPage extends HTMLElement {
                         background: #e5e7eb;
                         color: #374151;
                         padding: 4px 12px;
-                        border-radius: 12px;
+                        
                         font-size: 12px;
                         font-weight: 600;
                       ">${hobby}</span>
@@ -425,7 +425,7 @@ export class NewCoachPage extends HTMLElement {
           max-width: 1000px;
           margin: 50px auto 0 auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 40px;
           text-align: center;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -455,7 +455,7 @@ export class NewCoachPage extends HTMLElement {
             color: white;
             border: none;
             padding: 15px 35px;
-            border-radius: 50px;
+            
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
@@ -478,7 +478,7 @@ export class NewCoachPage extends HTMLElement {
             color: #1e3a8a;
             border: 2px solid #1e3a8a;
             padding: 15px 35px;
-            border-radius: 50px;
+            
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;

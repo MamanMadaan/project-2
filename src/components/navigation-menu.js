@@ -15,7 +15,7 @@ export class NavigationMenu extends DDDSuper(LitElement) {
 
     .nav-menu {
       background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: var(--ddd-radius-lg, 12px);
+      
       padding: var(--ddd-spacing-4, 1rem);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);
@@ -42,7 +42,7 @@ export class NavigationMenu extends DDDSuper(LitElement) {
       padding: var(--ddd-spacing-3, 0.75rem) var(--ddd-spacing-4, 1rem);
       color: var(--ddd-theme-default-coalyGray, #333333);
       text-decoration: none;
-      border-radius: var(--ddd-radius-md, 8px);
+      
       transition: all 0.3s ease;
       font-weight: var(--ddd-font-weight-medium, 500);
       text-align: center;

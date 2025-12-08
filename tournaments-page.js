@@ -68,7 +68,7 @@ export class TournamentsPage extends HTMLElement {
             border: 2px solid #1e3a8a;
             color: #1e3a8a;
             padding: 10px 20px;
-            border-radius: 50px;
+            
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -118,7 +118,7 @@ export class TournamentsPage extends HTMLElement {
               background: linear-gradient(135deg, #1e3a8a, #3b82f6);
               color: white;
               padding: 25px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 32px; font-weight: 900; margin-bottom: 8px;">3</div>
@@ -128,7 +128,7 @@ export class TournamentsPage extends HTMLElement {
               background: linear-gradient(135deg, #059669, #10b981);
               color: white;
               padding: 25px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 32px; font-weight: 900; margin-bottom: 8px;">$5,000</div>
@@ -138,7 +138,7 @@ export class TournamentsPage extends HTMLElement {
               background: linear-gradient(135deg, #dc2626, #ef4444);
               color: white;
               padding: 25px;
-              border-radius: 15px;
+              
               text-align: center;
             ">
               <div style="font-size: 32px; font-weight: 900; margin-bottom: 8px;">26</div>
@@ -164,7 +164,7 @@ export class TournamentsPage extends HTMLElement {
           max-width: 800px;
           margin: 50px auto 0 auto;
           background: white;
-          border-radius: 20px;
+          
           padding: 50px;
           text-align: center;
           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -189,7 +189,7 @@ export class TournamentsPage extends HTMLElement {
             color: white;
             border: none;
             padding: 18px 45px;
-            border-radius: 50px;
+            
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
@@ -225,7 +225,7 @@ export class TournamentsPage extends HTMLElement {
     return `
       <div style="
         background: white;
-        border-radius: 20px;
+        
         padding: 35px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
@@ -245,7 +245,7 @@ export class TournamentsPage extends HTMLElement {
           background: ${statusColor.bg};
           color: ${statusColor.text};
           padding: 8px 20px;
-          border-radius: 25px;
+          
           font-size: 12px;
           font-weight: 600;
           text-transform: uppercase;
@@ -280,7 +280,7 @@ export class TournamentsPage extends HTMLElement {
           <div style="
             background: #f8fafc;
             padding: 15px;
-            border-radius: 10px;
+            
           ">
             <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">DATE</div>
             <div style="color: #1e3a8a; font-weight: 600;">${tournament.date}</div>
@@ -289,7 +289,7 @@ export class TournamentsPage extends HTMLElement {
           <div style="
             background: #f8fafc;
             padding: 15px;
-            border-radius: 10px;
+            
           ">
             <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">LOCATION</div>
             <div style="color: #1e3a8a; font-weight: 600;">${tournament.location}</div>
@@ -298,7 +298,7 @@ export class TournamentsPage extends HTMLElement {
           <div style="
             background: #f8fafc;
             padding: 15px;
-            border-radius: 10px;
+            
           ">
             <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">TEAMS</div>
             <div style="color: #1e3a8a; font-weight: 600;">${tournament.teams} Teams</div>
@@ -307,7 +307,7 @@ export class TournamentsPage extends HTMLElement {
           <div style="
             background: #f8fafc;
             padding: 15px;
-            border-radius: 10px;
+            
           ">
             <div style="color: #6b7280; font-size: 12px; font-weight: 600; margin-bottom: 5px;">FORMAT</div>
             <div style="color: #1e3a8a; font-weight: 600;">${tournament.format}</div>
@@ -318,7 +318,7 @@ export class TournamentsPage extends HTMLElement {
         <div style="
           background: linear-gradient(135deg, #f59e0b10, #fbbf2410);
           padding: 20px;
-          border-radius: 10px;
+          
           margin-bottom: 20px;
         ">
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -337,7 +337,7 @@ export class TournamentsPage extends HTMLElement {
         <div style="
           background: #dc262615;
           padding: 15px;
-          border-radius: 10px;
+          
           text-align: center;
         ">
           <div style="color: #dc2626; font-size: 12px; font-weight: 600; margin-bottom: 5px;">REGISTRATION DEADLINE</div>
