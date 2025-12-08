@@ -51,7 +51,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
 
       .schedule-subtitle {
         font-size: var(--ddd-font-size-lg, 1.125rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         margin: 0;
       }
 
@@ -149,7 +149,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
 
       .team-division {
         font-size: var(--ddd-font-size-xs, 0.75rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
@@ -175,7 +175,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
 
       .game-location {
         font-size: var(--ddd-font-size-xs, 0.75rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
       }
 
       .score {
@@ -189,8 +189,22 @@ export class PslSchedule extends DDDSuper(LitElement) {
       }
 
       .completed .game-card {
-        background: var(--ddd-theme-default-athertonViolet, #f8fafc);
-        opacity: 0.8;
+        position: relative;
+      }
+
+      .completed-badge {
+        position: absolute;
+        top: var(--ddd-spacing-2, 0.5rem);
+        right: var(--ddd-spacing-2, 0.5rem);
+        background: var(--ddd-theme-default-forestGreen, #16a34a);
+        color: var(--ddd-theme-default-white, #fff);
+        font-size: var(--ddd-font-size-2xs, 0.625rem);
+        font-weight: var(--ddd-font-weight-bold, 700);
+        padding: var(--ddd-spacing-1, 0.25rem) var(--ddd-spacing-2, 0.5rem);
+        border-radius: var(--ddd-radius-xs, 3px);
+        text-transform: uppercase;
+        letter-spacing: 0.25px;
+        box-shadow: var(--ddd-boxShadow-1, 0 1px 3px rgba(0,0,0,0.1));
       }
 
       .upcoming .team-name {
@@ -377,6 +391,7 @@ export class PslSchedule extends DDDSuper(LitElement) {
   _renderGame(game) {
     return html`
       <div class="game-card">
+        ${game.status === "completed" ? html`<div class="completed-badge">Completed</div>` : ''}
         <div class="team">
           <div class="team-name">${game.homeTeam}</div>
           <div class="team-division">${game.division}</div>

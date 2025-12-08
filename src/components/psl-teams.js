@@ -51,7 +51,7 @@ export class PslTeams extends DDDSuper(LitElement) {
 
       .teams-subtitle {
         font-size: var(--ddd-font-size-lg, 1.125rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         margin: 0;
       }
 
@@ -148,7 +148,7 @@ export class PslTeams extends DDDSuper(LitElement) {
 
       .stat-label {
         font-size: var(--ddd-font-size-xs, 0.75rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin: var(--ddd-spacing-1, 0.25rem) 0 0 0;
@@ -172,7 +172,7 @@ export class PslTeams extends DDDSuper(LitElement) {
 
       .detail-label {
         font-size: var(--ddd-font-size-sm, 0.875rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         font-weight: var(--ddd-font-weight-medium, 500);
       }
 

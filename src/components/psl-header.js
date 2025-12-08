@@ -49,16 +49,22 @@ export class PslHeader extends DDDSuper(LitElement) {
       }
 
       .logo {
-        width: 40px;
-        height: 40px;
-        background: var(--ddd-theme-default-white, #ffffff);
-        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: var(--ddd-radius-md, 8px);
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: var(--ddd-font-weight-black, 900);
-        color: var(--ddd-theme-default-navy, #1e40af);
-        font-size: var(--ddd-font-size-sm, 0.875rem);
+        background: var(--ddd-theme-default-white, #ffffff);
+        padding: var(--ddd-spacing-1, 0.25rem);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       .site-title {
@@ -179,7 +185,9 @@ export class PslHeader extends DDDSuper(LitElement) {
       <header class="header">
         <div class="header-container">
           <div class="logo-section">
-            <div class="logo">PSL</div>
+            <div class="logo">
+              <img src="./src/assets/psl-logo.svg" alt="PSL Logo" />
+            </div>
             <h1 class="site-title">Penn State Soccer League</h1>
           </div>
           

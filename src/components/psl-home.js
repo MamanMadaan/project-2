@@ -92,7 +92,7 @@ export class PslHome extends DDDSuper(LitElement) {
 
       .cta-subtitle {
         font-size: var(--ddd-font-size-base, 1rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         margin-bottom: var(--ddd-spacing-6, 2rem);
       }
 
@@ -127,7 +127,7 @@ export class PslHome extends DDDSuper(LitElement) {
           <hero-banner
             title="Penn State Soccer League"
             subtitle="Join our soccer league and play with local teams"
-            cta-text="Register Your Team"
+            cta-text="Get Started"
             @cta-click="${() => this._handleNavigation('/register')}">
           </hero-banner>
         </div>
@@ -147,11 +147,6 @@ export class PslHome extends DDDSuper(LitElement) {
             number="28"
             label="Games Played"
             color="var(--ddd-theme-default-orange, #f59e0b)">
-          </stat-card>
-          <stat-card
-            number="89"
-            label="Total Goals"
-            color="var(--ddd-theme-default-alertImmediate, #dc2626)">
           </stat-card>
         </div>
 

@@ -49,7 +49,7 @@ export class PslRegister extends DDDSuper(LitElement) {
 
       .register-subtitle {
         font-size: var(--ddd-font-size-lg, 1.125rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         margin: 0;
       }
 
@@ -214,7 +214,6 @@ export class PslRegister extends DDDSuper(LitElement) {
       <div class="register-container">
         <div class="register-header">
           <h1 class="register-title">Register Your Team</h1>
-          <p class="register-subtitle">Join the Penn State Soccer League and compete with teams from across the region</p>
         </div>
 
         <div class="form-container">

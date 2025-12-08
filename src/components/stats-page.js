@@ -41,17 +41,6 @@ export class StatsPage extends DDDSuper(LitElement) {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
     }
-      cursor: pointer;
-      font-weight: var(--ddd-font-weight-bold);
-      transition: all var(--ddd-duration-rapid);
-      box-shadow: var(--ddd-boxShadow-sm);
-    }
-
-    .back-button:hover {
-      background: var(--ddd-theme-default-navy90);
-      transform: translateY(-1px);
-      box-shadow: var(--ddd-boxShadow-md);
-    }
 
     .header {
       text-align: center;
@@ -66,7 +55,7 @@ export class StatsPage extends DDDSuper(LitElement) {
     }
 
     .subtitle {
-      color: var(--ddd-theme-default-slateMaxLight);
+      color: var(--ddd-theme-default-coalyGray, #333333);
       font-size: var(--ddd-font-size-lg);
     }
 
@@ -113,7 +102,7 @@ export class StatsPage extends DDDSuper(LitElement) {
     }
 
     .stat-label {
-      color: var(--ddd-theme-default-slateMaxdark);
+      color: var(--ddd-theme-default-coalyGray, #333333);
       font-size: var(--ddd-font-size-lg);
       font-weight: var(--ddd-font-weight-bold);
       text-transform: uppercase;
@@ -161,10 +150,11 @@ export class StatsPage extends DDDSuper(LitElement) {
       flex: 1;
       font-weight: var(--ddd-font-weight-bold);
       margin-left: var(--ddd-spacing-4);
+      color: var(--ddd-theme-default-coalyGray, #333333);
     }
 
     .team-record {
-      color: var(--ddd-theme-default-slateMaxLight, #666666);
+      color: var(--ddd-theme-default-slateGray, #4a5568);
       font-size: var(--ddd-font-size-sm, 0.875rem);
       margin-right: var(--ddd-spacing-4, 1rem);
     }
@@ -176,7 +166,7 @@ export class StatsPage extends DDDSuper(LitElement) {
 
     .footer {
       background: var(--ddd-theme-default-white, #ffffff);
-      color: #64748b;
+      color: var(--ddd-theme-default-slateGray, #4a5568);
       padding: var(--ddd-spacing-6, 2rem);
       text-align: center;
       border-top: 1px solid var(--ddd-theme-default-slateLight, #e2e8f0);

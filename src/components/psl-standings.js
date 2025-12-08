@@ -49,7 +49,7 @@ export class PslStandings extends DDDSuper(LitElement) {
 
       .standings-subtitle {
         font-size: var(--ddd-font-size-lg, 1.125rem);
-        color: var(--ddd-theme-default-slateMaxLight, #666);
+        color: var(--ddd-theme-default-coalyGray, #333);
         margin: 0;
       }
 
@@ -404,7 +404,6 @@ export class PslStandings extends DDDSuper(LitElement) {
                 <th class="center">GA</th>
                 <th class="center">GD</th>
                 <th class="center">Pts</th>
-                <th class="center">Form</th>
               </tr>
             </thead>
             <tbody>
@@ -420,7 +419,6 @@ export class PslStandings extends DDDSuper(LitElement) {
                   <td class="stats">${team.goalsAgainst}</td>
                   <td class="stats">${team.goalsFor - team.goalsAgainst >= 0 ? '+' : ''}${team.goalsFor - team.goalsAgainst}</td>
                   <td class="points">${team.points}</td>
-                  <td class="form">${this._renderFormIndicators(team.form)}</td>
                 </tr>
               `)}
             </tbody>

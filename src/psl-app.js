@@ -93,7 +93,7 @@ export class PslApp extends DDDSuper(LitElement) {
 
   render() {
     return html`
-      <div class="app-container">
+      <div class="app-container" @navigate="${this.handleNavigation}">
         <psl-header 
           .currentRoute="${this.route}"
           @navigate="${this.handleNavigation}">

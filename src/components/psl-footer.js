@@ -9,76 +9,185 @@ export class PslFooter extends DDDSuper(LitElement) {
     }
 
     .footer {
-      background: var(--ddd-theme-default-coalyGray, #333333);
+      background: linear-gradient(135deg, var(--ddd-theme-default-navy, #1e3a8a), var(--ddd-theme-default-coalyGray, #333333));
       color: var(--ddd-theme-default-white, #ffffff);
-      padding: var(--ddd-spacing-8, 2rem) var(--ddd-spacing-6, 2rem) var(--ddd-spacing-6, 2rem);
+      padding: var(--ddd-spacing-10, 3rem) var(--ddd-spacing-6, 2rem) var(--ddd-spacing-6, 2rem);
       margin-top: var(--ddd-spacing-8, 2rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ddd-theme-default-skyBlue, #3b82f6), var(--ddd-theme-default-forestGreen, #16a34a));
     }
 
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--ddd-spacing-8, 2rem);
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--ddd-spacing-10, 3rem);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-section.logo-section {
+      align-items: flex-start;
+      text-align: left;
     }
 
     .footer-section h3 {
-      margin: 0 0 var(--ddd-spacing-4, 1rem) 0;
-      font-size: var(--ddd-font-size-lg, 1.125rem);
-      font-weight: var(--ddd-font-weight-bold, 600);
+      margin: 0 0 var(--ddd-spacing-5, 1.5rem) 0;
+      font-size: var(--ddd-font-size-xl, 1.25rem);
+      font-weight: var(--ddd-font-weight-bold, 700);
       color: var(--ddd-theme-default-skyBlue, #3b82f6);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--ddd-theme-default-skyBlue, #3b82f6);
     }
 
     .footer-links {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--ddd-spacing-3, 0.75rem);
     }
 
     .footer-links li {
-      margin-bottom: var(--ddd-spacing-2, 0.5rem);
+      margin-bottom: 0;
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      padding: var(--ddd-spacing-1, 0.25rem) 0;
+      border-radius: var(--ddd-radius-sm, 4px);
+      position: relative;
+      font-weight: var(--ddd-font-weight-medium, 500);
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--ddd-theme-default-skyBlue, #3b82f6);
+      transition: width 0.3s ease;
     }
 
     .footer-links a:hover {
       color: var(--ddd-theme-default-skyBlue, #3b82f6);
+      transform: translateX(4px);
+    }
+
+    .footer-links a:hover::before {
+      width: 100%;
     }
 
     .social-links {
       display: flex;
       gap: var(--ddd-spacing-4, 1rem);
+      margin-top: var(--ddd-spacing-2, 0.5rem);
     }
 
     .social-link {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--ddd-radius-md, 8px);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--ddd-theme-default-white, #ffffff);
       text-decoration: none;
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .social-link:hover {
       background: var(--ddd-theme-default-skyBlue, #3b82f6);
-      transform: translateY(-2px);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+      border-color: var(--ddd-theme-default-skyBlue, #3b82f6);
+    }
+
+    .logo-footer {
+      width: 80px;
+      height: 80px;
+      margin: 0 0 var(--ddd-spacing-5, 1.5rem) 0;
+      background: linear-gradient(135deg, var(--ddd-theme-default-white, #ffffff), var(--ddd-theme-default-slateLight, #e2e8f0));
+      border-radius: var(--ddd-radius-lg, 12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-footer::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--ddd-theme-default-white, #ffffff);
+      border-radius: var(--ddd-radius-md, 8px);
+    }
+
+    .logo-footer img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+    }
+
+    .league-title {
+      font-size: var(--ddd-font-size-2xl, 1.75rem);
+      font-weight: var(--ddd-font-weight-bold, 700);
+      color: var(--ddd-theme-default-white, #ffffff);
+      margin: 0 0 var(--ddd-spacing-3, 0.75rem) 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .league-description {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      font-size: var(--ddd-font-size-sm, 0.875rem);
+      margin: 0;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: var(--ddd-spacing-6, 2rem);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      margin-top: var(--ddd-spacing-8, 2rem);
       padding-top: var(--ddd-spacing-6, 2rem);
       font-size: var(--ddd-font-size-sm, 0.875rem);
-      opacity: 0.8;
     }
 
     .footer-bottom-content {
@@ -91,25 +200,32 @@ export class PslFooter extends DDDSuper(LitElement) {
 
     .footer-bottom-content p {
       margin: 0;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .powered-by {
       display: flex;
       align-items: center;
-      gap: var(--ddd-spacing-2, 0.5rem);
-      font-size: var(--ddd-font-size-xs, 0.75rem);
-      opacity: 0.7;
+      gap: var(--ddd-spacing-3, 0.75rem);
+      font-size: var(--ddd-font-size-sm, 0.875rem);
+      color: rgba(255, 255, 255, 0.6);
+      padding: var(--ddd-spacing-2, 0.5rem) var(--ddd-spacing-4, 1rem);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--ddd-radius-md, 8px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .powered-logo {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: var(--ddd-theme-default-white, #ffffff);
       border-radius: var(--ddd-radius-sm, 4px);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     .powered-logo img {
@@ -118,27 +234,32 @@ export class PslFooter extends DDDSuper(LitElement) {
       object-fit: contain;
     }
 
-    .logo-footer {
-      width: 40px;
-      height: 40px;
-      margin: 0 auto var(--ddd-spacing-4, 1rem);
-      background: var(--ddd-theme-default-white, #ffffff);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-footer img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
+    @media (max-width: 1024px) {
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ddd-spacing-8, 2rem);
+      }
+      
+      .footer-section.logo-section {
+        grid-column: 1 / -1;
+        align-items: center;
+        text-align: center;
+        margin-bottom: var(--ddd-spacing-4, 1rem);
+      }
     }
 
     @media (max-width: 768px) {
+      .footer {
+        padding: var(--ddd-spacing-8, 2rem) var(--ddd-spacing-4, 1rem) var(--ddd-spacing-6, 2rem);
+      }
+
       .footer-content {
         grid-template-columns: 1fr;
         gap: var(--ddd-spacing-6, 2rem);
+      }
+      
+      .footer-section.logo-section {
+        grid-column: 1;
       }
       
       .social-links {
@@ -148,7 +269,7 @@ export class PslFooter extends DDDSuper(LitElement) {
       .footer-bottom-content {
         flex-direction: column;
         text-align: center;
-        gap: var(--ddd-spacing-2, 0.5rem);
+        gap: var(--ddd-spacing-3, 0.75rem);
       }
     }
   `;
@@ -157,12 +278,12 @@ export class PslFooter extends DDDSuper(LitElement) {
     return html`
       <footer class="footer">
         <div class="footer-content">
-          <div class="footer-section">
+          <div class="footer-section logo-section">
             <div class="logo-footer">
               <img src="./src/assets/psl-logo.svg" alt="PSL Logo" />
             </div>
-            <h3>Penn State Soccer League</h3>
-            <p>Experience competitive soccer excellence at Penn State University. Building community through sport.</p>
+            <h2 class="league-title">Penn State Soccer League</h2>
+            <p class="league-description">Experience competitive soccer excellence at Penn State University. Building community through sport and fostering lifelong friendships on and off the field.</p>
           </div>
 
           <div class="footer-section">
@@ -172,16 +293,6 @@ export class PslFooter extends DDDSuper(LitElement) {
               <li><a href="#teams">Teams</a></li>
               <li><a href="#stats">Statistics</a></li>
               <li><a href="#register">Register</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h3>Information</h3>
-            <ul class="footer-links">
-              <li><a href="#rules">League Rules</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-              <li><a href="#about">About PSL</a></li>
-              <li><a href="#news">Latest News</a></li>
             </ul>
           </div>
 
