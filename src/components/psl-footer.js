@@ -281,7 +281,7 @@ export class PslFooter extends DDDSuper(LitElement) {
         <div class="footer-content">
           <div class="footer-section logo-section">
             <div class="logo-footer">
-              <img src="${new URL('./assets/psl-logo.svg', import.meta.url).href}" alt="PSL Logo" />
+              <img src="${pslLogo}" alt="PSL Logo" />
             </div>
             <h2 class="league-title">Penn State Soccer League</h2>
             <p class="league-description">Experience competitive soccer excellence at Penn State University. Building community through sport and fostering lifelong friendships on and off the field.</p>
@@ -330,7 +330,7 @@ export class PslFooter extends DDDSuper(LitElement) {
             <div class="powered-by">
               <span>Powered by</span>
               <div class="powered-logo">
-                <img src="${new URL('./assets/back-seat-bros-logo.svg', import.meta.url).href}" alt="Back Seat Bros" />
+                <img src="${backSeatBrosLogo}" alt="Back Seat Bros" />
               </div>
             </div>
           </div>

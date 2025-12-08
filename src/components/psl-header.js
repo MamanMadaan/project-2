@@ -7,6 +7,9 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
  * 
  * @element psl-header
  */
+
+const pslLogo = new URL('./assets/psl-logo.svg', import.meta.url).href;
+
 export class PslHeader extends DDDSuper(LitElement) {
   static get tag() {
     return "psl-header";
@@ -197,7 +200,7 @@ export class PslHeader extends DDDSuper(LitElement) {
         <div class="header-container">
           <div class="logo-section">
             <div class="logo">
-              <img src="${new URL('./assets/psl-logo.svg', import.meta.url).href}" alt="PSL Logo" />
+              <img src="${pslLogo}" alt="PSL Logo" />
             </div>
             <h1 class="site-title">Penn State Soccer League</h1>
           </div>

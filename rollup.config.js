@@ -34,9 +34,7 @@ export default {
     copy({
       targets: [
         { src: 'assets/**/*', dest: 'public/assets' },
-        { src: 'manifest.json', dest: 'public' },
-        { src: '_headers', dest: 'public' },
-        { src: '_redirects', dest: 'public' }
+        { src: 'manifest.json', dest: 'public' }
       ],
       copyOnce: true
     }),

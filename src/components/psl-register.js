@@ -144,7 +144,7 @@ export class PslRegister extends DDDSuper(LitElement) {
       .checkbox-input {
         width: 18px;
         height: 18px;
-        accent-color: var(--ddd-theme-default-skyBlue, #3b82f6);
+        
       }
 
       .checkbox-label {
