@@ -31,11 +31,14 @@ export class PslHeader extends DDDSuper(LitElement) {
         width: 100%;
       }
 
+      :host(.psl-header) .header,
+      psl-header .header,
       .header {
-        background: var(--ddd-theme-default-white);
-        color: var(--ddd-theme-default-coalyGray);
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+        color: var(--ddd-theme-default-white) !important;
         padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
         box-shadow: var(--ddd-boxShadow-2);
+        position: relative;
       }
 
       .header-container {
@@ -53,16 +56,17 @@ export class PslHeader extends DDDSuper(LitElement) {
       }
 
       .logo {
-        width: 50px;
-        height: 50px;
-        
+        width: 80px;
+        height: 80px;
+        border-radius: var(--ddd-radius-md);
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--ddd-theme-default-white);
-        padding: var(--ddd-spacing-1);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        border: none;
       }
 
       .logo img {
@@ -106,12 +110,13 @@ export class PslHeader extends DDDSuper(LitElement) {
 
       .mobile-menu-toggle {
         display: none;
-        background: var(--ddd-theme-default-slateLight);
-        border: 2px solid var(--ddd-theme-default-slateGray);
-        color: var(--ddd-theme-default-coalyGray);
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid var(--ddd-theme-default-white);
+        color: var(--ddd-theme-default-white);
         font-size: var(--ddd-font-size-xl);
         cursor: pointer;
         padding: var(--ddd-spacing-3);
+        border-radius: var(--ddd-radius-sm);
         transition: all 0.3s ease;
         min-width: 44px;
         min-height: 44px;
@@ -120,8 +125,8 @@ export class PslHeader extends DDDSuper(LitElement) {
       }
 
       .mobile-menu-toggle:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.3);
+        border-color: var(--ddd-theme-default-white);
       }
 
       .mobile-nav {
@@ -130,14 +135,37 @@ export class PslHeader extends DDDSuper(LitElement) {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--ddd-theme-default-navy);
+        background: var(--ddd-theme-default-white);
         flex-direction: column;
         padding: var(--ddd-spacing-4);
-        box-shadow: var(--ddd-boxShadow-2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        border-top: 1px solid var(--ddd-theme-default-slateLight);
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .mobile-nav.open {
         display: flex;
+      }
+
+      .mobile-nav .nav-link {
+        color: var(--ddd-theme-default-coalyGray);
+        padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
+        margin: var(--ddd-spacing-1) 0;
+        border-radius: var(--ddd-radius-sm);
+        text-align: left;
+        font-weight: var(--ddd-font-weight-medium);
+      }
+
+      .mobile-nav .nav-link:hover {
+        background: var(--ddd-theme-default-slateLight);
+      }
+
+      .mobile-nav .nav-link.active {
+        background: var(--ddd-theme-default-skyBlue);
+        color: var(--ddd-theme-default-white);
       }
 
       @media (max-width: 768px) {

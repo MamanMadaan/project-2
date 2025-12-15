@@ -108,6 +108,8 @@ export class PslSchedule extends DDDSuper(LitElement) {
         font-size: var(--ddd-font-size-xl);
         font-weight: var(--ddd-font-weight-bold);
         margin: 0;
+        color: var(--ddd-theme-default-coalyGray) !important;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
       }
 
       .games-list {
@@ -213,30 +215,109 @@ export class PslSchedule extends DDDSuper(LitElement) {
 
       @media (max-width: 768px) {
         .schedule-container {
-          padding: var(--ddd-spacing-4);
+          padding: var(--ddd-spacing-2);
+        }
+
+        .schedule-title {
+          font-size: var(--ddd-font-size-xl);
         }
 
         .schedule-filters {
           flex-direction: column;
           align-items: stretch;
+          gap: var(--ddd-spacing-2);
         }
 
         .filter-group {
           justify-content: space-between;
         }
 
+        .filter-select {
+          min-width: unset;
+          width: 100%;
+          padding: var(--ddd-spacing-2);
+        }
+
+        .games-list {
+          padding: var(--ddd-spacing-2);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--ddd-spacing-2);
+        }
+
         .game-card {
-          grid-template-columns: 1fr;
-          gap: var(--ddd-spacing-3);
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-1);
           text-align: center;
+          padding: var(--ddd-spacing-2);
+          margin-bottom: 0;
+        }
+
+        .team {
+          margin: var(--ddd-spacing-1) 0;
+        }
+
+        .team-name {
+          font-size: var(--ddd-font-size-sm);
+          color: var(--ddd-theme-default-skyBlue) !important;
+          font-weight: var(--ddd-font-weight-bold) !important;
+          line-height: 1.2;
+        }
+
+        .team-division {
+          font-size: var(--ddd-font-size-xs);
+          margin-top: var(--ddd-spacing-0);
+        }
+
+        .vs-divider {
+          font-size: var(--ddd-font-size-sm);
+          font-weight: var(--ddd-font-weight-bold) !important;
+          color: var(--ddd-theme-default-coalyGray) !important;
+          margin: var(--ddd-spacing-1) 0;
         }
 
         .game-info {
           text-align: center;
+          min-width: unset;
+          margin-top: var(--ddd-spacing-1);
+          padding: var(--ddd-spacing-2);
+          background: var(--ddd-theme-default-slateLight);
+          border-radius: var(--ddd-radius-sm);
         }
 
-        .vs-divider {
-          order: -1;
+        .game-time {
+          font-size: var(--ddd-font-size-sm);
+          font-weight: var(--ddd-font-weight-bold) !important;
+          color: var(--ddd-theme-default-coalyGray) !important;
+          line-height: 1.2;
+        }
+
+        .game-location {
+          font-size: var(--ddd-font-size-xs);
+          margin-top: var(--ddd-spacing-0);
+        }
+
+        .score {
+          font-size: var(--ddd-font-size-lg);
+          margin: var(--ddd-spacing-1) 0;
+          padding: var(--ddd-spacing-1);
+        }
+
+        .completed-badge {
+          position: static;
+          display: inline-block;
+          margin-top: var(--ddd-spacing-1);
+          font-size: var(--ddd-font-size-3xs);
+          padding: 2px var(--ddd-spacing-1);
+        }
+
+        .week-header {
+          padding: var(--ddd-spacing-3);
+        }
+
+        .week-title {
+          font-size: var(--ddd-font-size-lg);
         }
       }
     `];
@@ -383,14 +464,12 @@ export class PslSchedule extends DDDSuper(LitElement) {
         ${game.status === "completed" ? html`<div class="completed-badge">Completed</div>` : ''}
         <div class="team">
           <div class="team-name">${game.homeTeam}</div>
-          <div class="team-division">${game.division}</div>
         </div>
         
         <div class="vs-divider">VS</div>
         
         <div class="team">
           <div class="team-name">${game.awayTeam}</div>
-          <div class="team-division">${game.division}</div>
         </div>
         
         <div class="game-info">

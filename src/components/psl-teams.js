@@ -203,12 +203,17 @@ export class PslTeams extends DDDSuper(LitElement) {
 
       @media (max-width: 768px) {
         .teams-container {
-          padding: var(--ddd-spacing-4);
+          padding: var(--ddd-spacing-2);
+        }
+        
+        .teams-title {
+          font-size: var(--ddd-font-size-2xl);
         }
         
         .teams-filters {
           flex-direction: column;
           align-items: stretch;
+          gap: var(--ddd-spacing-2);
         }
 
         .filter-group {
@@ -218,15 +223,57 @@ export class PslTeams extends DDDSuper(LitElement) {
         .search-input {
           min-width: unset;
           width: 100%;
+          padding: var(--ddd-spacing-2);
         }
 
         .teams-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--ddd-spacing-3);
+        }
+
+        .team-card {
+          font-size: 0.85em;
+        }
+
+        .team-header {
+          padding: var(--ddd-spacing-2);
+        }
+
+        .team-name {
+          font-size: var(--ddd-font-size-lg);
+          padding: var(--ddd-spacing-2);
+          margin: 0 0 var(--ddd-spacing-2) 0;
+        }
+
+        .team-info {
+          padding: var(--ddd-spacing-2);
         }
 
         .team-stats {
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: var(--ddd-spacing-2);
+          margin-bottom: var(--ddd-spacing-2);
+        }
+
+        .stat-value {
+          font-size: var(--ddd-font-size-lg);
+        }
+
+        .stat-label {
+          font-size: var(--ddd-font-size-2xs);
+        }
+
+        .detail-row {
+          padding: var(--ddd-spacing-1) 0;
+        }
+
+        .detail-label,
+        .detail-value {
+          font-size: var(--ddd-font-size-xs);
+        }
+
+        .team-details {
+          margin-bottom: var(--ddd-spacing-2);
         }
       }
     `];

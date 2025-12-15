@@ -97,7 +97,7 @@ export class PslStandings extends DDDSuper(LitElement) {
       }
 
       .table-header {
-        background: linear-gradient(135deg, var(--ddd-theme-default-skyBlue), var(--ddd-theme-default-navy));
+        background: var(--ddd-theme-default-coalyGray);
         color: var(--ddd-theme-default-white);
       }
 
@@ -108,6 +108,7 @@ export class PslStandings extends DDDSuper(LitElement) {
         font-weight: var(--ddd-font-weight-bold);
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        color: var(--ddd-theme-default-white);
       }
 
       .table-header th.center {
@@ -124,7 +125,42 @@ export class PslStandings extends DDDSuper(LitElement) {
       }
 
       tbody tr:hover {
-        background: var(--ddd-theme-default-athertonViolet);
+        background: linear-gradient(135deg, rgba(156, 163, 175, 0.6), rgba(156, 163, 175, 0.4));
+        color: var(--ddd-theme-default-white);
+      }
+
+      tbody tr:hover td {
+        color: var(--ddd-theme-default-white);
+      }
+
+      tbody tr:nth-child(1):hover {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(34, 197, 94, 0.6)) !important;
+        color: var(--ddd-theme-default-white);
+      }
+
+      tbody tr:nth-child(1):hover td {
+        color: var(--ddd-theme-default-white);
+        font-weight: var(--ddd-font-weight-bold);
+      }
+
+      tbody tr:nth-child(2):hover {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.6)) !important;
+        color: var(--ddd-theme-default-white);
+      }
+
+      tbody tr:nth-child(2):hover td {
+        color: var(--ddd-theme-default-white);
+        font-weight: var(--ddd-font-weight-bold);
+      }
+
+      tbody tr:nth-child(3):hover {
+        background: linear-gradient(135deg, rgba(251, 146, 60, 0.8), rgba(251, 146, 60, 0.6)) !important;
+        color: var(--ddd-theme-default-white);
+      }
+
+      tbody tr:nth-child(3):hover td {
+        color: var(--ddd-theme-default-white);
+        font-weight: var(--ddd-font-weight-bold);
       }
 
       tbody tr:last-child {
@@ -199,6 +235,91 @@ export class PslStandings extends DDDSuper(LitElement) {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
       }
 
+      .glossary {
+        background: linear-gradient(135deg, var(--ddd-theme-default-white), rgba(59, 130, 246, 0.02));
+        border: 1px solid var(--ddd-theme-default-slateLight);
+        border-radius: var(--ddd-radius-md);
+        padding: var(--ddd-spacing-6);
+        margin-top: var(--ddd-spacing-6);
+        box-shadow: var(--ddd-boxShadow-2);
+      }
+
+      .glossary-title {
+        font-size: var(--ddd-font-size-xl);
+        font-weight: var(--ddd-font-weight-bold);
+        color: var(--ddd-theme-default-coalyGray);
+        margin: 0 0 var(--ddd-spacing-5) 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .glossary-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(135deg, var(--ddd-theme-default-skyBlue), var(--ddd-theme-default-navy));
+        border-radius: var(--ddd-radius-sm);
+      }
+
+      .glossary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: var(--ddd-spacing-2);
+      }
+
+      .glossary-item {
+        text-align: center;
+        padding: var(--ddd-spacing-2);
+        background: var(--ddd-theme-default-white);
+        border: 2px solid var(--ddd-theme-default-slateLight);
+        border-radius: var(--ddd-radius-sm);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glossary-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(135deg, var(--ddd-theme-default-skyBlue), var(--ddd-theme-default-navy));
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .glossary-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--ddd-boxShadow-2);
+        border-color: var(--ddd-theme-default-skyBlue);
+      }
+
+      .glossary-item:hover::before {
+        transform: translateX(0);
+      }
+
+      .glossary-abbr {
+        font-size: var(--ddd-font-size-base);
+        font-weight: var(--ddd-font-weight-black);
+        color: var(--ddd-theme-default-skyBlue);
+        display: block;
+        margin-bottom: var(--ddd-spacing-1);
+        text-shadow: 1px 1px 2px rgba(59, 130, 246, 0.1);
+      }
+
+      .glossary-desc {
+        font-size: var(--ddd-font-size-xs);
+        color: var(--ddd-theme-default-coalyGray);
+        line-height: 1.3;
+        font-weight: var(--ddd-font-weight-medium);
+      }
+
       @media (max-width: 768px) {
         .standings-container {
           padding: var(--ddd-spacing-4);
@@ -232,133 +353,85 @@ export class PslStandings extends DDDSuper(LitElement) {
 
   constructor() {
     super();
-    this.standings = {
-      "Elite": [
-        {
-          position: 1,
-          team: "State College Strikers",
-          gamesPlayed: 10,
-          wins: 9,
-          draws: 1,
-          losses: 0,
-          goalsFor: 42,
-          goalsAgainst: 8,
-          points: 28,
-          form: ["W", "W", "W", "D", "W"]
-        },
-        {
-          position: 2,
-          team: "Penn State Lions",
-          gamesPlayed: 10,
-          wins: 8,
-          draws: 0,
-          losses: 2,
-          goalsFor: 34,
-          goalsAgainst: 12,
-          points: 24,
-          form: ["W", "L", "W", "W", "W"]
-        },
-        {
-          position: 3,
-          team: "Happy Valley Stars",
-          gamesPlayed: 10,
-          wins: 7,
-          draws: 1,
-          losses: 2,
-          goalsFor: 31,
-          goalsAgainst: 15,
-          points: 22,
-          form: ["W", "D", "L", "W", "W"]
-        }
-      ],
-      "Competitive": [
-        {
-          position: 1,
-          team: "Nittany United",
-          gamesPlayed: 10,
-          wins: 6,
-          draws: 2,
-          losses: 2,
-          goalsFor: 28,
-          goalsAgainst: 18,
-          points: 20,
-          form: ["W", "W", "D", "L", "W"]
-        },
-        {
-          position: 2,
-          team: "University Wolves",
-          gamesPlayed: 10,
-          wins: 5,
-          draws: 3,
-          losses: 2,
-          goalsFor: 22,
-          goalsAgainst: 16,
-          points: 18,
-          form: ["D", "W", "W", "D", "L"]
-        },
-        {
-          position: 3,
-          team: "Central PA United",
-          gamesPlayed: 10,
-          wins: 4,
-          draws: 4,
-          losses: 2,
-          goalsFor: 19,
-          goalsAgainst: 17,
-          points: 16,
-          form: ["D", "D", "W", "L", "D"]
-        }
-      ],
-      "Recreational": [
-        {
-          position: 1,
-          team: "Blue & White FC",
-          gamesPlayed: 8,
-          wins: 5,
-          draws: 2,
-          losses: 1,
-          goalsFor: 22,
-          goalsAgainst: 12,
-          points: 17,
-          form: ["W", "D", "W", "W", "D"]
-        },
-        {
-          position: 2,
-          team: "Campus Crusaders",
-          gamesPlayed: 8,
-          wins: 4,
-          draws: 2,
-          losses: 2,
-          goalsFor: 18,
-          goalsAgainst: 15,
-          points: 14,
-          form: ["L", "W", "D", "W", "W"]
-        },
-        {
-          position: 3,
-          team: "Happy Valley Wanderers",
-          gamesPlayed: 8,
-          wins: 3,
-          draws: 3,
-          losses: 2,
-          goalsFor: 16,
-          goalsAgainst: 14,
-          points: 12,
-          form: ["D", "L", "D", "W", "D"]
-        }
-      ]
-    };
-    this.selectedDivision = "Elite";
+    this.standings = [
+      {
+        position: 1,
+        team: "State College Strikers",
+        gamesPlayed: 10,
+        wins: 9,
+        draws: 1,
+        losses: 0,
+        goalsFor: 42,
+        goalsAgainst: 8,
+        points: 28,
+        form: ["W", "W", "W", "D", "W"]
+      },
+      {
+        position: 2,
+        team: "Penn State Lions",
+        gamesPlayed: 10,
+        wins: 8,
+        draws: 0,
+        losses: 2,
+        goalsFor: 34,
+        goalsAgainst: 12,
+        points: 24,
+        form: ["W", "L", "W", "W", "W"]
+      },
+      {
+        position: 3,
+        team: "Happy Valley Stars",
+        gamesPlayed: 10,
+        wins: 7,
+        draws: 1,
+        losses: 2,
+        goalsFor: 31,
+        goalsAgainst: 15,
+        points: 22,
+        form: ["W", "D", "L", "W", "W"]
+      },
+      {
+        position: 4,
+        team: "Nittany United",
+        gamesPlayed: 10,
+        wins: 6,
+        draws: 2,
+        losses: 2,
+        goalsFor: 28,
+        goalsAgainst: 18,
+        points: 20,
+        form: ["W", "W", "D", "L", "W"]
+      },
+      {
+        position: 5,
+        team: "Blue & White FC",
+        gamesPlayed: 10,
+        wins: 5,
+        draws: 2,
+        losses: 3,
+        goalsFor: 22,
+        goalsAgainst: 18,
+        points: 17,
+        form: ["W", "D", "W", "L", "D"]
+      },
+      {
+        position: 6,
+        team: "Campus Crusaders",
+        gamesPlayed: 10,
+        wins: 4,
+        draws: 2,
+        losses: 4,
+        goalsFor: 18,
+        goalsAgainst: 20,
+        points: 14,
+        form: ["L", "W", "D", "W", "L"]
+      }
+    ];
   }
 
-  _selectDivision(division) {
-    this.selectedDivision = division;
-  }
-
-  _getRowClass(position, division) {
+  _getRowClass(position) {
     if (position === 1) return "top-position";
-    if (division === "Elite" && position <= 2) return "playoff-position";
-    if (division !== "Elite" && position <= 3) return "playoff-position";
+    if (position <= 3) return "playoff-position";
     return "";
   }
 
@@ -370,23 +443,11 @@ export class PslStandings extends DDDSuper(LitElement) {
   }
 
   render() {
-    const currentStandings = this.standings[this.selectedDivision] || [];
-
     return html`
       <div class="standings-container">
         <div class="standings-header">
           <h1 class="standings-title">League Standings</h1>
-          <p class="standings-subtitle">Current standings for all divisions in the Penn State Soccer League</p>
-        </div>
-
-        <div class="division-tabs">
-          ${Object.keys(this.standings).map(division => html`
-            <button 
-              class="division-tab ${division === this.selectedDivision ? 'active' : ''}"
-              @click="${() => this._selectDivision(division)}">
-              ${division} Division
-            </button>
-          `)}
+          <p class="standings-subtitle">Current standings for the Penn State Soccer League</p>
         </div>
 
         <div class="standings-table">
@@ -406,8 +467,8 @@ export class PslStandings extends DDDSuper(LitElement) {
               </tr>
             </thead>
             <tbody>
-              ${currentStandings.map(team => html`
-                <tr class="${this._getRowClass(team.position, this.selectedDivision)}">
+              ${this.standings.map(team => html`
+                <tr class="${this._getRowClass(team.position)}">
                   <td class="position">${team.position}</td>
                   <td class="team-name">${team.team}</td>
                   <td class="stats">${team.gamesPlayed}</td>
@@ -422,6 +483,44 @@ export class PslStandings extends DDDSuper(LitElement) {
               `)}
             </tbody>
           </table>
+        </div>
+        
+        <div class="glossary">
+          <h3 class="glossary-title">Standings Key</h3>
+          <div class="glossary-grid">
+            <div class="glossary-item">
+              <span class="glossary-abbr">GP</span>
+              <span class="glossary-desc">Games Played</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">W</span>
+              <span class="glossary-desc">Wins</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">D</span>
+              <span class="glossary-desc">Draws</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">L</span>
+              <span class="glossary-desc">Losses</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">GF</span>
+              <span class="glossary-desc">Goals For</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">GA</span>
+              <span class="glossary-desc">Goals Against</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">GD</span>
+              <span class="glossary-desc">Goal Difference</span>
+            </div>
+            <div class="glossary-item">
+              <span class="glossary-abbr">Pts</span>
+              <span class="glossary-desc">Points</span>
+            </div>
+          </div>
         </div>
       </div>
     `;
