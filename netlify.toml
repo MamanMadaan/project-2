@@ -19,3 +19,8 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "no-cache"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

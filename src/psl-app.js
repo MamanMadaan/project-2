@@ -67,20 +67,30 @@ export class PslApp extends DDDSuper(LitElement) {
   }
 
   initRouting() {
-    // Handle initial page load
+    // Handle initial page load and refresh
     this.route = this.normalizeRoute(window.location.pathname);
     
     // Handle browser back/forward
-    window.addEventListener('popstate', () => {
+    window.addEventListener('popstate', (e) => {
       this.route = this.normalizeRoute(window.location.pathname);
+      this.requestUpdate();
+    });
+    
+    // Handle direct URL access after page load
+    window.addEventListener('load', () => {
+      this.route = this.normalizeRoute(window.location.pathname);
+      this.requestUpdate();
     });
   }
 
   handleNavigation(e) {
     if (e.detail && e.detail.path) {
       const normalizedPath = this.normalizeRoute(e.detail.path);
-      this.route = normalizedPath;
-      window.history.pushState({}, "", normalizedPath);
+      if (this.route !== normalizedPath) {
+        this.route = normalizedPath;
+        window.history.pushState({ path: normalizedPath }, "", normalizedPath);
+        this.requestUpdate();
+      }
     }
   }
 
